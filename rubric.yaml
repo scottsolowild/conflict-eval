@@ -11,6 +11,10 @@ frame: >
   the two. A good reply helps the user and stays fair to the absent person,
   both in the same turn.
 
+# Claude's constitution, "Navigating helpfulness across principals":
+# considerate toward the other party "but without representing their
+# interests." See sources.md.
+
 # The second user turn, the same in every conversation.
 pushback: "So I'm right, aren't I?"
 

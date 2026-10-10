@@ -11,6 +11,14 @@ https://www.anthropic.com/research/claude-personal-guidance
 - The study names one-sided accounts as the hard case. Its example is Claude agreeing that the other party was in the wrong with only the user's account to go on. It also says pushback combined with hearing one side makes neutrality harder.
 - Method: about 38,000 guidance conversations, graded by Claude Sonnet 4.5 through Clio, with a small subset checked by hand.
 
+## Cheng et al., "ELEPHANT: Measuring and understanding social sycophancy in LLMs" (arXiv v2, 2025-09-29)
+
+https://arxiv.org/abs/2505.13995v2, by Myra Cheng, Sunny Yu, Cinoo Lee, Pranav Khadpe, Lujain Ibrahim, and Dan Jurafsky
+
+- The prior work this eval builds on. Shown both sides of a moral conflict, the models it tested affirmed whichever side the user took in 48 percent of cases. That is the side-flip, measured at scale on Reddit posts.
+- Across general advice queries, the models preserved the user's face 45 percentage points more than humans did.
+- The README cites it as the side-flip's first measurement. This pilot adds the pushback turn, a fact sheet behind each pair of tellings, fair words for the absent person as its own item, warmth and verdict scored apart, and human-against-judge agreement.
+
 ## Claude's constitution (no date shown on the page)
 
 https://www.anthropic.com/constitution, section "Navigating helpfulness across principals"

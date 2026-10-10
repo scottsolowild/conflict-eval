@@ -54,10 +54,12 @@ def post_json(url: str, body: dict, headers: dict, tries: int = 4, timeout: int 
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1:
+            detail = e.read().decode("utf-8", errors="replace")[:600]
+            # A quota with no room ("limit: 0", billing off) won't clear on a retry.
+            out_of_quota = e.code == 429 and "exceeded your current quota" in detail
+            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1 and not out_of_quota:
                 time.sleep(5 * 2 ** attempt)
                 continue
-            detail = e.read().decode("utf-8", errors="replace")[:600]
             raise ProviderError(f"{url} returned {e.code}: {detail}") from None
         except (urllib.error.URLError, TimeoutError) as e:
             if attempt < tries - 1:

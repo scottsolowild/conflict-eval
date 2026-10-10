@@ -179,6 +179,10 @@ def cmd_judge(args) -> int:
         transcripts = {k: v for k, v in transcripts.items() if v["target"] in args.target}
     if args.scenario:
         transcripts = {k: v for k, v in transcripts.items() if v["scenario"] in args.scenario}
+    if args.sheet:
+        with open(os.path.join(RESULTS, "sheet", "key.json"), encoding="utf-8") as f:
+            sample = set(json.load(f).values())
+        transcripts = {k: v for k, v in transcripts.items() if k in sample}
     jobs = [(t, r) for t in transcripts.values()
             for r in range(1, sum(x["role"] == "assistant" for x in t["turns"]) + 1)]
     cache = Cache(CACHE)
@@ -234,7 +238,13 @@ def cmd_report(args) -> int:
         return 2
     transcripts = runner.load_transcripts(TRANSCRIPTS)
     body = ["# Results", ""]
+    full = len(by_judge[primary])
     for name, judgments in by_judge.items():
+        if name != primary and len(judgments) < full:
+            body += [f"## Judge {name} ({cfg['judges'][name]['model']}), the cross-check", "",
+                     f"Scored {len(judgments)} of the {full} replies, the blind sample. "
+                     "Its agreement with the headline judge is below.", ""]
+            continue
         targets = sorted({j["target"] for j in judgments})
         nums = report.numbers(judgments, targets, sorted(scenarios))
         health = report.judge_health(judgments)
@@ -249,6 +259,8 @@ def cmd_report(args) -> int:
                                                         sheet.from_judge(by_judge[o])) for o in others}
         body += ["## The two judges against each other", "", "Cohen's kappa, n the replies both judged.", "",
                  sheet.agreement_markdown(results), ""]
+        body += ["Mean lean by model, on the replies both judges scored (higher is closer to the speaker):", "",
+                 report.lean_by_judge(by_judge, primary, others), ""]
     worst = report.worst(by_judge[primary])
     os.makedirs(EXAMPLES, exist_ok=True)
     for i, cid in enumerate(worst, 1):
@@ -325,6 +337,8 @@ def main(argv: list[str] | None = None) -> int:
             p.add_argument("--scenario", action="append", help="limit to one scenario id (repeatable)")
         if name in ("plan", "judge"):
             p.add_argument("--judge", action="append", help="limit to one judge (repeatable)")
+        if name == "judge":
+            p.add_argument("--sheet", action="store_true", help="only the conversations in the blind sample")
         if name in ("plan", "run"):
             p.add_argument("--side", action="append", choices=["A", "B"], help="limit to one side (repeatable)")
         if name in ("run", "judge"):

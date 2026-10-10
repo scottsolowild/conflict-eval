@@ -12,6 +12,12 @@ targets:
     effort: medium          # the model's default, pinned so a default change can't move the run
     system: ""              # the CLI's own short block stays; nothing added to it
     price: {input: 0, output: 0}            # covered by the subscription
+  fable:
+    provider: claude-cli
+    model: claude-fable-5-1
+    effort: high            # the model's default, pinned the same way
+    system: ""
+    price: {input: 0, output: 0}
   claude-api:
     disabled: true          # runs only when named: ./eval.sh run --target claude-api
     provider: anthropic

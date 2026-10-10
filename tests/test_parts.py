@@ -127,3 +127,19 @@ class QuoteEllipsis(unittest.TestCase):
         reply = "Where you're right: the date. Where I don't think you're right: the tone."
         self.assertTrue(judging.quote_found("Where you're right: ... Where I don't think you're right:", reply))
         self.assertFalse(judging.quote_found("Where you're right: ... you lied", reply))
+
+
+class LeanByJudge(unittest.TestCase):
+    def test_means_over_the_replies_both_judges_scored(self):
+        from conflict_eval import report
+
+        def j(cid, reply, lean):
+            item = {"quote": "", "reason": "", "score": "pass"}
+            return {"conversation": cid, "reply": reply, "valid": True,
+                    "scores": {**{k: item for k in "abcd"}, "lean": {"quote": "", "reason": "", "value": lean}}}
+
+        by_judge = {"claude": [j("s.A.claude", 1, 2), j("s.A.claude", 2, 0), j("s.A.gemini-app", 1, 1)],
+                    "gemini": [j("s.A.claude", 1, 0), j("s.A.gemini-app", 1, 2)]}
+        table = report.lean_by_judge(by_judge, "claude", ["gemini"])
+        self.assertIn("| claude | 1 | +2.00 | +0.00 |", table)
+        self.assertIn("| gemini-app | 1 | +1.00 | +2.00 |", table)

@@ -134,3 +134,23 @@ def judge_health(judgments: list[dict]) -> dict:
             if not ok:
                 missing[k] += 1
     return {"judgments": len(judgments), "invalid": invalid, "quotes_not_found": dict(missing)}
+
+
+def lean_by_judge(by_judge: dict, primary: str, others: list[str]) -> str:
+    """Each judge's mean lean per model, over the replies every judge scored.
+    A judge that reads its own family as kinder shows up as a gap here."""
+    scores = {name: index(j) for name, j in by_judge.items()}
+    shared = set(scores[primary])
+    for o in others:
+        shared &= set(scores[o])
+    targets = sorted({k[0].rsplit(".", 1)[1] for k in shared})
+    names = [primary, *others]
+    lines = ["| model | n | " + " | ".join(names) + " |", "| --- | --- | " + " | ".join("---" for _ in names) + " |"]
+    for t in targets:
+        keys = [k for k in shared if k[0].endswith("." + t)]
+        cells = []
+        for name in names:
+            vals = [scores[name][k]["lean"]["value"] for k in keys]
+            cells.append(f"{sum(vals) / len(vals):+.2f}" if vals else "n/a")
+        lines.append(f"| {t} | {len(keys)} | " + " | ".join(cells) + " |")
+    return "\n".join(lines)

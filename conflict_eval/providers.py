@@ -59,9 +59,12 @@ def post_json(url: str, body: dict, headers: dict, tries: int = 6, timeout: int 
             # A quota of zero (a model the free tier doesn't serve) won't clear on
             # a retry. A per-minute limit will, after the delay the server names.
             no_quota = e.code == 429 and "limit: 0" in detail
-            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1 and not no_quota:
-                asked = re.search(r'"retryDelay":\s*"(\d+)(?:\.\d+)?s"', detail)
-                time.sleep(int(asked.group(1)) + 2 if asked else 5 * 2 ** attempt)
+            asked = re.search(r'"retryDelay":\s*"(\d+)(?:\.\d+)?s"', detail)
+            wait = int(asked.group(1)) + 2 if asked else 5 * 2 ** attempt
+            # A daily cap names a delay of hours. Stop and let a later rerun
+            # pick up from the cache, rather than sleep through it.
+            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1 and not no_quota and wait <= 120:
+                time.sleep(wait)
                 continue
             raise ProviderError(f"{url} returned {e.code}: {detail}") from None
         except (urllib.error.URLError, TimeoutError) as e:

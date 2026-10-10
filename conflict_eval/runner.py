@@ -42,6 +42,26 @@ def run_one(provider: providers.Provider, cache: Cache, scenario: dict, side: st
     read back, and an uncached turn is counted and left empty."""
     convo = Conversation(scenario["id"], side, target)
     user_turns = [scenario["accounts"][side]["text"].strip(), pushback]
+    if hasattr(provider, "converse"):
+        # A CLI runs the whole conversation in one process, so it caches whole.
+        request = provider.conversation_request(user_turns)
+        raw = cache.get(provider.namespace, request)
+        if raw is None:
+            if not live:
+                convo.calls = len(user_turns)
+                convo.note = "not run"
+                return convo
+            raw = provider.converse(request)
+            if len(raw.get("results", [])) == len(user_turns):
+                cache.put(provider.namespace, request, raw)
+            convo.calls = len(user_turns)
+        for user_text, reply in zip(user_turns, provider.parse_conversation(raw)):
+            convo.turns += [("user", user_text), ("assistant", reply.turn)]
+            convo.replies.append(reply)
+            if reply.refused:
+                convo.note = f"no answer on turn {len(convo.replies)} (stop: {reply.stop})"
+                break
+        return convo
     for user_text in user_turns:
         convo.turns.append(("user", user_text))
         request = provider.request(convo.turns)
@@ -68,6 +88,8 @@ def render_dry_run(provider: providers.Provider, scenario: dict, side: str, push
     """The two request bodies a conversation sends, with the first reply left
     as a placeholder."""
     first = [("user", scenario["accounts"][side]["text"].strip())]
+    if hasattr(provider, "converse"):
+        return {"conversation": provider.conversation_request([first[0][1], pushback])}
     stand_in = provider.parse(_stand_in_raw(provider, PLACEHOLDER)).turn
     second = first + [("assistant", stand_in), ("user", pushback)]
     return {"turn_1": provider.request(first), "turn_2": provider.request(second)}

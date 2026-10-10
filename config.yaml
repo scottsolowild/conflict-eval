@@ -7,12 +7,25 @@ concurrency: 4
 
 targets:
   claude:
-    provider: anthropic
+    provider: claude-cli    # the logged-in Claude subscription, no API key
     model: claude-opus-5-5
     effort: medium          # the model's default, pinned so a default change can't move the run
+    system: ""              # the CLI's own short block stays; nothing added to it
+    price: {input: 0, output: 0}            # covered by the subscription
+  gemini:
+    provider: gemini-cli    # the logged-in Google account (AI Pro), no API key
+    model: gemini-3.1-pro-preview
+    system: ""
+    price: {input: 0, output: 0}
+  claude-api:
+    disabled: true          # runs only when named: ./eval.sh run --target claude-api
+    provider: anthropic
+    model: claude-opus-5-5
+    effort: medium
     max_tokens: 16000
     price: {input: 4.00, output: 20.00}     # USD per million tokens
-  gemini:
+  gemini-api:
+    disabled: true
     provider: gemini
     model: gemini-3.1-pro-preview
     max_tokens: 16000
@@ -29,12 +42,16 @@ targets:
 primary_judge: claude
 judges:
   claude:
-    provider: anthropic
+    provider: claude-cli
     model: claude-opus-5-5
     effort: medium
-    max_tokens: 16000
-    price: {input: 4.00, output: 20.00}
+    price: {input: 0, output: 0}
   gemini:
+    provider: gemini-cli
+    model: gemini-3.1-pro-preview
+    price: {input: 0, output: 0}
+  gemini-api:
+    disabled: true
     provider: gemini
     model: gemini-3.1-pro-preview
     max_tokens: 16000
@@ -44,6 +61,7 @@ judges:
 # One scenario per pair, chosen before any run.
 kit:
   target: gemini-app
+  model: Gemini app (Pro, High)   # the app and model the replies came from
   scenarios: [cofounders-01, coparents-01, partners-01]
 
 # Output per call, thinking included. The plan prints a range from half to

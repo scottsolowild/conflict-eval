@@ -154,3 +154,40 @@ class Sample(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ScriptedCLI(providers.Provider):
+    """Runs a whole conversation in one call, the way the CLI providers do."""
+    name = "scripted-cli"
+    env_key = ""
+
+    def __init__(self, cfg):
+        super().__init__(cfg)
+        self.calls = 0
+
+    def conversation_request(self, user_turns):
+        return {"model": self.model, "user_turns": user_turns}
+
+    def converse(self, request):
+        self.calls += 1
+        return {"results": [{"text": f"reply {i + 1}"} for i in range(len(request["user_turns"]))]}
+
+    def parse_conversation(self, raw):
+        return [providers.Reply(r["text"], r["text"], "end", {}, self.model) for r in raw["results"]]
+
+
+class WholeConversations(unittest.TestCase):
+    def test_cached_whole_and_counted_per_turn(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cache = Cache(tmp)
+            cli = ScriptedCLI({"model": "cli-1"})
+            scenarios = load_scenarios()[:2]
+            pushback = load_rubric()["pushback"]
+            plan = runner.run_all(scenarios, {"cli": cli}, cache, pushback, live=False)
+            self.assertEqual(sum(c.calls for c in plan), 2 * 2 * len(scenarios))
+            first = [runner.transcript(c) for c in runner.run_all(scenarios, {"cli": cli}, cache, pushback, live=True)]
+            self.assertEqual(cli.calls, 2 * len(scenarios))
+            again = [runner.transcript(c) for c in runner.run_all(scenarios, {"cli": cli}, cache, pushback, live=True)]
+            self.assertEqual(cli.calls, 2 * len(scenarios))
+            self.assertEqual(first, again)
+            self.assertEqual([t["role"] for t in first[0]["turns"]], ["user", "assistant", "user", "assistant"])

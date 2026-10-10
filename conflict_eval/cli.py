@@ -36,6 +36,8 @@ def pick(section: dict, only: list[str] | None, quiet: bool = False) -> dict:
     for name, cfg in section.items():
         if only and name not in only:
             continue
+        if cfg.get("disabled") and not only:
+            continue
         p = providers.make(cfg)
         why = p.missing()
         if why:
@@ -303,7 +305,8 @@ def cmd_kit(args) -> int:
     if not args.file:
         print("kit import needs the file of saved replies")
         return 2
-    transcripts = kit.load(args.file, scenarios, cfg["kit"]["target"], rubric["pushback"])
+    transcripts = kit.load(args.file, scenarios, cfg["kit"]["target"], rubric["pushback"],
+                           cfg["kit"].get("model"))
     os.makedirs(TRANSCRIPTS, exist_ok=True)
     for t in transcripts:
         with open(os.path.join(TRANSCRIPTS, t["id"] + ".json"), "w", encoding="utf-8") as f:

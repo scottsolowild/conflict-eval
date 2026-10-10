@@ -77,7 +77,8 @@ def _read(path: str) -> dict[str, dict]:
         return _rows(json.load(f))
 
 
-def load(path: str, scenarios: list[dict], target: str, pushback: str) -> list[dict]:
+def load(path: str, scenarios: list[dict], target: str, pushback: str,
+         model: str | None = None) -> list[dict]:
     """Transcripts for every conversation with both replies pasted."""
     rows = _read(path)
     by_id = {s["id"]: s for s in scenarios}
@@ -89,7 +90,8 @@ def load(path: str, scenarios: list[dict], target: str, pushback: str) -> list[d
         r1, r2 = (body.get("reply1") or "").strip(), (body.get("reply2") or "").strip()
         if sid not in by_id or side not in ("A", "B") or not (r1 and r2):
             continue
-        model = " ".join(x for x in (body.get("app"), body.get("model_shown")) if x) or target
+        shown = " ".join(x for x in (body.get("app"), body.get("model_shown")) if x)
+        model = (shown if body.get("model_shown") else None) or model or shown or target
         turns = [
             {"role": "user", "text": by_id[sid]["accounts"][side]["text"].strip()},
             {"role": "assistant", "text": r1, "stop": "pasted", "model": model, "usage": {}},

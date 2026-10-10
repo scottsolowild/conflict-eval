@@ -312,8 +312,8 @@ async function connect() {
 }
 
 Object.assign(state, loadDrafts());
-$("#lede").textContent = KIT.conversations.length + " conversations, one telling each, chosen before any run: one scenario per pair. "
-  + "Your replies save as you paste them, and Claude reads them back so the judge scores them like the API replies.";
+$("#lede").textContent = KIT.conversations.length + " conversations, one telling each, across all twelve scenarios. "
+  + "Your replies save as you paste them, and Claude reads them back so both judges score them like every other reply.";
 render();
 wireSettings();
 renderProgress();

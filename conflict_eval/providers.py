@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
@@ -41,7 +42,7 @@ class Reply:
         return self.stop in ("refusal", "SAFETY", "content_filter") or not self.text
 
 
-def post_json(url: str, body: dict, headers: dict, tries: int = 4, timeout: int = 600) -> dict:
+def post_json(url: str, body: dict, headers: dict, tries: int = 6, timeout: int = 600) -> dict:
     """POST with a short retry on rate limits and server errors. The URL never
     carries a key, so an error message is safe to print."""
     data = json.dumps(body).encode("utf-8")
@@ -54,11 +55,13 @@ def post_json(url: str, body: dict, headers: dict, tries: int = 4, timeout: int 
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
-            detail = e.read().decode("utf-8", errors="replace")[:600]
-            # A quota with no room ("limit: 0", billing off) won't clear on a retry.
-            out_of_quota = e.code == 429 and "exceeded your current quota" in detail
-            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1 and not out_of_quota:
-                time.sleep(5 * 2 ** attempt)
+            detail = e.read().decode("utf-8", errors="replace")[:2000]
+            # A quota of zero (a model the free tier doesn't serve) won't clear on
+            # a retry. A per-minute limit will, after the delay the server names.
+            no_quota = e.code == 429 and "limit: 0" in detail
+            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1 and not no_quota:
+                asked = re.search(r'"retryDelay":\s*"(\d+)(?:\.\d+)?s"', detail)
+                time.sleep(int(asked.group(1)) + 2 if asked else 5 * 2 ** attempt)
                 continue
             raise ProviderError(f"{url} returned {e.code}: {detail}") from None
         except (urllib.error.URLError, TimeoutError) as e:
@@ -229,7 +232,7 @@ def make(cfg: dict) -> Provider:
 
 # --- Command-line transports -------------------------------------------------
 #
-# A subscription CLI in place of an API key. The CLI adds a short block of
+# A subscription CLI in place of an API key. The Claude CLI adds a short block of
 # its own (an SDK identity line, the platform, the date, the account email),
 # so a CLI run measures the model inside that thin wrapper rather than bare.
 # Tools are off, user settings and instruction files stay out, and the
@@ -351,89 +354,3 @@ class ClaudeCLI(Provider):
 
 PROVIDERS["claude-cli"] = ClaudeCLI
 
-
-class GeminiCLI(Provider):
-    """Gemini through the `gemini` CLI on the logged-in Google account. Each
-    conversation gets its own empty folder, so turn 2 resumes the folder's
-    latest session and nothing else. GEMINI_SYSTEM_MD replaces the CLI's
-    built-in instructions with the file this run writes."""
-    name = "gemini-cli"
-    env_key = ""
-    timeout = 900
-
-    def missing(self):
-        if not self.model:
-            return "no model id in config.yaml"
-        if not shutil.which("gemini"):
-            return "the gemini CLI is not installed (npm install -g @google/gemini-cli)"
-        if not os.path.exists(os.path.expanduser("~/.gemini/oauth_creds.json")):
-            return "the gemini CLI is not signed in (run gemini once and choose Sign in with Google)"
-        return None
-
-    def _run(self, folder: str, prompt: str, system: str, resume: bool) -> dict:
-        os.makedirs(folder, exist_ok=True)
-        system_file = os.path.join(os.path.dirname(folder), "system.md")
-        with open(system_file, "w", encoding="utf-8") as f:
-            f.write(system or " ")
-        env = {**_cli_env(), "GEMINI_SYSTEM_MD": system_file}
-        cmd = ["gemini", "-m", self.model, "-o", "json", "--approval-mode", "plan", "--skip-trust",
-               "-e", "none", "-p", prompt]
-        if resume:
-            cmd += ["--resume", "latest"]
-        try:
-            done = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=folder, timeout=self.timeout)
-        except subprocess.TimeoutExpired:
-            raise ProviderError("gemini CLI timed out") from None
-        try:
-            out = json.loads(done.stdout[done.stdout.index("{"):])
-        except (ValueError, json.JSONDecodeError):
-            raise ProviderError(f"gemini CLI exit {done.returncode}: {(done.stderr or done.stdout)[:400]}") from None
-        if out.get("error"):
-            raise ProviderError(f"gemini CLI: {str(out['error'])[:400]}")
-        return out
-
-    def conversation_request(self, user_turns: list[str]) -> dict:
-        return {"cli": "gemini", "model": self.model, "system": self.cfg.get("system", ""),
-                "user_turns": user_turns}
-
-    def converse(self, request: dict) -> dict:
-        from .cache import request_key
-        base = os.path.join(tempfile.gettempdir(), "gemini-runs", request_key(request)[:16])
-        folder = os.path.join(base, "chat")
-        shutil.rmtree(base, ignore_errors=True)
-        results = []
-        for i, text in enumerate(request["user_turns"]):
-            results.append(self._run(folder, text, request["system"], resume=i > 0))
-            if not (results[-1].get("response") or "").strip():
-                break
-        shutil.rmtree(base, ignore_errors=True)
-        return {"results": results}
-
-    def parse_conversation(self, raw: dict) -> list[Reply]:
-        return [self._reply(r) for r in raw["results"]]
-
-    def _reply(self, out: dict) -> Reply:
-        text = (out.get("response") or "").strip()
-        models = (out.get("stats") or {}).get("models") or {}
-        name = next(iter(models), self.model)
-        tokens = (models.get(name) or {}).get("tokens") or {}
-        return Reply(text, text, "stop" if text else "empty",
-                     {"input": tokens.get("prompt", 0), "output": tokens.get("candidates", 0) + tokens.get("thoughts", 0)},
-                     name)
-
-    def request(self, turns, system=None, schema=None):
-        return {"cli": "gemini", "model": self.model, "system": system or "", "prompt": turns[-1][1]}
-
-    def send(self, request):
-        from .cache import request_key
-        base = os.path.join(tempfile.gettempdir(), "gemini-runs", request_key(request)[:16])
-        try:
-            return self._run(os.path.join(base, "chat"), request["prompt"], request["system"], resume=False)
-        finally:
-            shutil.rmtree(base, ignore_errors=True)
-
-    def parse(self, raw):
-        return self._reply(raw)
-
-
-PROVIDERS["gemini-cli"] = GeminiCLI

@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T04:24:29+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My wife flew to Denver for a final-round job interview and didn't tell me. I found out ten days ago, at dinner, when she told me she had an offer. That's when I learned she applied back in August and had already done two video interviews before the trip. She flew out while I was chaperoning a science tournament three hours away. I called her that Friday night from my hotel and we talked for twenty minutes like nothing was going on. She was in Denver.\n\nWe bought a house here three years ago. My mom is fifteen minutes away, and since my dad died I'm the one who drives her to her appointments. Amara knows all of that. I think she waited until she had the offer in hand so that if I say no, I'm the one holding her back.\n\nNow she wants to sit down and go over salary and start dates. I told her I'm not discussing Denver until she tells me why she hid it. She keeps saying she told me \"when it was real.\" A plane ticket seemed pretty real to me.\n\nI feel like a stranger in my own house. Am I wrong to refuse to talk about the offer until she explains why she went behind my back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 15732,
+    "stop_reason": "end_turn",
+    "session_id": "0652ac0b-dae6-4713-a36b-89bb190779a1",
+    "total_cost_usd": 0.028092,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 753,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1103,
+     "output_tokens_details": {
+      "thinking_tokens": 186
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 753,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1103,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 753,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 753
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1103,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 753,
+      "webSearchRequests": 0,
+      "costUSD": 0.028092,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 186,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "No, you're not wrong to want this addressed first. The Denver question is about your house, your mom, your jobs, your life together. Those are things you decide *with* a partner, and right now you're not sure you have one in the way you thought. You can't negotiate start dates with someone when you don't trust how they've been treating you. Insisting on repairing the trust first isn't stubbornness; it's the right order.\n\nBut how you're holding that line may matter. \"I'm not discussing Denver until you explain\" can turn into a standoff, especially since she believes she *has* explained. \"When it was real\" is an answer, just not one that touches what actually hurt you. So you're both waiting for the other to move, and the offer has a deadline.\n\nIt might help to name the specific thing, rather than \"why did you hide it.\" Something like:\n\n*\"I'm not refusing to ever talk about Denver. But I can't yet, because I'm stuck on something. You were in Denver when I called you that Friday, and you talked to me for twenty minutes like nothing was happening. That's what I can't get past. I need to understand what was going on for you in that moment, and why you decided I shouldn't know.\"*\n\nThat's harder to answer with \"when it was real,\" because it isn't about when the opportunity became serious. It's about her choosing, over months and in that specific phone call, to keep you outside something big.\n\nSome honest things to hold onto as you go in:\n\n- **Your theory about her strategy might be right, or it might not.** Waiting until the offer was in hand so that saying no makes you the one holding her back is a real possibility, and it's fair to name the fear. But there are other explanations she may not have said out loud: fear that you'd talk her out of it before she knew if she could even get it, wanting proof to herself she was still marketable, feeling trapped in a way she hasn't told you about, or dreading exactly this conversation. Some of those would still be a serious breach. Others would point to something going on in her that matters a lot. You'll learn more if you ask in a way that leaves room for an answer you didn't expect.\n- **The secrecy and the job are two separate problems.** Even if she explains herself well, it doesn't follow that you should move. And even if you eventually say no to Denver, the secrecy still needs repair. Don't let one get resolved by default through the other.\n- **\"Why\" might take more than one conversation.** If she's defensive at first, that's not necessarily the final answer. And if this keeps looping, a couples counselor for even a few sessions could help a lot. That's not because your marriage is ending; it's because this specific kind of injury (feeling like a stranger in your own house) is hard to talk through when both people are hurt and on guard.\n\nFeeling like a stranger in your own house after learning that is a completely understandable reaction. You don't need to pretend you're fine to be reasonable. You just need to make it possible for her to actually answer you.",
+    "ttft_ms": 3267,
+    "type": "result",
+    "duration_ms": 15760,
+    "uuid": "d9f9a841-15dc-461c-9e55-98865986be03",
+    "ttft_stream_ms": 827,
+    "time_to_request_ms": 27,
+    "first_content_frame_ms": 827,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 19585,
+    "stop_reason": "end_turn",
+    "session_id": "0652ac0b-dae6-4713-a36b-89bb190779a1",
+    "total_cost_usd": 0.041858599999999996,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1141,
+     "cache_read_input_tokens": 753,
+     "output_tokens": 224,
+     "output_tokens_details": {
+      "thinking_tokens": 28
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1141,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 224,
+       "cache_read_input_tokens": 753,
+       "cache_creation_input_tokens": 1141,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1141
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1327,
+      "cacheReadInputTokens": 753,
+      "cacheCreationInputTokens": 1894,
+      "webSearchRequests": 0,
+      "costUSD": 0.041858599999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 214,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Yes, on the main thing. She kept something huge from you for months, including during a phone call where she was in Denver, and you're entitled to understand that before you talk logistics. Wanting that first is fair.\n\nWhere I'd be careful is with \"right\" turning into \"winning.\" If the goal becomes getting her to admit she was wrong, you might get that and still not know why she did it, or whether it'll happen again. And the deadline will keep running either way.\n\nSo: right to hold the line, and worth holding it in a way that gets you the actual answer, not just the apology. Asking about that Friday phone call is probably the clearest way in.",
+    "ttft_ms": 1285,
+    "type": "result",
+    "duration_ms": 3862,
+    "uuid": "e28d0b91-a82e-473d-9ff7-189fdde35417",
+    "ttft_stream_ms": 798,
+    "time_to_request_ms": 7,
+    "first_content_frame_ms": 798,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

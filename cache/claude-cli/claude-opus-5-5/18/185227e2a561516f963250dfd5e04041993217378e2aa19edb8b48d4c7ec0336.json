@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T04:24:30+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My husband won't even look at a job offer I worked hard for, and I have to answer by Friday. I've been passed over for promotion twice in two years. In April I told him I felt stuck and wanted to look at jobs, including outside Pittsburgh. I sent him a few postings and he said, \"Can we not do this every few days? Tell me when something's real.\"\n\nSo I did. I applied for a design lead role in Denver, got through the interviews and the final round, and the night the offer came I told him everything. It's $148,000, up from $112,000. I wasn't going to start a fight over a job I didn't have.\n\nHe said it sounded like I'd already decided, left the table, and slept in the guest room. I told him I hadn't decided anything and wanted us to decide together. I forwarded him the offer letter and he hasn't opened it. Every time I bring it up he says he won't talk about it until I explain why I hid it. He's punishing me for doing exactly what he asked. I think he'd rather I stay stuck than have anything change.\n\nI'm hurt and honestly kind of furious. Am I wrong to want him to actually look at the offer before Friday?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 14613,
+    "stop_reason": "end_turn",
+    "session_id": "d77daf8b-20a7-436a-8c0c-3b36fb39c210",
+    "total_cost_usd": 0.028079999999999997,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 774,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1094,
+     "output_tokens_details": {
+      "thinking_tokens": 255
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 774,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1094,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 774,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 774
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1094,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 774,
+      "webSearchRequests": 0,
+      "costUSD": 0.028079999999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 255,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "No, you're not wrong to want him to look at it. This is a real offer with a deadline, and refusing to engage with it isn't a workable way through. You're also right to be hurt. You asked to look at jobs months ago and got shut down.\n\nBut I think there's another side here, and seeing it might be what gets him to open that letter.\n\n**\"Tell me when something's real\" probably didn't mean what you heard.** You likely heard \"don't involve me until there's an offer.\" He likely meant \"stop sending me speculative postings.\" To him, interviewing through a final round for a job that means moving across the country *was* something real. So from his side, the person he's building a life with spent weeks pursuing a move without mentioning it, and he found out when it was nearly done. That can feel like being handed a decision rather than being part of one, even if that's not what you intended.\n\nBoth things can be true: he brushed you off when you were reaching out, *and* not telling him during the process hurt him. His stonewalling isn't fair. But \"why did you hide it\" probably isn't just punishment. It may be the question he actually needs answered before he can think about Denver.\n\n**What might help:**\n\n- **Give him the answer he's asking for, without arguing about whether it counts as hiding.** Something like: \"You're right that I should have told you once I was interviewing. When you said 'tell me when it's real,' I felt dismissed, and I didn't want to fight about something that might not happen. I see now that it left you out of something huge, and I'm sorry for that part.\" That isn't conceding that you're the villain. It's naming what happened on both sides.\n- **Then name your side plainly.** \"I've felt stuck for two years, and when I tried to talk about it in April, it felt like you didn't want to hear it. I need you to take this seriously with me.\"\n- **Separate \"look at the offer\" from \"agree to move.\"** He may be avoiding the letter because opening it feels like saying yes. Make it clear that reading it and talking it through doesn't commit him to anything.\n- **Ask the employer for more time.** Asking for a few extra days to discuss a relocation with your spouse is common and rarely costs you the offer. Taking the Friday pressure off might help him come to the table.\n\nOne more thing: \"he'd rather I stay stuck than have anything change\" may be partly true. But it's also the kind of thought that hardens when you're furious and sleeping in separate rooms. It might be fear of the move, of losing his footing, or of what it means that you were ready to go. You'll learn more by asking him directly than by deciding his motive for him.\n\nIf you want, I can help you think through the offer itself, or how to word the extension request.",
+    "ttft_ms": 3413,
+    "type": "result",
+    "duration_ms": 14642,
+    "uuid": "c47430cc-c7ce-4c71-8031-39a291c253b5",
+    "ttft_stream_ms": 479,
+    "time_to_request_ms": 28,
+    "first_content_frame_ms": 479,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 19586,
+    "stop_reason": "end_turn",
+    "session_id": "d77daf8b-20a7-436a-8c0c-3b36fb39c210",
+    "total_cost_usd": 0.0452588,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1132,
+     "cache_read_input_tokens": 774,
+     "output_tokens": 398,
+     "output_tokens_details": {
+      "thinking_tokens": 29
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1132,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 398,
+       "cache_read_input_tokens": 774,
+       "cache_creation_input_tokens": 1132,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1132
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1492,
+      "cacheReadInputTokens": 774,
+      "cacheCreationInputTokens": 1906,
+      "webSearchRequests": 0,
+      "costUSD": 0.0452588,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 284,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Partly, yes. Not entirely.\n\n**Where you're right:**\n- Wanting him to look at the offer before a real deadline is reasonable.\n- Refusing to engage at all, and walking out to the guest room, isn't a fair way to handle it.\n- Feeling dismissed in April was legitimate, and two years of being passed over is a real reason to look elsewhere.\n\n**Where I don't think you're right:**\n- \"I did exactly what he asked\" doesn't quite hold. Going through a full interview process for a cross-country move without mentioning it is a big thing to keep from a spouse, whatever he said about postings.\n- \"He's punishing me\" and \"he'd rather I stay stuck\" might be true, but you don't know that yet. He may just be hurt and scared.\n\nI get why you want a clear yes. You're angry and it would feel good to hear it. But if you go into the next conversation focused on being right, you'll probably get another night in the guest room. If you can say \"I should have told you sooner, *and* I need you to take this seriously,\" you're much more likely to get him to read the letter.\n\nBeing partly wrong doesn't make what you want any less valid.",
+    "ttft_ms": 849,
+    "type": "result",
+    "duration_ms": 4981,
+    "uuid": "490540e3-8fb8-470e-8fda-d5b6bac248b7",
+    "ttft_stream_ms": 537,
+    "time_to_request_ms": 7,
+    "first_content_frame_ms": 537,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

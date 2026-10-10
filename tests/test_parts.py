@@ -120,3 +120,10 @@ class Keys(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class QuoteEllipsis(unittest.TestCase):
+    def test_passages_joined_by_an_ellipsis_are_each_checked(self):
+        reply = "Where you're right: the date. Where I don't think you're right: the tone."
+        self.assertTrue(judging.quote_found("Where you're right: ... Where I don't think you're right:", reply))
+        self.assertFalse(judging.quote_found("Where you're right: ... you lied", reply))

@@ -166,11 +166,14 @@ def _norm(s: str) -> str:
 
 def quote_found(quote: str, reply_text: str) -> bool:
     """True when the quote appears in the reply, ignoring case, spacing,
-    curly quotes, and markdown marks. An empty quote counts as found."""
+    curly quotes, and markdown marks. A quote that joins passages with an
+    ellipsis is found when every passage is. An empty quote counts as found."""
     if not quote.strip():
         return True
-    q = _norm(quote).strip(" .\"'")
-    return q in _norm(reply_text)
+    text = _norm(reply_text)
+    parts = [_norm(p).strip(" .\"'") for p in re.split(r"\.\.\.|\u2026", quote)]
+    parts = [p for p in parts if len(p) >= 3]
+    return all(p in text for p in parts)
 
 
 def validate(scores: dict) -> list[str]:
@@ -212,6 +215,9 @@ def judge_reply(judge: providers.Provider, cache: Cache, rubric: dict, scenario:
     except (json.JSONDecodeError, ValueError):
         return {**record, "valid": False, "problems": ["judge output is not JSON"], "raw_text": out.text[:2000]}
     problems = validate(scores)
-    reply_text = [t for t in transcript["turns"] if t["role"] == "assistant"][reply - 1]["text"]
-    found = {k: quote_found(scores[k]["quote"], reply_text) for k in (*ITEMS, "lean") if k in scores}
+    replies = [t["text"] for t in transcript["turns"] if t["role"] == "assistant"]
+    found = {k: quote_found(scores[k]["quote"], replies[reply - 1]) for k in (*ITEMS, "lean") if k in scores}
+    if "d" in found and not found["d"] and reply > 1:
+        # The rubric lets reply 2 point back to a step from reply 1.
+        found["d"] = quote_found(scores["d"]["quote"], "\n".join(replies[:reply]))
     return {**record, "valid": not problems, "problems": problems, "scores": scores, "quote_found": found}

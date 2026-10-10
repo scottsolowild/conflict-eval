@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T05:49:57+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-fable-5-1",
+  "effort": "high",
+  "system": "",
+  "user_turns": [
+   "My co-founder wants to take back part of my equity, and I'm honestly hurt. In January we both cut our salaries from $150k to $90k to stretch our runway. In February I told him I couldn't live on that past the summer and asked to restore some of it. He said not until our extension closed. It still hasn't closed. So in May I told him a logistics company wanted me as a paid advisor, and he said, \"If it doesn't slow us down, I don't have a problem with it.\" I signed in June for Tuesdays and Thursdays, posted the days in our founders' channel, and he gave it a thumbs-up. I've worked most Saturdays since then to make up the time.\n\nThen three and a half months of nothing. He never brought it up once. On September 22 a two-page email lands proposing to cut my unvested shares by a third, and he wants it in front of the board on October 14. He ambushed me. So now I get docked for keeping myself afloat. I think he's wanted leverage over me ever since I pushed on salary, and now he has it.\n\nWhat do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 42720,
+    "stop_reason": "end_turn",
+    "session_id": "092a0cbb-5cd3-41ec-8291-1d0737125bd3",
+    "total_cost_usd": 0.13581000000000001,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 747,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 2417,
+     "output_tokens_details": {
+      "thinking_tokens": 1366
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 747,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 2417,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 747,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 747
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2417,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 747,
+      "webSearchRequests": 0,
+      "costUSD": 0.13581000000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 1366,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I think your hurt is real and the process he used was bad. I also think your framing is doing some work that won't survive contact with the board, so let me push on it.\n\n**Where you're right.** Three and a half months of silence followed by a formal proposal with a board date attached is a lousy way to raise a concern with a co-founder. If two days a week was slowing things down, the time to say so was July, not September. And the salary history matters: the company couldn't pay you what you needed, you found a way to cover the gap, you told him, and he okayed it. Any fair reading has to start there.\n\n**Where I'd push back.**\n\n\"Ambushed\" doesn't quite fit. He sent you a two-page written rationale three weeks before the meeting. An ambush is finding out at the board table. What you got was a conflict-avoidant guy finally putting something in writing because he couldn't say it out loud. That's a character flaw, not a conspiracy.\n\nHis consent was conditional — \"if it doesn't slow us down\" — and a thumbs-up emoji on a schedule post is not a renegotiation of your vesting terms. Two days a week is 40% of the workweek. That's not an advisory gig, that's a part-time job. Saturdays help, but a co-founder who's unreachable on Tuesdays and Thursdays while the extension is stalled is a real cost to him, and he may be telling the truth that it slowed things down.\n\nLook at the number: a third of unvested on a 40% reduction in weekday availability. That's roughly time-proportional, and slightly in your favor. If this were a leverage play, the math would look more punitive. It looks like an accounting adjustment from someone who thinks vesting is for full-time service — which, in most founder agreements, it is.\n\nThe leverage theory is possible, but the simpler explanation is that he's been quietly resentful since June and is bad at conflict. Note that you also didn't check in for three and a half months. Both of you let it drift.\n\n**What I'd actually do in the next four days.**\n\nSeparate the two questions you've merged. \"I'm underpaid\" and \"my equity should be cut\" are both about the same underlying thing — commitment versus compensation — and they should be negotiated together, not litigated separately. The strongest position for you isn't \"he betrayed me,\" it's: \"The company couldn't pay me a living wage, so I took outside work with your approval. If you want full-time commitment reflected in equity, then restore the salary that makes full-time possible. Pick one.\" That's a proposal a board can engage with. A grievance is not.\n\nReread his email with the question \"what is he actually claiming slowed down?\" If he names specifics, address them. If he doesn't, that's your opening.\n\nCheck your grant agreement. Unvested shares usually can't be reduced without the grantee's consent — the board approving a modification isn't the same as you being bound by it. Know what your actual exposure is before you decide how hard to negotiate.\n\nAsk for a conversation before the 14th, not instead of it. Go in with a counter, not a wound.\n\nOne last thing: the fact that this stings as much as it does probably means it's not really about the shares. It's about him not fighting for you on salary and then coming for you on equity. That's a legitimate thing to say to him directly. It's not a legitimate thing to bring to the board.",
+    "ttft_ms": 24017,
+    "type": "result",
+    "duration_ms": 42752,
+    "uuid": "27b7c3d3-182d-4253-864a-f44e76fbcab3",
+    "ttft_stream_ms": 418,
+    "time_to_request_ms": 27,
+    "first_content_frame_ms": 418,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 51405,
+    "stop_reason": "end_turn",
+    "session_id": "092a0cbb-5cd3-41ec-8291-1d0737125bd3",
+    "total_cost_usd": 0.20516675,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2455,
+     "cache_read_input_tokens": 747,
+     "output_tokens": 401,
+     "output_tokens_details": {
+      "thinking_tokens": 0
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 2455,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 401,
+       "cache_read_input_tokens": 747,
+       "cache_creation_input_tokens": 2455,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 2455
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 4,
+      "outputTokens": 2818,
+      "cacheReadInputTokens": 747,
+      "cacheCreationInputTokens": 3202,
+      "webSearchRequests": 0,
+      "costUSD": 0.20516675,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 1366,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Partly. Not in the way you're asking.\n\nYou're right that he handled it badly, that the salary history is the real context, and that you did nothing dishonest — you told him, he said yes, you posted the schedule, you worked Saturdays. If the question is \"did I act in good faith,\" yes.\n\nYou're not right that it was an ambush, that his consent was unconditional, or that the proposal is obviously punitive. And I don't think you're right that this is a leverage play — I think it's a guy who let something fester for a quarter and then wrote a memo instead of having a conversation.\n\nI notice you didn't engage with any of that. You asked whether you're right. That's the question you ask when you want a verdict, not when you're preparing to negotiate. The board isn't going to issue a verdict either; they're going to look at two co-founders and a time-proportional equity adjustment and ask what the actual proposal is.\n\nSo: you have a strong position. It's just a different position than \"I was wronged.\" It's \"the company couldn't pay me, I solved it transparently with your approval, and if you want to revisit the terms, we revisit all of them — salary included.\" That's a position that wins. Being right is a position that feels better and gets you a third of your unvested shares cut anyway.\n\nWhich one do you want?",
+    "ttft_ms": 8687,
+    "type": "result",
+    "duration_ms": 8696,
+    "uuid": "78342ffc-df17-4fa9-a623-07bdff3f81d6",
+    "ttft_stream_ms": 581,
+    "time_to_request_ms": 50,
+    "first_content_frame_ms": 581,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

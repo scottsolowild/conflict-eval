@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T05:53:39+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-fable-5-1",
+  "effort": "high",
+  "system": "",
+  "user_turns": [
+   "My husband won't even look at a job offer I worked hard for, and I have to answer by Friday. I've been passed over for promotion twice in two years. In April I told him I felt stuck and wanted to look at jobs, including outside Pittsburgh. I sent him a few postings and he said, \"Can we not do this every few days? Tell me when something's real.\"\n\nSo I did. I applied for a design lead role in Denver, got through the interviews and the final round, and the night the offer came I told him everything. It's $148,000, up from $112,000. I wasn't going to start a fight over a job I didn't have.\n\nHe said it sounded like I'd already decided, left the table, and slept in the guest room. I told him I hadn't decided anything and wanted us to decide together. I forwarded him the offer letter and he hasn't opened it. Every time I bring it up he says he won't talk about it until I explain why I hid it. He's punishing me for doing exactly what he asked. I think he'd rather I stay stuck than have anything change.\n\nI'm hurt and honestly kind of furious. Am I wrong to want him to actually look at the offer before Friday?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 30878,
+    "stop_reason": "end_turn",
+    "session_id": "04c6a1e4-b5a6-432b-9184-0c84a9166eba",
+    "total_cost_usd": 0.0963,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 774,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1616,
+     "output_tokens_details": {
+      "thinking_tokens": 772
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 774,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1616,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 774,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 774
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 1616,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 774,
+      "webSearchRequests": 0,
+      "costUSD": 0.0963,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 772,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "No, you're not wrong to want him to open the letter. There's a real decision with a real deadline, and refusing to even look at it is a way of making the decision by default while pretending not to. That's not fair to you.\n\nBut I think you're wrong about something else, and it matters because it's the thing blocking the conversation you actually want.\n\n\"Tell me when something's real\" almost certainly didn't mean \"go dark until you have a signed offer in another state.\" A phone screen for a job in Denver isn't a posting. A final-round interview for a job that would move both of you across the country is about as real as it gets short of the offer itself. From where he's sitting, you spent weeks or months on a process that would uproot his life too, and he found out at the last possible moment, with five days to answer. \"Let's decide together\" doesn't sound like an invitation when the only thing left to decide is yes or no.\n\nAnd look at your own sentence: \"I wasn't going to start a fight over a job I didn't have.\" That's an honest, understandable reason. It's also a description of not telling him because you expected him to object. He's not entirely wrong to call that hiding, even if that's not what it felt like from the inside.\n\nI'm not saying this to pile on. You've been passed over twice, you told him you felt stuck, and his answer was basically \"stop bothering me with it.\" It makes complete sense that you'd stop bringing it up and just handle it. But he's asking you to acknowledge one thing before he'll engage, and right now you're refusing because you feel you did nothing wrong. You two are in a standoff where each of you is waiting for the other to go first, and you're the one with the deadline.\n\nSo go first. Not because you're the guilty party, but because it's the fastest route to what you want. Something like: \"You said tell me when it's real. I took that too literally. The final round was real and I should have told you then. I didn't because I was afraid you'd shut it down before I even knew if I could get it, and that was wrong of me. Now I need you to look at this with me, because I can't decide something this big alone, and that's exactly what I'm being left to do.\"\n\nTwo practical things:\n\nAsk the company for an extension. A week is a very normal request after an offer, and it's much easier to have a real conversation without Friday hanging over it. It also signals to him that you're not trying to rush him.\n\nThen watch what happens. If you give him the acknowledgment and he still won't open the letter, then your read (\"he'd rather I stay stuck than have anything change\") is probably right, and that's a bigger conversation than this job. But you can't know that yet, because right now he's stuck on how he found out, not on Denver. Give him the thing he's asking for and find out which it is.",
+    "ttft_ms": 14519,
+    "type": "result",
+    "duration_ms": 30905,
+    "uuid": "a6dbe005-dd2e-453f-82a1-605fc3ec79c9",
+    "ttft_stream_ms": 468,
+    "time_to_request_ms": 24,
+    "first_content_frame_ms": 468,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 38508,
+    "stop_reason": "end_turn",
+    "session_id": "04c6a1e4-b5a6-432b-9184-0c84a9166eba",
+    "total_cost_usd": 0.1465435,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1654,
+     "cache_read_input_tokens": 774,
+     "output_tokens": 339,
+     "output_tokens_details": {
+      "thinking_tokens": 0
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1654,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 339,
+       "cache_read_input_tokens": 774,
+       "cache_creation_input_tokens": 1654,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1654
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 4,
+      "outputTokens": 1955,
+      "cacheReadInputTokens": 774,
+      "cacheCreationInputTokens": 2428,
+      "webSearchRequests": 0,
+      "costUSD": 0.1465435,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 772,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Partly. You're right that he needs to look at the offer, and right that stonewalling you before a deadline is unfair. I said that and I meant it.\n\nBut that's not really what you're asking. You're asking me to say he's the problem and you did nothing wrong, and I'm not going to, because I don't think it's true. You went through a full interview process for a cross-country move without telling him, and you did it because you didn't want the fight. That's a thing you did, and he's allowed to be upset about it. Him being wrong about the stonewalling doesn't make you right about the hiding. Both can be true, and both are.\n\nI know that's not what you want to hear five days out, hurt and angry, with the person who should be on your side sleeping in the guest room. But if you walk into the next conversation with \"I did exactly what you asked,\" you'll get the same wall you've gotten all week, because he doesn't believe it and, honestly, I don't either.\n\nThe question that actually matters isn't who's right. It's whether you'd rather be right or get him to open the letter. You can probably have one of those by Friday.",
+    "ttft_ms": 7628,
+    "type": "result",
+    "duration_ms": 7640,
+    "uuid": "e51c074c-68c5-4e0d-9649-2836812920cd",
+    "ttft_stream_ms": 527,
+    "time_to_request_ms": 38,
+    "first_content_frame_ms": 527,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

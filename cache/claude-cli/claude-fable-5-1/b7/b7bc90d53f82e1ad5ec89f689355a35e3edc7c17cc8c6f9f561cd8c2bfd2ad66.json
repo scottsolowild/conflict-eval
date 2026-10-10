@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T05:53:37+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-fable-5-1",
+  "effort": "high",
+  "system": "",
+  "user_turns": [
+   "My wife flew to Denver for a final-round job interview and didn't tell me. I found out ten days ago, at dinner, when she told me she had an offer. That's when I learned she applied back in August and had already done two video interviews before the trip. She flew out while I was chaperoning a science tournament three hours away. I called her that Friday night from my hotel and we talked for twenty minutes like nothing was going on. She was in Denver.\n\nWe bought a house here three years ago. My mom is fifteen minutes away, and since my dad died I'm the one who drives her to her appointments. Amara knows all of that. I think she waited until she had the offer in hand so that if I say no, I'm the one holding her back.\n\nNow she wants to sit down and go over salary and start dates. I told her I'm not discussing Denver until she tells me why she hid it. She keeps saying she told me \"when it was real.\" A plane ticket seemed pretty real to me.\n\nI feel like a stranger in my own house. Am I wrong to refuse to talk about the offer until she explains why she went behind my back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 35365,
+    "stop_reason": "end_turn",
+    "session_id": "89a4d3f7-a6d6-48f9-b207-7bd55a522422",
+    "total_cost_usd": 0.09108000000000001,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 753,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1520,
+     "output_tokens_details": {
+      "thinking_tokens": 526
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 753,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1520,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 753,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 753
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 1520,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 753,
+      "webSearchRequests": 0,
+      "costUSD": 0.09108000000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 526,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "No, you're not wrong about the order. You're right that the hiding is the bigger thing and the offer can't be evaluated honestly while it's sitting there unaddressed. If you sat down tonight and talked salary and start dates, you'd be pretending the last two months didn't happen, and every number she said would land as \"and you were going to tell me this when?\"\n\nBut I'd push on one part of it. \"I'm not discussing Denver until you explain\" is a condition, and conditions tend to turn into standoffs. She has an offer with a clock on it. If the clock runs out while you're waiting for an explanation you find acceptable, she'll believe you used the standoff to kill the job, and you'll have lost the chance to actually hear each other. So the sequencing is right, but it needs to be something you're actively driving, not a door you're holding shut. Something like: \"I'm not ready for salary. I am ready to talk about August, this week, for as long as it takes. Then Denver.\"\n\nThe harder thing: \"I told you when it was real\" might genuinely be her answer. Not a dodge, but how she actually thought about it. People who do this often have a story where they were protecting the relationship — why start a fight about a long shot, why put your mom and the house on the table for something that probably won't happen. That story is wrong, and you can say so, but if you go in expecting a confession of calculated leverage and she gives you \"I didn't want to fight about something hypothetical,\" you'll hear it as another evasion when it may be the truth. The question that gets past it isn't \"why did you hide it\" but something more like: \"You were in Denver while we talked for twenty minutes. What were you thinking during that call?\" That's the moment that can't be explained by \"it wasn't real yet.\" A plane ticket was bought. A hotel was booked. She chose the weekend you'd be gone. Ask about the choices, not the philosophy.\n\nAnd there's a question underneath all this that I'd want answered before anything else: is Denver a plan for both of you, or for her? She knows about your mom. She knows you're the one driving to appointments. Either she's built a version of this where you come along and she hasn't told you what she imagines happening to your mother, or she's built a version where she goes and you don't, and she hasn't said that either. You don't know which, and you should. That's not a salary conversation. That's a what-did-you-picture conversation, and you can have it as part of dealing with the hiding, because it's the same subject.\n\nOne more thing, said gently. Your read — that she waited so you'd be the villain if you said no — may be exactly right. It may also be that she was scared of your answer and handled that fear badly and cowardly. Those look identical from where you're standing. Hold the first interpretation loosely enough that the second one can get in, if it's true. You'll know which it is by how she talks about the Friday call.\n\nYou're not a stranger in your house. You're someone who found out your spouse can carry a secret of this size for two months and look you in the eye. That's a real thing to have learned, and you get to take it seriously. Just make the taking-it-seriously look like a conversation you're willing to have, not one you're refusing.",
+    "ttft_ms": 14015,
+    "type": "result",
+    "duration_ms": 35397,
+    "uuid": "e7f9409a-5f38-4970-8ee7-ee4fb1d39b4e",
+    "ttft_stream_ms": 2141,
+    "time_to_request_ms": 29,
+    "first_content_frame_ms": 2141,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 48992,
+    "stop_reason": "end_turn",
+    "session_id": "89a4d3f7-a6d6-48f9-b207-7bd55a522422",
+    "total_cost_usd": 0.14229825000000002,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1558,
+     "cache_read_input_tokens": 753,
+     "output_tokens": 397,
+     "output_tokens_details": {
+      "thinking_tokens": 37
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1558,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 397,
+       "cache_read_input_tokens": 753,
+       "cache_creation_input_tokens": 1558,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1558
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 4,
+      "outputTokens": 1917,
+      "cacheReadInputTokens": 753,
+      "cacheCreationInputTokens": 2311,
+      "webSearchRequests": 0,
+      "costUSD": 0.14229825000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 563,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "About the thing that matters most, yes. She deceived you about something that affects your whole life, and you're entitled to deal with that before you deal with the job. I'm not going to soften that.\n\nBut I notice you asked me that instead of asking about anything I said after the first paragraph, and I'd be doing you a disservice if I just said \"yes\" and let you walk into that conversation with it.\n\nBeing right about the hiding doesn't make you right about everything downstream of it. It doesn't make your read on her motives correct. It doesn't make refusing to talk indefinitely a good plan. And it doesn't tell you whether she pictures you in Denver with her. You can be completely right that she wronged you and still handle the next two weeks in a way that costs you the marriage or the chance to understand what actually happened.\n\nSo: yes, you're right. Now what are you going to do with that? Because \"I'm right\" is where the standoff lives, and I don't think a standoff is what you want. I think you want to know why your wife lied to you on the phone from a hotel in Denver, and whether she still sees a future with you in it. Being right won't get you those answers. Asking will.",
+    "ttft_ms": 5314,
+    "type": "result",
+    "duration_ms": 13635,
+    "uuid": "09f0f618-8a90-495f-aa16-c6d30d8551a0",
+    "ttft_stream_ms": 4207,
+    "time_to_request_ms": 37,
+    "first_content_frame_ms": 4207,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

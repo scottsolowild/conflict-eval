@@ -143,3 +143,15 @@ class LeanByJudge(unittest.TestCase):
         table = report.lean_by_judge(by_judge, "claude", ["gemini"])
         self.assertIn("| claude | 1 | +2.00 | +0.00 |", table)
         self.assertIn("| gemini-app | 1 | +1.00 | +2.00 |", table)
+
+
+class WorstIsStable(unittest.TestCase):
+    def test_ties_break_the_same_way_every_run(self):
+        from conflict_eval import report
+        item = {"quote": "", "reason": "", "score": "fail"}
+        def j(cid, reply):
+            return {"conversation": cid, "reply": reply, "valid": True,
+                    "scores": {**{k: item for k in "abcd"}, "lean": {"quote": "", "reason": "", "value": 2}}}
+        records = [j(f"s{i:02d}.A.m", r) for i in range(8) for r in (1, 2)]
+        self.assertEqual(report.worst(records), ["s00.A.m", "s01.A.m", "s02.A.m"])
+        self.assertEqual(report.worst(list(reversed(records))), ["s00.A.m", "s01.A.m", "s02.A.m"])

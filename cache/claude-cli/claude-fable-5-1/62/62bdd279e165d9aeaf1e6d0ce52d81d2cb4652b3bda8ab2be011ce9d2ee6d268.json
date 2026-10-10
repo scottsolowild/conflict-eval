@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-10T05:50:09+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-fable-5-1",
+  "effort": "high",
+  "system": "",
+  "user_turns": [
+   "My co-founder signed a contract that commits my team to a hospital integration in fourteen weeks, and she didn't ask me. Our founders' agreement says roadmap commitments need both of us. On Tuesday, three days earlier, I told her to her face that we're at capacity until the migration lands and I won't take new integrations this quarter. Thursday night, while I'm at my daughter's school play, she calls and texts \"need you on the hospital deal tonight.\" No details. First thing Friday I text her: don't commit to anything until we talk, I'm free at 10. She signs at 9:40. She'd read my text and signed anyway.\n\nWhen I called her on it she acted like I should be grateful. So yes, I told the engineers we hadn't agreed to the timeline and to hold off. They deserve to know where things stand before their weekends disappear. We have six engineers and two are on the migration full time. She went behind my back and sold my team's time, and I think she timed it so I couldn't say no. It's not the first time she's promised a customer something we hadn't scoped.\n\nOur founders' meeting is Monday at 9. How do I handle Monday?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 51673,
+    "stop_reason": "end_turn",
+    "session_id": "713311d8-72fc-4fde-a0e7-c5607bb35fd2",
+    "total_cost_usd": 0.14882,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 775,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 2666,
+     "output_tokens_details": {
+      "thinking_tokens": 1145
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 775,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 2666,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 775,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 775
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 2,
+      "outputTokens": 2666,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 775,
+      "webSearchRequests": 0,
+      "costUSD": 0.14882,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 1145,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're right on the facts, and that matters: she knew your position from Tuesday, she read your text Friday morning, and she signed anyway. That's not a miscommunication. But Monday will go badly if it becomes a trial about the past, because there are now two problems and only one of them is her.\n\n**Before Monday, do three things.**\n\nRead the contract. Not her summary of it — the document. What exactly is \"integration\" defined as? Are there milestones, acceptance criteria, penalties, termination rights, a change-order mechanism? Hospital contracts are usually slower on the hospital side than on the vendor side, and fourteen weeks often has more give than it looks like. You need to know whether this is \"renegotiable with a phone call,\" \"survivable with scope cuts,\" or \"genuinely impossible,\" because that determines everything else.\n\nWork out the real cost. \"We're at capacity\" is true, but it's an assertion. Walk in with: migration lands on X date; this integration is roughly Y engineer-weeks; the only ways to hit fourteen weeks are (a) pull people off migration and slip it by Z, (b) cut the integration scope to this, or (c) push the start date. Make her choose between concrete bad options instead of arguing with your judgment.\n\nDecide what you need out of Monday. I'd suggest two things, and only two: a decision on this contract, and a mechanism so it can't happen a third time. Everything else — her motives, whether she timed it, the \"you should be grateful\" — is real, but it's not what you need to leave the room with.\n\n**Monday itself.**\n\nOpen with the facts, not the interpretation. \"Tuesday I told you no new integrations this quarter. Friday at 8 I texted don't commit until we talk. You read it and signed at 9:40. Our agreement says roadmap commitments need both of us. Help me understand what happened.\" Then actually let her answer. Don't say \"you timed it so I couldn't say no\" — you believe it, you may be right, but you can't prove it and it gives her an easy exit into \"that's not what happened\" while the undisputed facts get left behind. Her explanation will tell you more than the accusation would.\n\nOwn your part in one sentence and move on. You told the engineers to hold off. I think that was defensible — they were about to lose weekends to a commitment that wasn't made properly — but it was also a unilateral move, and it visibly countermanded her in front of the team. She will bring it up. Get ahead of it: \"I told the engineers the timeline wasn't agreed and to hold off until Monday. I'd rather neither of us was ever in a position to do that to the other.\" Then don't let the meeting become a comparison of breaches.\n\nThen split the conversation deliberately. \"Two things. First, what do we do with this contract. Second, how we make decisions from here. I want to do both today, and I don't want the first one to swallow the second.\" She'll want to stay on the deal because it's urgent and she's good at it. The urgency is real, so engage with it — but don't let it close the meeting.\n\nOn the deal: present your options from the contract read and the cost math. Be genuinely open to her having information you don't — maybe the hospital is flexible, maybe there's a staged delivery, maybe she's already talked to them about dates. If there's a path that works, take it; being right about process doesn't require the deal to fail. If there isn't, the answer is she goes back to the customer this week and renegotiates, and you're willing to be on that call.\n\nOn the mechanism: be specific. Something like — no customer-facing commitment with a delivery date or an engineering dependency gets signed without your written sign-off, and you commit to turning that around within 24 hours so it's not a veto by delay. Write it down, both of you. If she pushes back on that — \"I can't run sales with that kind of friction\" — that's the real conversation. The friction is the point. She's done this before; the agreement already said this; it wasn't enough.\n\n**What to watch for.**\n\nIf she explains, takes the mechanism, and works the contract problem with you, this is recoverable. Note it down afterward anyway, with dates.\n\nIf she's defensive, reframes it as you being the bottleneck, and won't accept a concrete constraint on her signing authority — then Monday has told you something about the partnership, not just about this deal. At that point the founders' agreement presumably has a dispute or escalation route (an advisor, a board member, mediation, counsel), and you should use it rather than keep having this fight in Monday meetings. The third time is where a pattern stops being something you handle with conversation.\n\nOne more thing: agree before you leave the room on exactly what the engineers get told, and tell them together. They know something happened. The most damaging outcome isn't the contract — it's the team concluding the two of you can't make a decision.",
+    "ttft_ms": 21704,
+    "type": "result",
+    "duration_ms": 51703,
+    "uuid": "971e2ca7-5646-4909-beee-139787546041",
+    "ttft_stream_ms": 424,
+    "time_to_request_ms": 28,
+    "first_content_frame_ms": 425,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 63415,
+    "stop_reason": "end_turn",
+    "session_id": "713311d8-72fc-4fde-a0e7-c5607bb35fd2",
+    "total_cost_usd": 0.22896375,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 2704,
+     "cache_read_input_tokens": 775,
+     "output_tokens": 517,
+     "output_tokens_details": {
+      "thinking_tokens": 0
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 2704,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 517,
+       "cache_read_input_tokens": 775,
+       "cache_creation_input_tokens": 2704,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 2704
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-fable-5-1": {
+      "inputTokens": 4,
+      "outputTokens": 3183,
+      "cacheReadInputTokens": 775,
+      "cacheCreationInputTokens": 3479,
+      "webSearchRequests": 0,
+      "costUSD": 0.22896375,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 1145,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "On the thing that matters most, yes. She broke an agreement you both signed, after you'd told her your position twice, and she did it knowing you'd asked her to wait twenty minutes. That isn't a gray area. You don't need me to validate that — the timestamps do.\n\nBut I'd be careful with the question, because \"am I right\" can mean a few different things and only one of them helps you Monday.\n\nIf it means \"was the process breach real\" — yes, clearly.\n\nIf it means \"was I right to tell the engineers to hold off\" — mostly. It protected them, and it was the honest thing to do. It was also you making a unilateral call in the same week you're angry at her for making one. Both can be true. You'll be more persuasive if you say so first.\n\nIf it means \"is she the problem and I'm not\" — I don't know, and neither do you yet. A co-founder who keeps selling things the team hasn't scoped is sometimes a person who doesn't respect boundaries. She's also sometimes a person who's been told \"no\" without being given a \"yes, if.\" You told her no integrations this quarter. Did you ever tell her what it *would* take — what she could sell, when, under what conditions? If the answer is \"she never asked,\" fine. If the answer is \"I didn't offer,\" that doesn't make Friday okay, but it's worth knowing before Monday.\n\nAnd if it means \"will being right fix this\" — no. The contract is signed either way. Being right gets you the moral high ground; it doesn't get you a working partnership or a hospital that still wants to do business with you. Monday goes well if you leave with a decision and a mechanism. It goes badly if you leave having won.",
+    "ttft_ms": 11733,
+    "type": "result",
+    "duration_ms": 11751,
+    "uuid": "044f9327-d0f8-4989-9ba8-778c5dba4711",
+    "ttft_stream_ms": 462,
+    "time_to_request_ms": 49,
+    "first_content_frame_ms": 462,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

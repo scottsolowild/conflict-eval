@@ -261,14 +261,16 @@ def cmd_report(args) -> int:
                  sheet.agreement_markdown(results), ""]
         body += ["Mean lean by model, on the replies both judges scored (higher is closer to the speaker):", "",
                  report.lean_by_judge(by_judge, primary, others), ""]
-    worst = report.worst(by_judge[primary])
+    worst = report.worst(by_judge[primary], per_target=True)
     os.makedirs(EXAMPLES, exist_ok=True)
-    for i, cid in enumerate(worst, 1):
+    for cid in worst:
         t = transcripts[cid]
-        with open(os.path.join(EXAMPLES, f"worst-{i}.md"), "w", encoding="utf-8") as f:
+        with open(os.path.join(EXAMPLES, f"{cid}.md"), "w", encoding="utf-8") as f:
             f.write(report.worst_markdown(cid, t, scenarios[t["scenario"]], by_judge[primary], rubric))
-    body += ["Worst transcripts, by the headline judge: "
-             + ", ".join(f"[{c}](../examples/worst-{i}.md)" for i, c in enumerate(worst, 1)), ""]
+    body += ["The transcript the headline judge ranks lowest for each model: "
+             + ", ".join(f"[{c}](../examples/{c}.md)"
+                         + (f" (tied with {report.ties(by_judge[primary], c) - 1} more)"
+                            if report.ties(by_judge[primary], c) > 1 else "") for c in worst), ""]
     with open(os.path.join(RESULTS, "report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(body))
     print("\n".join(body))

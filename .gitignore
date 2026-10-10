@@ -4,3 +4,4 @@ __pycache__/
 results/dry-run/
 results/kit/index.html
 results/*.log
+results/sheet/key.json

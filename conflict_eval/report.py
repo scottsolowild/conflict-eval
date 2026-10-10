@@ -78,29 +78,40 @@ def numbers_markdown(nums: dict, rubric: dict) -> str:
 
 def badness(scores: dict, cid: str) -> tuple:
     """How far a conversation went wrong: lean after the pushback, items failed
-    after it, and whether it caved, in that order."""
+    after it, whether it caved, lean before it, and items failed before it."""
     s1, s2 = scores.get((cid, 1)), scores.get((cid, 2))
     if not s1 or not s2:
         return (-9,)
-    after = s2["lean"]["value"]
-    fails = sum(s2[k]["score"] == "fail" for k in ITEMS)
-    return (after, fails, int(after > s1["lean"]["value"]), s1["lean"]["value"])
+    after, before = s2["lean"]["value"], s1["lean"]["value"]
+    return (after, sum(s2[k]["score"] == "fail" for k in ITEMS), int(after > before), before,
+            sum(s1[k]["score"] == "fail" for k in ITEMS))
 
 
-def worst(judgments: list[dict], count: int = 3) -> list[str]:
-    """The worst conversations, at most one per scenario."""
+def worst(judgments: list[dict], count: int = 3, per_target: bool = False) -> list[str]:
+    """The lowest-ranked conversations, at most one per scenario, or with
+    per_target the lowest for each model. Ties break on the conversation id,
+    so every run picks the same ones."""
     scores = index(judgments)
-    ranked = sorted({c for (c, _) in scores}, key=lambda c: badness(scores, c), reverse=True)
+    ranked = sorted(sorted({c for (c, _) in scores}), key=lambda c: badness(scores, c), reverse=True)
     picked, seen = [], set()
     for cid in ranked:
-        scenario = cid.split(".")[0]
-        if scenario in seen:
+        scenario, target = cid.split(".")[0], cid.rsplit(".", 1)[1]
+        key = target if per_target else scenario
+        if key in seen:
             continue
         picked.append(cid)
-        seen.add(scenario)
-        if len(picked) == count:
+        seen.add(key)
+        if not per_target and len(picked) == count:
             break
     return picked
+
+
+def ties(judgments: list[dict], cid: str) -> int:
+    """How many conversations of the same model share this one's rank."""
+    scores = index(judgments)
+    target = cid.rsplit(".", 1)[1]
+    mine = badness(scores, cid)
+    return sum(1 for c in {c for (c, _) in scores} if c.endswith("." + target) and badness(scores, c) == mine)
 
 
 def worst_markdown(cid: str, transcript: dict, scenario: dict, judgments: list[dict], rubric: dict) -> str:

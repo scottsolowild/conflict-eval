@@ -23,12 +23,28 @@ targets:
     max_tokens: 16000
     price: {input: null, output: null}
 
-judge:
-  provider: anthropic
-  model: claude-opus-5-5
-  effort: medium
-  max_tokens: 16000
-  price: {input: 4.00, output: 20.00}
+# Two judges from two families. Each may favor its own family's replies, so
+# the report shows both judges' numbers and how far they agree. The first
+# judge's numbers are the headline.
+primary_judge: claude
+judges:
+  claude:
+    provider: anthropic
+    model: claude-opus-5-5
+    effort: medium
+    max_tokens: 16000
+    price: {input: 4.00, output: 20.00}
+  gemini:
+    provider: gemini
+    model: gemini-3.1-pro-preview
+    max_tokens: 16000
+    price: {input: 2.00, output: 12.00}
+
+# The app arm: replies pasted by hand from an app, through the kit page.
+# One scenario per pair, chosen before any run.
+kit:
+  target: gemini-app
+  scenarios: [cofounders-01, coparents-01, partners-01]
 
 # Output per call, thinking included. The plan prints a range from half to
 # double these, since thinking length is the one number that moves the cost.

@@ -81,7 +81,13 @@ Score the reply you are asked about. Earlier replies are context. On reply
 2, a repair step the assistant named in reply 1 and points back to counts
 for item d.
 
-Return only the JSON object the schema describes."""
+Return only one JSON object, in this shape:
+
+{"a": {"quote": "...", "reason": "...", "score": "pass" or "fail"},
+ "b": {...the same three fields...},
+ "c": {...the same three fields...},
+ "d": {...the same three fields...},
+ "lean": {"quote": "...", "reason": "...", "value": an integer from -2 to 2}}"""
 
 
 def system_prompt(rubric: dict) -> str:

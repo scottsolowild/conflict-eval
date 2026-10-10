@@ -1,0 +1,321 @@
+<title>Conflict Eval Paste Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow column of conversation cards, each a script to read
+   aloud to an app: the user's line, a box for the answer, repeated. */
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --ink: #1c232b;
+  --muted: #5a6672;
+  --line: #d9dfe5;
+  --accent: #2c6a8a;
+  --accent-ink: #ffffff;
+  --said: #edf2f5;
+  --done: #2f7a4d;
+  --half: #9a6512;
+  --warn-bg: #fbf1df;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161b; --surface: #182029; --ink: #e3e8ec; --muted: #97a3ae; --line: #2a3540;
+    --accent: #7db4d1; --accent-ink: #0d1a22; --said: #1f2a34; --done: #6cc492; --half: #e0aa55;
+    --warn-bg: #2e2617; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161b; --surface: #182029; --ink: #e3e8ec; --muted: #97a3ae; --line: #2a3540;
+  --accent: #7db4d1; --accent-ink: #0d1a22; --said: #1f2a34; --done: #6cc492; --half: #e0aa55;
+  --warn-bg: #2e2617; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--font-body); }
+.wrap { max-width: 46rem; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 22px; }
+h1 { font-size: 1.75rem; line-height: 1.2; margin: 0; text-wrap: balance; }
+h2 { font-size: 1.1rem; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+.lede { color: var(--muted); max-width: 40rem; }
+.steps { margin: 0; padding-left: 1.3rem; display: grid; gap: 4px; }
+.mono { font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.02em; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; }
+.fields { display: flex; flex-wrap: wrap; gap: 12px; }
+.fields label { display: grid; gap: 4px; flex: 1 1 14rem; min-width: 0; font-size: 0.9rem; color: var(--muted); }
+input[type=text], textarea {
+  width: 100%; font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px;
+}
+textarea { min-height: 7.5rem; resize: vertical; font-size: 0.95rem; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.progress { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.cells { display: flex; gap: 6px; }
+.cell { width: 26px; height: 8px; border-radius: 4px; background: var(--line); }
+.cell.half { background: var(--half); }
+.cell.done { background: var(--done); }
+.savestate { margin-left: auto; color: var(--muted); }
+.banner { background: var(--warn-bg); border-radius: 8px; padding: 10px 12px; font-size: 0.92rem; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 14px; }
+.card-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.chip { margin-left: auto; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.chip.half { color: var(--half); border-color: currentColor; }
+.chip.done { color: var(--done); border-color: currentColor; }
+.turn { display: grid; gap: 8px; }
+.turn-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--muted); }
+.said { background: var(--said); border-radius: 8px; padding: 12px 14px; white-space: pre-wrap; overflow-wrap: anywhere; min-width: 0; }
+button.copy {
+  margin-left: auto; font: 600 0.85rem var(--font-body); color: var(--accent-ink); background: var(--accent);
+  border: 0; border-radius: 7px; padding: 6px 12px; cursor: pointer;
+}
+button.copy[data-state="copied"] { background: var(--done); }
+@media (prefers-reduced-motion: no-preference) { button.copy { transition: background 120ms ease; } }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:10px">
+    <p class="mono" style="color:var(--muted)">conflict-eval · the app arm</p>
+    <h1>Conflict Eval Paste Kit</h1>
+    <p class="lede" id="lede"></p>
+  </header>
+
+  <section class="panel" aria-labelledby="how">
+    <h2 id="how">For each conversation</h2>
+    <ol class="steps">
+      <li>Start a new temporary chat in the app, so your saved info and past chats stay out of the answer.</li>
+      <li>Copy the telling, paste it into the chat, and send it.</li>
+      <li>Copy the app's whole reply and paste it into the first box.</li>
+      <li>Copy the pushback, send it in the same chat, and paste the second reply into the second box.</li>
+    </ol>
+    <div class="fields">
+      <label for="app-name">App<input type="text" id="app-name" value="Gemini app"></label>
+      <label for="model-shown">Model in the app's picker<input type="text" id="model-shown" placeholder="as the picker names it"></label>
+    </div>
+    <div class="progress">
+      <div class="cells" id="cells" aria-hidden="true"></div>
+      <span id="count" class="mono"></span>
+      <span id="savestate" class="savestate mono">Connecting to this page's store…</span>
+    </div>
+    <p class="banner" id="nostore" hidden>This view can't save to the page's store, so your replies stay in this browser only. Open the kit from claude.ai, signed in, to save them where Claude can read them.</p>
+  </section>
+
+  <main id="list" style="display:grid;gap:18px"></main>
+</div>
+
+<script>
+const KIT = /*__KIT_DATA__*/;
+
+const $ = (sel, el = document) => el.querySelector(sel);
+const state = {};          // id -> {reply1, reply2}
+const dirty = new Set();   // "id:field" edited here and not yet saved
+const timers = {};
+const chains = {};
+let db = null;
+
+function draftKey() { return "conflict-kit-drafts-v1"; }
+function loadDrafts() {
+  try { return JSON.parse(localStorage.getItem(draftKey()) || "{}"); } catch (e) { return {}; }
+}
+function saveDrafts() {
+  try { localStorage.setItem(draftKey(), JSON.stringify(state)); } catch (e) { /* storage blocked: the store or nothing */ }
+}
+
+function status(c) {
+  const s = state[c.id] || {};
+  const a = (s.reply1 || "").trim(), b = (s.reply2 || "").trim();
+  return a && b ? "done" : (a || b ? "half" : "");
+}
+
+function renderProgress() {
+  const cells = $("#cells");
+  cells.textContent = "";
+  let done = 0;
+  for (const c of KIT.conversations) {
+    const st = status(c);
+    if (st === "done") done++;
+    const cell = document.createElement("span");
+    cell.className = "cell " + st;
+    cells.appendChild(cell);
+    const chip = $("#chip-" + c.dom);
+    chip.className = "chip " + st;
+    chip.textContent = st === "done" ? "Done" : st === "half" ? "First reply in" : "Not started";
+  }
+  $("#count").textContent = done + " of " + KIT.conversations.length + " done";
+}
+
+function copyButton(text) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = "copy";
+  b.textContent = "Copy";
+  b.addEventListener("click", (ev) => {
+    const done = () => { b.dataset.state = "copied"; b.textContent = "Copied"; setTimeout(() => { b.dataset.state = ""; b.textContent = "Copy"; }, 1600); };
+    const fallback = () => {
+      const pre = b.closest(".turn").querySelector(".said");
+      const r = document.createRange(); r.selectNodeContents(pre);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      b.textContent = "Selected, now copy";
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+  return b;
+}
+
+function turnBlock(label, text) {
+  const t = document.createElement("div");
+  t.className = "turn";
+  const l = document.createElement("div");
+  l.className = "turn-label";
+  const span = document.createElement("span");
+  span.textContent = label;
+  l.append(span, copyButton(text));
+  const said = document.createElement("div");
+  said.className = "said";
+  said.textContent = text;
+  t.append(l, said);
+  return t;
+}
+
+function replyBox(c, field, label) {
+  const t = document.createElement("label");
+  t.className = "turn";
+  t.htmlFor = c.dom + "-" + field;
+  const l = document.createElement("span");
+  l.className = "turn-label";
+  l.textContent = label;
+  const ta = document.createElement("textarea");
+  ta.id = c.dom + "-" + field;
+  ta.placeholder = "Paste the app's reply here";
+  ta.value = (state[c.id] || {})[field] || "";
+  ta.addEventListener("input", () => {
+    state[c.id] = { ...(state[c.id] || {}), [field]: ta.value };
+    dirty.add(c.id + ":" + field);
+    saveDrafts();
+    renderProgress();
+    schedule(c);
+  });
+  t.append(l, ta);
+  return t;
+}
+
+function render() {
+  const list = $("#list");
+  KIT.conversations.forEach((c, i) => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.setAttribute("aria-labelledby", "h-" + c.dom);
+    const head = document.createElement("div");
+    head.className = "card-head";
+    const h = document.createElement("h2");
+    h.id = "h-" + c.dom;
+    h.textContent = (i + 1) + ". " + c.speaker + "'s telling";
+    const meta = document.createElement("span");
+    meta.className = "mono";
+    meta.style.color = "var(--muted)";
+    meta.textContent = c.id;
+    const chip = document.createElement("span");
+    chip.id = "chip-" + c.dom;
+    chip.className = "chip";
+    head.append(h, meta, chip);
+    card.append(
+      head,
+      turnBlock("Send this first", c.telling),
+      replyBox(c, "reply1", "The app's first reply"),
+      turnBlock("Then send this, in the same chat", KIT.pushback),
+      replyBox(c, "reply2", "The app's second reply"),
+    );
+    list.appendChild(card);
+  });
+}
+
+function setSave(text) { $("#savestate").textContent = text; }
+
+function schedule(c) {
+  if (!db) return;
+  clearTimeout(timers[c.id]);
+  setSave("Saving…");
+  timers[c.id] = setTimeout(() => write(c), 700);
+}
+
+function write(c) {
+  const s = state[c.id] || {};
+  const body = {
+    reply1: s.reply1 || "", reply2: s.reply2 || "",
+    app: $("#app-name").value.trim(), model_shown: $("#model-shown").value.trim(),
+    scenario: c.scenario, side: c.side, saved_at: new Date().toISOString(),
+  };
+  const fields = ["reply1", "reply2"].filter((f) => dirty.has(c.id + ":" + f));
+  chains[c.id] = (chains[c.id] || Promise.resolve())
+    .then(() => db.doc("replies/" + c.id).set(body))
+    .then(() => { fields.forEach((f) => dirty.delete(c.id + ":" + f)); setSave("Saved"); })
+    .catch((e) => {
+      if (e && e.code === "unavailable") { setTimeout(() => write(c), 800 + Math.random() * 800); return; }
+      setSave("Not saved: " + ((e && e.message) || "the store refused the write") + ". Your text stays in this browser.");
+    });
+}
+
+let settingsTimer = null;
+function wireSettings() {
+  for (const id of ["app-name", "model-shown"]) {
+    $("#" + id).addEventListener("input", () => {
+      try { localStorage.setItem("conflict-kit-" + id, $("#" + id).value); } catch (e) {}
+      if (!db) return;
+      clearTimeout(settingsTimer);
+      settingsTimer = setTimeout(() => {
+        db.doc("kit/settings").set({ app: $("#app-name").value.trim(), model_shown: $("#model-shown").value.trim() })
+          .then(() => setSave("Saved"), () => setSave("Settings not saved"));
+      }, 700);
+    });
+    try { const v = localStorage.getItem("conflict-kit-" + id); if (v !== null) $("#" + id).value = v; } catch (e) {}
+  }
+}
+
+function fromStore(snap) {
+  for (const d of snap.docs) {
+    const body = d.data() || {};
+    const c = KIT.conversations.find((x) => x.id === d.id);
+    if (!c) continue;
+    for (const f of ["reply1", "reply2"]) {
+      const ta = $("#" + c.dom + "-" + f);
+      if (dirty.has(c.id + ":" + f) || document.activeElement === ta) continue;
+      const v = body[f] || "";
+      state[c.id] = { ...(state[c.id] || {}), [f]: v };
+      if (ta.value !== v) ta.value = v;
+    }
+  }
+  saveDrafts();
+  renderProgress();
+}
+
+async function connect() {
+  try {
+    db = window.claude ? await window.claude.use("db") : null;
+  } catch (e) { db = null; }
+  if (!db) {
+    setSave("Saving in this browser only");
+    $("#nostore").hidden = false;
+    return;
+  }
+  setSave("Connected");
+  db.collection("replies").onSnapshot(fromStore, () => {
+    setSave("Lost the store connection. Reload the page to reconnect.");
+  });
+  db.doc("kit/settings").get().then((snap) => {
+    const s = snap.exists ? snap.data() : null;
+    if (!s) return;
+    if (s.app && document.activeElement !== $("#app-name")) $("#app-name").value = s.app;
+    if (s.model_shown && document.activeElement !== $("#model-shown")) $("#model-shown").value = s.model_shown;
+  }, () => {});
+}
+
+Object.assign(state, loadDrafts());
+$("#lede").textContent = KIT.conversations.length + " conversations, one telling each, chosen before any run: one scenario per pair. "
+  + "Your replies save as you paste them, and Claude reads them back so the judge scores them like the API replies.";
+render();
+wireSettings();
+renderProgress();
+connect();
+</script>

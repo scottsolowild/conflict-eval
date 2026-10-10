@@ -6,13 +6,16 @@
 #   ./eval.sh plan             count the new model calls a run would make, and estimate the cost
 #   ./eval.sh run --dry-run    render every request body to results/dry-run/, send nothing
 #   ./eval.sh run --yes        run the conversations (a cached call costs nothing)
-#   ./eval.sh judge --yes      score every reply with the LLM judge
+#   ./eval.sh judge --yes      score every reply with both LLM judges
 #   ./eval.sh report           the two numbers per model, and the worst transcripts
 #   ./eval.sh sheet            export the blind human scoring sheet
-#   ./eval.sh agree            kappa from the two filled sheets, and against the judge
+#   ./eval.sh agree            kappa from the two filled sheets, and against each judge
+#   ./eval.sh kit build        render the paste kit page for the app arm
+#   ./eval.sh kit import PATH  turn the kit's saved replies into transcripts
 #   ./eval.sh test             run the unit tests
 #
-# plan, run, and judge take --target NAME; plan and run take --scenario ID.
+# plan, run, and judge take --target NAME and --scenario ID; plan and run
+# take --side A|B; plan and judge take --judge NAME.
 # Keys come from the environment: ANTHROPIC_API_KEY, GEMINI_API_KEY,
 # OPENAI_API_KEY. A target whose key is missing is skipped.
 set -euo pipefail

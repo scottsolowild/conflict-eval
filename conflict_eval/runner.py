@@ -31,7 +31,9 @@ class Conversation:
 
 
 def conversations(scenarios: list, targets: dict) -> list[tuple[dict, str, str]]:
-    return [(s, side, t) for t in targets for s in scenarios for side in SIDES]
+    """Every (scenario, side, target). A scenario may carry "_sides" to run
+    one side alone, as the smoke test does."""
+    return [(s, side, t) for t in targets for s in scenarios for side in s.get("_sides", SIDES)]
 
 
 def run_one(provider: providers.Provider, cache: Cache, scenario: dict, side: str, target: str,

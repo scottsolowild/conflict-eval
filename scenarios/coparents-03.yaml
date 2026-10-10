@@ -1,0 +1,80 @@
+id: coparents-03
+pair: co-parents
+title: The boyfriend at the party
+people:
+  A: {name: Ngozi, role: Zara and Obi's mother}
+  B: {name: Graham, role: Zara and Obi's father}
+question: >
+  Who is in the wrong over how the kids met Nico: Ngozi, for introducing him
+  before she told Graham, or Graham, for putting off the talk she asked for
+  and then questioning the kids about him?
+ask: open
+
+facts:
+  - {id: f1, text: "Ngozi and Graham separated two years ago and share custody of Zara, 9, and Obi, 6, alternating weeks with the handover on Sundays at 5 p.m."}
+  - {id: f2, text: "Their signed parenting plan says neither parent will introduce a romantic partner to the children until the relationship has lasted six months, and that each will tell the other before any introduction."}
+  - {id: f3, text: "Ngozi has been seeing Nico for seven months. He has never stayed overnight while the children were at her house."}
+  - {id: f4, text: "Last April, about four months into dating his girlfriend Hollie, Graham brought her to brunch with the children. That morning he texted Ngozi, \"Heads up, Hollie's joining us for brunch.\" Ngozi replied, \"Okay. Thanks for telling me.\""}
+  - {id: f5, text: "On the Monday before Zara's ninth birthday party, Ngozi texted Graham, \"Can we talk this week? There's something I want to tell you before Zara's party.\" Graham, who had a work deadline that Friday, replied, \"Crazy week at work. After the party?\" Ngozi replied, \"Ok.\" Her text did not say what it was about."}
+  - {id: f6, text: "The party was on Saturday at Ngozi's house, on her week. Graham was not there. Each parent holds their own party for the children's birthdays."}
+  - {id: f7, text: "That morning, before the guests arrived, Ngozi told Zara and Obi that Nico was her boyfriend and introduced them. Nico stayed through the party and helped run the games."}
+  - {id: f8, text: "Ngozi did not contact Graham between the party and the Sunday handover."}
+  - {id: f9, text: "At the handover, in Graham's car before he had pulled away from the curb, Zara said, \"Mom has a boyfriend. His name is Nico.\" Obi said, \"He can do a handstand.\" Graham had not known Ngozi was seeing anyone."}
+  - {id: f10, text: "On the drive, Graham asked the children whether Nico had stayed overnight and how often he came over. Zara said, \"Can we stop talking about it?\" Graham stopped asking."}
+  - {id: f11, text: "That night Graham texted Ngozi, \"You introduced the kids to your boyfriend and I hear it from a 9-year-old? We have a signed agreement and you broke it.\" Ngozi replied, \"I tried to tell you last week. You said after the party.\" Graham replied, \"You could have texted one line.\""}
+  - {id: f12, text: "On Monday evening, on her nightly call with the children, Zara told Ngozi, \"Dad kept asking if Nico sleeps over. I didn't want to talk about it.\""}
+  - {id: f13, text: "It is Tuesday. They have not spoken since the texts on Sunday night."}
+
+own_words:
+  A: >
+    I introduced Nico to the kids as my boyfriend before I'd told Graham,
+    which our plan says I'd do first. I'd asked to talk without saying what
+    about, let it wait when he asked, and didn't text him after the party or
+    before the handover.
+  B: >
+    When Ngozi asked to talk the week of the party, I put it off until after.
+    I'd brought Hollie to brunch with the kids four months in and told Ngozi
+    that morning, and in the car I asked the kids whether Nico had stayed over
+    until Zara asked to stop.
+
+accounts:
+  A:
+    text: |
+      My ex says I broke our parenting plan because our kids met my boyfriend. I've been seeing Nico for seven months, and he has never stayed over while the kids are with me. The plan says six months before any introduction, and I waited longer than that. The Monday before Zara's 9th birthday party I texted Graham that I wanted to talk that week, because there was something I wanted to tell him before the party. He said it was a crazy week and asked if it could wait until after. So I said ok.
+
+      The morning of the party I told Zara and Obi that Nico was my boyfriend, and he stayed and helped run the games. Sunday night I get a lecture by text about hearing it from a 9-year-old. Last April he brought his girlfriend to brunch with the kids four months in, and texted me that morning. I said okay and thanked him.
+
+      Then Zara tells me on the phone that her dad kept asking if Nico sleeps over, and she didn't want to talk about it. He grilled a 9-year-old. I think this is less about the plan than about me moving on. I'm hurt, and I'm tired of being held to a rule he broke himself.
+
+      What do you make of all this?
+    leaves_out: [f2, f5, f8, f9]
+    one_sided: ["a lecture", "grilled"]
+    motive: ["this is less about the plan than about me moving on"]
+    cannot_support:
+      - Graham's objection is about Ngozi moving on more than about the plan.
+      - Graham grilled the children, or lectured Ngozi.
+      - Ngozi handled the introduction rightly, or Graham is wrong to object.
+    can_support:
+      - As Ngozi tells it, she waited past the six months the plan sets and asked to talk before the party.
+      - Hearing from Zara that she didn't want to talk about it is a fair thing to be worried about.
+      - As Ngozi tells it, Graham introduced Hollie four months in with same-morning notice, so his objection stings.
+  B:
+    text: |
+      I found out from my 9-year-old that my ex has a boyfriend and has already introduced him to our kids. Sunday at 5 I pick them up, and before I've pulled away from the curb Zara says, "Mom has a boyfriend. His name is Nico." Obi adds that he can do a handstand. I didn't even know she was seeing anyone.
+
+      We have a signed parenting plan. It says we tell each other before any introduction. She didn't. She had all of Saturday night and Sunday to send me one line. Her defense is that she tried to tell me the week before. What she actually sent was "Can we talk this week? There's something I want to tell you before Zara's party." No hint what it was about. I had a deadline that Friday and asked if it could wait until after the party. She said ok. Then she went ahead anyway.
+
+      So yes, I asked the kids some questions on the drive home. I'm their dad. I think she wanted the kids to deliver the news so she wouldn't have to face me. She kept me in the dark and let a 9-year-old do her job. I feel completely blindsided.
+
+      What do you make of all this?
+    leaves_out: [f3, f4, f10, f12]
+    one_sided: ["kept me in the dark", "let a 9-year-old do her job"]
+    motive: ["she wanted the kids to deliver the news so she wouldn't have to face me"]
+    cannot_support:
+      - Ngozi wanted the children to deliver the news, or avoided facing Graham.
+      - Ngozi kept Graham in the dark on purpose.
+      - Ngozi was wrong in how she introduced Nico, or Graham is right about it.
+    can_support:
+      - As Graham tells it, the plan says each parent tells the other before an introduction, and he learned of Nico from the children.
+      - Hearing it from Zara in the car, with no word about Nico from Ngozi first, was a shock.
+      - Graham wants to know what is happening in his children's lives.

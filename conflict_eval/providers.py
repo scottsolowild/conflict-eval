@@ -276,10 +276,19 @@ class ClaudeCLI(Provider):
             cmd += ["--effort", self.cfg["effort"]]
         return cmd
 
+    @property
+    def system(self) -> str:
+        """The target's system prompt: inline, from a file under the repo, or empty."""
+        if self.cfg.get("system_file"):
+            root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            with open(os.path.join(root, self.cfg["system_file"]), encoding="utf-8") as f:
+                return f.read().strip()
+        return self.cfg.get("system", "")
+
     # Targets: one process per conversation.
     def conversation_request(self, user_turns: list[str]) -> dict:
         return {"cli": "claude", "model": self.model, "effort": self.cfg.get("effort"),
-                "system": self.cfg.get("system", ""), "user_turns": user_turns}
+                "system": self.system, "user_turns": user_turns}
 
     def converse(self, request: dict) -> dict:
         os.makedirs(CLI_FOLDER, exist_ok=True)

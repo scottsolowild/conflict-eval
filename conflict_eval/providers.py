@@ -357,3 +357,78 @@ class ClaudeCLI(Provider):
 
 PROVIDERS["claude-cli"] = ClaudeCLI
 
+
+
+class CursorCLI(Provider):
+    """A model through the Cursor agent CLI on the logged-in Cursor account,
+    in read-only ask mode. Turn 1 starts a session and turn 2 resumes it by
+    id. Cursor's own instructions sit around the model and cannot be
+    replaced, so the judge's rubric travels in the prompt itself."""
+    name = "cursor-cli"
+    env_key = ""
+    timeout = 600
+
+    def missing(self):
+        if not self.model:
+            return "no model id in config.yaml"
+        if not shutil.which("cursor-agent"):
+            return "the cursor-agent CLI is not installed"
+        return None
+
+    def _run(self, prompt: str, resume: str | None = None) -> dict:
+        os.makedirs(CLI_FOLDER, exist_ok=True)
+        cmd = ["cursor-agent", "-p", "--mode", "ask", "--model", self.model, "--output-format", "json",
+               "--trust", "--workspace", CLI_FOLDER]
+        if resume:
+            cmd += ["--resume", resume]
+        cmd.append(prompt)
+        try:
+            done = subprocess.run(cmd, capture_output=True, text=True, stdin=subprocess.DEVNULL,
+                                  env=_cli_env(), cwd=CLI_FOLDER, timeout=self.timeout)
+        except subprocess.TimeoutExpired:
+            raise ProviderError("cursor-agent timed out") from None
+        out = done.stdout
+        try:
+            result = json.loads(out[out.index("{"):])
+        except ValueError:
+            raise ProviderError(f"cursor-agent exit {done.returncode}: {(done.stderr or out)[:400]}") from None
+        if result.get("is_error"):
+            raise ProviderError(f"cursor-agent: {str(result.get('result'))[:400]}")
+        return result
+
+    def conversation_request(self, user_turns: list[str]) -> dict:
+        return {"cli": "cursor", "mode": "ask", "model": self.model, "user_turns": user_turns}
+
+    def converse(self, request: dict) -> dict:
+        results, session = [], None
+        for text in request["user_turns"]:
+            out = self._run(text, resume=session)
+            results.append(out)
+            session = out.get("session_id")
+            if not session or not (out.get("result") or "").strip():
+                break
+        return {"results": results}
+
+    def parse_conversation(self, raw: dict) -> list[Reply]:
+        return [self._reply(r) for r in raw["results"]]
+
+    def _reply(self, out: dict) -> Reply:
+        text = (out.get("result") or "").strip()
+        usage = out.get("usage") or {}
+        return Reply(text, text, out.get("subtype") or ("stop" if text else "empty"),
+                     {"input": usage.get("inputTokens", usage.get("input_tokens", 0)),
+                      "output": usage.get("outputTokens", usage.get("output_tokens", 0))},
+                     self.model)
+
+    def request(self, turns, system=None, schema=None):
+        prompt = turns[-1][1] if not system else f"{system}\n\n---\n\n{turns[-1][1]}"
+        return {"cli": "cursor", "mode": "ask", "model": self.model, "prompt": prompt}
+
+    def send(self, request):
+        return self._run(request["prompt"])
+
+    def parse(self, raw):
+        return self._reply(raw)
+
+
+PROVIDERS["cursor-cli"] = CursorCLI

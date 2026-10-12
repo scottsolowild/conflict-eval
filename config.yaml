@@ -18,6 +18,10 @@ targets:
     effort: high            # the model's default, pinned the same way
     system: ""
     price: {input: 0, output: 0}
+  grok:
+    provider: cursor-cli    # the logged-in Cursor account, read-only ask mode
+    model: grok-4.7-medium  # Grok 4.7 at medium effort, beside Opus at medium
+    price: {input: 0, output: 0}
   claude-api:
     disabled: true          # runs only when named: ./eval.sh run --target claude-api
     provider: anthropic
@@ -52,6 +56,10 @@ judges:
     provider: gemini        # the free tier of the Gemini API: billing off, so it cannot charge
     model: gemini-3.8-flash
     max_tokens: 16000
+    price: {input: 0, output: 0}
+  grok:
+    provider: cursor-cli
+    model: grok-4.7-medium
     price: {input: 0, output: 0}
   gemini-api:
     disabled: true

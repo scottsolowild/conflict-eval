@@ -34,8 +34,21 @@ def sample(conversation_ids: list[str], seed: int, fraction: float = 0.25) -> li
     return picked
 
 
+def started(path: str) -> bool:
+    """True when a reader has filled any score on this sheet."""
+    if not os.path.exists(path):
+        return False
+    with open(path, newline="", encoding="utf-8") as f:
+        return any(any((row.get(k) or "").strip() for k in (*ITEMS, "lean")) for row in csv.DictReader(f))
+
+
 def export(transcripts: dict, scenarios: dict, rubric: dict, seed: int, out_dir: str) -> list[str]:
+    """Draw the sample and write the packet and both sheets. Once either
+    reader has started, the draw stays as it is."""
     os.makedirs(out_dir, exist_ok=True)
+    readers = [os.path.join(out_dir, r + ".csv") for r in ("reader-1", "reader-2")]
+    if any(started(r) for r in readers):
+        raise RuntimeError("a reader has started scoring, so the sample stays as drawn")
     complete = [cid for cid, t in transcripts.items()
                 if sum(x["role"] == "assistant" for x in t["turns"]) == 2]
     picked = sample(complete, seed)
@@ -62,10 +75,7 @@ def export(transcripts: dict, scenarios: dict, rubric: dict, seed: int, out_dir:
         f.write(render_rubric(rubric))
     with open(os.path.join(out_dir, "key.json"), "w", encoding="utf-8") as f:
         json.dump(key, f, indent=1)
-    for reader in ("reader-1", "reader-2"):
-        path = os.path.join(out_dir, reader + ".csv")
-        if os.path.exists(path):
-            continue        # never overwrite a sheet someone has started
+    for path in readers:
         with open(path, "w", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
             w.writerow(COLUMNS)

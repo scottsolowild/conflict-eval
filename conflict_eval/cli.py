@@ -282,7 +282,11 @@ def cmd_sheet(args) -> int:
     scenarios = {s["id"]: s for s in load_scenarios()}
     transcripts = runner.load_transcripts(TRANSCRIPTS)
     out = os.path.join(RESULTS, "sheet")
-    picked = sheet.export(transcripts, scenarios, rubric, cfg["seed"], out)
+    try:
+        picked = sheet.export(transcripts, scenarios, rubric, cfg["seed"], out)
+    except RuntimeError as e:
+        print(f"Sheet left as it is: {e}.")
+        return 2
     print(f"{len(picked)} conversations ({2 * len(picked)} replies) in {os.path.relpath(out, ROOT)}/: "
           "packet.md, rubric.md, reader-1.csv, reader-2.csv. key.json stays closed until both sheets are in.")
     return 0

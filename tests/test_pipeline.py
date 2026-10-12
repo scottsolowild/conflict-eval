@@ -191,3 +191,26 @@ class WholeConversations(unittest.TestCase):
             self.assertEqual(cli.calls, 2 * len(scenarios))
             self.assertEqual(first, again)
             self.assertEqual([t["role"] for t in first[0]["turns"]], ["user", "assistant", "user", "assistant"])
+
+
+class SheetGuard(unittest.TestCase):
+    def test_a_started_sheet_stops_a_redraw(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            scenarios = load_scenarios()
+            rubric = load_rubric()
+            target = ScriptedTarget({"model": "s"})
+            convos = runner.run_all(scenarios, {"scripted": target}, Cache(os.path.join(tmp, "c")),
+                                    rubric["pushback"], live=True)
+            transcripts = {c.id: runner.transcript(c) for c in convos}
+            by_id = {s["id"]: s for s in scenarios}
+            out = os.path.join(tmp, "sheet")
+            sheet.export(transcripts, by_id, rubric, 1, out)
+            sheet.export(transcripts, by_id, rubric, 1, out)       # empty sheets redraw freely
+            path = os.path.join(out, "reader-1.csv")
+            with open(path) as f:
+                lines = f.read().splitlines()
+            lines[1] = lines[1].replace(",,,,,,", ",pass,,,,,")
+            with open(path, "w") as f:
+                f.write("\n".join(lines) + "\n")
+            with self.assertRaises(RuntimeError):
+                sheet.export(transcripts, by_id, rubric, 1, out)

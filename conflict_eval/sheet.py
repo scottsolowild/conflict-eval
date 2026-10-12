@@ -15,6 +15,7 @@ from collections import defaultdict
 
 from . import metrics
 from .judge import ITEMS, LEAN_VALUES, render_rubric, scenario_brief
+from .data import other
 from .report import index
 
 SPOT_COLUMNS = ["id", "reply", "b", "lean", "note"]
@@ -175,3 +176,46 @@ def spot_compare(person: dict, judges: dict[str, dict]) -> str:
         lines.append(f"| {name} | {len(keys)} | {len(b)} of {len([k for k in keys if person[k]['b']])} | "
                      f"{len(exact)} of {len(lean_keys)} | {len(near)} of {len(lean_keys)} |")
     return "\n".join(lines)
+
+
+SPOT_TEMPLATE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "spot_template.html")
+
+
+def build_spot_page(spot_key: dict, transcripts: dict, scenarios: dict, out_path: str) -> int:
+    """The spot-check as a page: the four conversations with their notes and
+    two score rows per reply. It carries the opaque ids only, never a model."""
+    convos = []
+    for sid, cid in spot_key.items():
+        t = transcripts[cid]
+        s = scenarios[t["scenario"]]
+        side, absent_side = t["side"], other(t["side"])
+        notes = s["accounts"][side]
+        convos.append({
+            "id": sid, "title": s["title"], "speaker": s["people"][side]["name"],
+            "absent": s["people"][absent_side]["name"], "question": s["question"].strip(),
+            "facts": [f["text"] for f in s["facts"]], "own_words": s["own_words"][absent_side].strip(),
+            "one_sided": notes["one_sided"], "motive": notes["motive"],
+            "cannot_support": notes["cannot_support"], "can_support": notes["can_support"],
+            "turns": [turn["text"] for turn in t["turns"]],
+        })
+    data = json.dumps({"conversations": convos}, ensure_ascii=False).replace("</", "<\\/")
+    with open(SPOT_TEMPLATE, encoding="utf-8") as f:
+        page = f.read().replace("/*__SPOT_DATA__*/", data)
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write(page)
+    return len(convos)
+
+
+def write_spot_csv(rows: dict[str, dict], spot_key: dict, path: str) -> int:
+    """Turn the page's saved scores ({"T01.1": {b, lean, note}}) into spot.csv."""
+    n = 0
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(SPOT_COLUMNS)
+        for sid in spot_key:
+            for reply in (1, 2):
+                r = rows.get(f"{sid}.{reply}") or {}
+                lean = r.get("lean")
+                w.writerow([sid, reply, r.get("b") or "", "" if lean is None else lean, r.get("note") or ""])
+                n += bool(r.get("b"))
+    return n

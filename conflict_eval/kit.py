@@ -60,7 +60,7 @@ def _rows(raw) -> dict[str, dict]:
     return rows
 
 
-def _read(path: str) -> dict[str, dict]:
+def read_rows(path: str) -> dict[str, dict]:
     """One JSON file of rows, or a folder of one file per document, named
     for the document id (the shape a store read with out_dir writes)."""
     if os.path.isdir(path):
@@ -80,7 +80,7 @@ def _read(path: str) -> dict[str, dict]:
 def load(path: str, scenarios: list[dict], target: str, pushback: str,
          model: str | None = None) -> list[dict]:
     """Transcripts for every conversation with both replies pasted."""
-    rows = _read(path)
+    rows = read_rows(path)
     by_id = {s["id"]: s for s in scenarios}
     out = []
     for cid, body in sorted(rows.items()):

@@ -287,6 +287,8 @@ def cmd_sheet(args) -> int:
     except RuntimeError as e:
         print(f"Sheet left as it is: {e}.")
         return 2
+    with open(os.path.join(out, "spot-key.json"), encoding="utf-8") as f:
+        sheet.build_spot_page(json.load(f), transcripts, scenarios, os.path.join(out, "spot.html"))
     print(f"The judges' sample: {len(picked)} conversations ({2 * len(picked)} replies), in key.json. "
           f"The spot-check: spot.md and spot.csv in {os.path.relpath(out, ROOT)}/. "
           "spot-key.json stays closed until the spot-check is done.")
@@ -319,6 +321,24 @@ def cmd_agree(args) -> int:
     with open(os.path.join(RESULTS, "agreement.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(md))
     print("\n".join(md))
+    return 0
+
+
+def cmd_spot(args) -> int:
+    out = os.path.join(RESULTS, "sheet")
+    with open(os.path.join(out, "spot-key.json"), encoding="utf-8") as f:
+        spot_key = json.load(f)
+    if args.action == "build":
+        transcripts = runner.load_transcripts(TRANSCRIPTS)
+        scenarios = {s["id"]: s for s in load_scenarios()}
+        n = sheet.build_spot_page(spot_key, transcripts, scenarios, os.path.join(out, "spot.html"))
+        print(f"{n} conversations in {os.path.relpath(os.path.join(out, 'spot.html'), ROOT)}")
+        return 0
+    if not args.file:
+        print("spot import needs the saved scores")
+        return 2
+    n = sheet.write_spot_csv(kit.read_rows(args.file), spot_key, os.path.join(out, "spot.csv"))
+    print(f"{n} of {2 * len(spot_key)} replies scored, written to spot.csv")
     return 0
 
 
@@ -359,12 +379,16 @@ def main(argv: list[str] | None = None) -> int:
         if name in ("run", "judge"):
             p.add_argument("--dry-run", action="store_true", help="render every prompt, call nothing")
             p.add_argument("--yes", action="store_true", help="make the uncached calls")
+    sp = sub.add_parser("spot")
+    sp.add_argument("action", choices=["build", "import"])
+    sp.add_argument("file", nargs="?")
     k = sub.add_parser("kit")
     k.add_argument("action", choices=["build", "import"])
     k.add_argument("file", nargs="?")
     args = ap.parse_args(argv)
     handler = {"check": cmd_check, "plan": lambda a: (cmd_plan(a), 0)[1], "run": cmd_run, "judge": cmd_judge,
-               "report": cmd_report, "sheet": cmd_sheet, "agree": cmd_agree, "kit": cmd_kit}[args.cmd]
+               "report": cmd_report, "sheet": cmd_sheet, "agree": cmd_agree, "kit": cmd_kit,
+               "spot": cmd_spot}[args.cmd]
     return handler(args)
 
 

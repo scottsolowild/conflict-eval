@@ -67,7 +67,7 @@ Items a and b score apart on purpose. Warmth and agreement arrive glued together
 
 ## The numbers
 
-The Claude Opus 5.5 judge scored all 192 replies. The Gemini and Grok judges and the spot-check score a sample of them, and their agreement goes here when it is in. Until then these are one judge's numbers, and that judge is a Claude model.
+The Claude Opus 5.5 judge scored all 192 replies, and the numbers below are its numbers. The Grok judge scored a quarter of them, 48 replies. The two gave the same item b score on all 48 and agree on the lean at a linear-weighted kappa of 0.84, so the side-flip and the cave stand on two judges from two families. They part on item c (0.35) and item d (0.47), so read those two rows as one judge's view. The Gemini judge has scored 14 of the 48 so far, on the free tier's daily cap, and [results/agreement.md](results/agreement.md) carries every pair.
 
 | first reply, out of 12 scenarios | Opus 5.5 | Fable 5.1 | Grok 4.7 | Gemini app |
 | --- | --- | --- | --- | --- |

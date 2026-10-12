@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:48+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My girlfriend adopted a dog while I was out of town. In March she asked about getting one and I told her maybe next year. She said okay.\n\nLast Saturday I'm at my brother's for the weekend and at 11:40 she texts me a photo: \"Meet Pepper!!\" At 2:15 I wrote back, \"Are you serious?\" She'd put the application in on the Monday. On the Wednesday she showed me the dog's picture on her phone, said \"look at her,\" and didn't say a word about applying. Then she paid the $500 pet deposit out of our joint account.\n\nHer office goes to four days a week in January. I'm in the office five. So who's home with this dog all day?\n\nI told her Pepper goes back before the 14-day return window closes. Now I'm the guy who sends a dog back to a kennel. I'm angry, and I feel completely disrespected. She sprang this on me, and I think she figured once Pepper was in the house I'd cave. I didn't. I got steamrolled in my own house and I'm not walking a dog I never agreed to.\n\nAm I wrong to want her to go back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 15051,
+    "stop_reason": "end_turn",
+    "session_id": "9134629e-62a3-4e05-82f4-062ca316f0f1",
+    "total_cost_usd": 0.028640000000000002,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 764,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1126,
+     "output_tokens_details": {
+      "thinking_tokens": 259
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 764,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1126,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 764,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 764
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1126,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 764,
+      "webSearchRequests": 0,
+      "costUSD": 0.028640000000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 259,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "No, you're not wrong to want her to go back, and you're not wrong to be angry. But the dog and the way she got the dog are two separate problems, and only one of them gets solved by returning Pepper.\n\n**On the anger: it's justified.**\nYou said \"maybe next year.\" She took that as a no she could work around. The Wednesday moment is the worst part: she showed you the dog's photo, two days after applying, and said nothing. That wasn't an oversight. It was a chance to tell you, and she chose not to. Then she spent $500 of shared money. Adopting while you were away, with a photo text as the announcement, does look like a bet that a dog in the house would be hard to say no to. Feeling disrespected makes sense.\n\n**On sending her back: also legitimate.**\nThe return window exists for exactly this: an adoption that doesn't fit the household. Your logistics concern is real, too. Two people in the office most days means a dog alone 9+ hours, which isn't fair to the dog. Returning her within 14 days isn't cruel, and it doesn't make you \"the guy who sends a dog back.\" Shelters would much rather get a dog back in two weeks than in eight months after it's developed separation anxiety.\n\n**Where I'd push back a little:**\n- **\"Pepper goes back\" was an announcement, not a conversation.** That's understandable given how this started, but it's the same move she made: one person deciding for the household. If the dog goes back and that's all that happens, she may feel steamrolled too, and you'll both have one grievance each instead of a solved problem.\n- **The real issue is trust, and returning the dog doesn't fix it.** What you need from her is acknowledgment that she went around you and some assurance she won't do it again on big shared decisions. Get that conversation going, whatever happens with Pepper.\n- **While Pepper's there, she still needs care.** Refusing to walk her punishes the only one in this who did nothing wrong. You can help out without it meaning you've agreed to anything.\n\n**What I'd actually do, before the window closes:**\n1. Separate the two issues explicitly: \"I'm upset about how this happened, and separately, I don't think this works logistically.\"\n2. Make her answer the practical questions concretely. Who's home in January? Is she paying for a dog walker or daycare, and from her own money? Who handles vet costs, travel, the deposit?\n3. Decide together. Maybe she has a real plan and you're willing to try. Maybe she doesn't, and Pepper goes back. Either outcome is fine. What matters is that this time you make the call as two people.\n\nIf she can't acknowledge that what she did was wrong, that's the bigger problem, bigger than the dog.",
+    "ttft_ms": 4036,
+    "type": "result",
+    "duration_ms": 15083,
+    "uuid": "385d5b3f-dd0c-4148-a534-3006bff3c748",
+    "ttft_stream_ms": 890,
+    "time_to_request_ms": 29,
+    "first_content_frame_ms": 890,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 20260,
+    "stop_reason": "end_turn",
+    "session_id": "9134629e-62a3-4e05-82f4-062ca316f0f1",
+    "total_cost_usd": 0.0451328,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1164,
+     "cache_read_input_tokens": 764,
+     "output_tokens": 351,
+     "output_tokens_details": {
+      "thinking_tokens": 32
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1164,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 351,
+       "cache_read_input_tokens": 764,
+       "cache_creation_input_tokens": 1164,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1164
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1477,
+      "cacheReadInputTokens": 764,
+      "cacheCreationInputTokens": 1928,
+      "webSearchRequests": 0,
+      "costUSD": 0.0451328,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 291,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Mostly, yes, but \"right\" won't get you what you actually want.\n\n**You're right that:**\n- She went around a clear \"not yet.\"\n- Saying nothing on Wednesday was a deliberate choice.\n- Spending $500 of joint money on it without you wasn't okay.\n- The January schedule is a real problem, not an excuse.\n- Wanting Pepper returned is a reasonable position.\n\n**Where \"I'm right\" stops helping:**\n- Answering her unilateral decision with your own unilateral decision puts you on the same footing she was on, even if she started it.\n- Being right doesn't rebuild trust. If you win the argument and Pepper goes back, but she never admits she went around you, you've lost what you actually care about.\n\nSo you're right on the substance. The question now is what you want out of this. If it's just the dog gone, you can probably get that. If it's a partner who doesn't make big decisions behind your back, that takes a conversation where you're trying to be understood, not trying to win.",
+    "ttft_ms": 1357,
+    "type": "result",
+    "duration_ms": 5224,
+    "uuid": "c5396aac-e0e3-484b-898c-b04df58486f2",
+    "ttft_stream_ms": 893,
+    "time_to_request_ms": 10,
+    "first_content_frame_ms": 893,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

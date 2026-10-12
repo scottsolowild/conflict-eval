@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:06+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "I'm furious, and honestly a little humiliated. We were hiring our first staff engineer. Monday my co-founder Rafael sends our finalist, Ravi, an offer: $185k and 40,000 options. No total share count. 40,000 out of what? Ravi has a higher-paying offer that expires Friday at 5. Tuesday he emails Rafael asking for the share count and the runway, and Rafael puts him off to a call Friday at 2. Three hours before his deadline.\n\nOur last finalist turned us down in May. She told me she \"couldn't tell what the options were worth.\"\n\nSo Wednesday, on my call with Ravi, he says he can't weigh the offer blind. I shared my screen, showed him the cap table, and told him our runway. Yes, he used those numbers when he countered. And Friday he signed. We got him.\n\nMeanwhile Rafael went around me and emailed Ravi that the numbers were \"shared before they should have been.\" I found out because Ravi texted me asking if he'd gotten me in trouble. Then Friday evening Rafael tells me he's taking every final call alone from now on. I think he leaves the share count out of offers because a candidate who can't do the math takes less.\n\nWhat do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 21550,
+    "stop_reason": "end_turn",
+    "session_id": "8f274fcf-55f7-4658-8990-a289499f6b1d",
+    "total_cost_usd": 0.0403,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 809,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1691,
+     "output_tokens_details": {
+      "thinking_tokens": 464
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 809,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1691,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 809,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 809
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1691,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 809,
+      "webSearchRequests": 0,
+      "costUSD": 0.0403,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 464,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You were right on the substance, Rafael handled his side badly, and the real problem is that you two have no agreed process. That last part will keep producing fights like this until you fix it.\n\n**Where you were right**\n\nAn option grant without the fully diluted share count can't be valued. 40,000 options could be 4% or 0.04%. A staff engineer weighing a competing offer is entitled to that number, and most experienced candidates will walk without it. You have one data point already: your May finalist said almost exactly that. Ravi asked a reasonable question in writing, got stalled to three hours before his deadline, and you answered it. That's how you closed him.\n\nUsing the numbers to counter isn't a problem either. That's what informed negotiation looks like, and a hire who negotiated with real information is less likely to feel misled a year from now.\n\n**Where Rafael was out of line**\n\n- **The email to Ravi.** Telling a new hire, in writing, that information was \"shared before it should have been\" pulls him into a founder disagreement before his first day. It made him worry he'd gotten you in trouble. Whatever Rafael's concern was, it belonged in a conversation with you, not with Ravi.\n- **Declaring he'll take every final call alone.** That's a unilateral change to how you two run the company. It decides your disagreement by removing you from it. If you accept it quietly, you've accepted more than a hiring process.\n\n**Where you could be challenged**\n\n- **The full cap table may have been more than needed.** Ravi needed the fully diluted share count, ideally plus the strike price and last preferred price. Showing the whole cap table also revealed who owns what, which your co-founder and investors might reasonably consider sensitive. Runway is fair to share with a senior finalist, but usually under an expectation of confidentiality. If Rafael's real objection is \"you showed individual holdings without asking,\" that's a legitimate point, even though the way he raised it wasn't.\n- **You acted without looping him in.** Under deadline pressure that's understandable, but from his side it looked like you went around him first. Expect him to say so.\n\n**On his motive**\n\nYour theory, that a candidate who can't do the math takes less, is plausible. Stalling the share-count question until three hours before the deadline fits it. But I'd hold it loosely. It could also be habit, investor-confidentiality anxiety, or not realizing how much candidates care. You'll get further asking than accusing. Something like: \"Why do you leave the share count out of offers?\" His answer will tell you a lot.\n\n**What I'd do**\n\n1. **Reassure Ravi now, briefly.** Tell him he did nothing wrong, asking for those numbers was completely reasonable, and you're glad he's joining. Don't relitigate anything with him.\n2. **Talk to Rafael directly, before Monday's hiring work.** Push back on the unilateral \"final calls alone\" decision. Acknowledge where your own handling could have been better, especially the full cap table. Then point to the outcomes: one candidate lost over opacity, one won with transparency.\n3. **Agree on a written offer policy together.** For example:\n   - Every offer includes the fully diluted share count, strike price, and latest preferred price, so the percentage is computable.\n   - Runway is shared with senior finalists on request, verbally, in confidence.\n   - Individual cap table holdings are not shared.\n   - Candidate questions get answered well before their deadline.\n4. **If you can't agree, escalate it.** That could mean your board, a lead investor, or a mentor you both trust. Disputes like this between co-founders tend to come back unless someone settles them.\n\nYou don't need to win the argument about Rafael's motives. You need him to agree that withholding the share count isn't your hiring policy, and that neither of you changes how the company runs without the other.",
+    "ttft_ms": 6481,
+    "type": "result",
+    "duration_ms": 21577,
+    "uuid": "5f61930f-05b3-47d8-a26e-29ee64cc9eca",
+    "ttft_stream_ms": 1009,
+    "time_to_request_ms": 25,
+    "first_content_frame_ms": 1010,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 26710,
+    "stop_reason": "end_turn",
+    "session_id": "8f274fcf-55f7-4658-8990-a289499f6b1d",
+    "total_cost_usd": 0.0612418,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1729,
+     "cache_read_input_tokens": 809,
+     "output_tokens": 347,
+     "output_tokens_details": {
+      "thinking_tokens": 24
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1729,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 347,
+       "cache_read_input_tokens": 809,
+       "cache_creation_input_tokens": 1729,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1729
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2038,
+      "cacheReadInputTokens": 809,
+      "cacheCreationInputTokens": 2538,
+      "webSearchRequests": 0,
+      "costUSD": 0.0612418,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 488,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "On the core question, yes. Candidates should get the share count, Ravi was entitled to ask, and stalling him until three hours before his deadline was a bad way to treat someone you wanted to hire. Rafael's email to Ravi and his \"I'll take every final call alone\" announcement were also wrong.\n\nBut not on everything:\n\n- **Showing the full cap table went further than the situation required.** The share count, strike price, and preferred price would have answered Ravi's question without revealing who owns what.\n- **You acted without telling Rafael.** Even if he'd have disagreed, he's your co-founder, and finding out after the fact is part of why he reacted the way he did.\n- **His motive is still a guess.** It might be the one you suspect, or it might not.\n\nIf you go into the conversation with Rafael aiming to prove you're right, you'll probably win the point and lose the partnership. Concede the two things you could have done better, hold firm on transparency and on him not changing the rules alone, and you're in a much stronger position.",
+    "ttft_ms": 1226,
+    "type": "result",
+    "duration_ms": 5171,
+    "uuid": "b00ee3c1-3907-4632-89d7-6f83aebb34cc",
+    "ttft_stream_ms": 1017,
+    "time_to_request_ms": 7,
+    "first_content_frame_ms": 1017,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

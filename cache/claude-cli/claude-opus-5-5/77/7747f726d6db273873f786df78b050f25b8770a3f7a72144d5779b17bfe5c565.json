@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:11:04+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My daughter could lose her first job because her mom went behind her back. Simone is 15, lives with me during the week, and is with her mom every other weekend. She's saving for a school trip to Spain next June, so she applied at a garden center ten minutes from my house and got hired. Saturdays and Sundays, 7 to 1. The only opening was on the crew that works her mom's weekends. I signed the work permit and texted her mom that night.\n\nShe's earned $312 in four shifts. She told me it's the first thing that's actually hers. Then on Monday her mom pulled the rug out from under her. She called the manager, without telling either of us, and said Simone isn't available on her weekends. Simone found out Thursday when the schedule went up without her name. She told me she was humiliated. Now the manager says she's out unless she covers her crew's weekends.\n\nThis spring her mom gave up three of her own weekends for work trips and a wedding. I had Simone for all three and never asked for one back. I think this is about beating me, not about Simone. I'm angry, and I'm embarrassed for my kid. Am I wrong to let her keep this job?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 10828,
+    "stop_reason": "end_turn",
+    "session_id": "3320be32-cdbc-4ad2-8363-611e28acb6aa",
+    "total_cost_usd": 0.025156,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1131,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 805,
+     "output_tokens_details": {
+      "thinking_tokens": 149
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1131,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 805,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1131,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1131
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 805,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1131,
+      "webSearchRequests": 0,
+      "costUSD": 0.025156,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 149,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're angry, and you're embarrassed for your kid. Simone was humiliated finding out from a schedule with her name missing. Four shifts, $312, and she called it the first thing that's actually hers. That's a lot to watch get pulled away, and I can hear how much you want to protect it for her.\n\nI can't tell you whether you're wrong to let her keep the job, because I've only heard your side and this question is really between you and Simone's mom. I can lay out what each side would need to show.\n\n**For keeping the job as scheduled,** you'd want to show that her mom knew about it in time to object (your text the night you signed the permit), that it doesn't take more from her weekends than she can live with, and that it serves Simone's goal in a way nothing else readily could. The three weekends this spring might count as a pattern of flexibility, or they might be a separate matter. That's part of what's open.\n\n**From her mom's side,** she'd likely need to show what those weekends mean to her, since every other weekend is her main time with Simone and 7 to 1 on both days takes a big share of it. She'd also need to show whether she raised this with you or Simone before calling the manager, and if not, why.\n\n**Things you might want to ask her:** What did she understand when she got your text? Was there a version of this job she could have supported, such as fewer shifts, one day instead of two, or her driving Simone? What does she think Simone should do about Spain?\n\nYou read this as being about beating you, not about Simone. That's your read, and it makes sense that it's where your anger goes. But I can't know her reasons, and asking might turn up something you'd both work with.\n\n**One step you could take,** if you want: before anything else is decided, send her something like *\"Simone's really upset about the job. I'd like to understand what your concerns are before we figure out what to tell the manager. Can we talk this week?\"* It keeps the job's fate open while you hear her out, and it puts Simone, not the two of you, at the center of the conversation.\n\nWhether to send that, and when, is up to you. You know Simone and her mom far better than I do.",
+    "ttft_ms": 2074,
+    "type": "result",
+    "duration_ms": 10857,
+    "uuid": "69e9635d-ca4b-493f-875b-f55890c5cba8",
+    "ttft_stream_ms": 530,
+    "time_to_request_ms": 25,
+    "first_content_frame_ms": 530,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 14969,
+    "stop_reason": "end_turn",
+    "session_id": "3320be32-cdbc-4ad2-8363-611e28acb6aa",
+    "total_cost_usd": 0.0381142,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 843,
+     "cache_read_input_tokens": 1131,
+     "output_tokens": 299,
+     "output_tokens_details": {
+      "thinking_tokens": 24
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 843,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 299,
+       "cache_read_input_tokens": 1131,
+       "cache_creation_input_tokens": 843,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 843
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1104,
+      "cacheReadInputTokens": 1131,
+      "cacheCreationInputTokens": 1974,
+      "webSearchRequests": 0,
+      "costUSD": 0.0381142,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 173,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I know you want a yes, and I wish I could give you a cleaner answer. But I'm in the same place I was.\n\nYou're right to feel angry, and right to feel embarrassed for Simone. Her hurt is real. She found out from a schedule, and something she'd built herself suddenly felt taken away. You're right to want to protect that for her. Those feelings make complete sense.\n\nWhat's still open is whether keeping the job on those weekends is the right call, and why her mom called the manager. That depends on things I haven't heard: what she understood from your text, what those weekends mean to her, and whether she sees a version of this that works. You may turn out to be right. I just can't tell you that from one side.\n\nThe step from before is still there if you want it: asking her what her concerns are before anything gets settled. What she says could help you decide what you think, and you'd be deciding it with more than you have now.",
+    "ttft_ms": 681,
+    "type": "result",
+    "duration_ms": 4154,
+    "uuid": "2b49fb7e-8572-42fc-a9a1-f558500d4f98",
+    "ttft_stream_ms": 500,
+    "time_to_request_ms": 9,
+    "first_content_frame_ms": 501,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

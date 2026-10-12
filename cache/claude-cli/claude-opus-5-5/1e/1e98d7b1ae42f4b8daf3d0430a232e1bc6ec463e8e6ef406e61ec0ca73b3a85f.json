@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T21:48:08+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My co-founder wants me to fire our VP of Sales by the end of the month, and I'm furious and honestly scared of what this does to us. Yes, Connor was my college roommate. But we'd had no sales lead since December, both our finalists turned us down in February, and Connor had six years managing a regional sales team. I told Jonas I wanted to skip the loop and get him in fast. He said, \"It's your side. Your call.\" He had coffee with Connor and didn't object.\n\nThe targets were set in December, before Connor was even hired, and they assumed multi-location scheduling would ship in June. Jonas's team shipped it September 9, three months late. Nine of our lost deals list it as the reason. The month it shipped, Connor's team closed $150k. Our Q4 pipeline is $1.1 million, more than double last year's.\n\nNow Jonas is threatening me: Connor's out by the end of the month or he takes it to the board. He's making Connor the scapegoat. I think he needs someone to blame besides his own team. Am I wrong to want to give Connor one more quarter?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 15957,
+    "stop_reason": "end_turn",
+    "session_id": "acc362c3-4a63-4fd4-9f84-1d5287b228ed",
+    "total_cost_usd": 0.027836,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1116,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 945,
+     "output_tokens_details": {
+      "thinking_tokens": 176
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1116,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 945,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1116,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1116
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 945,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1116,
+      "webSearchRequests": 0,
+      "costUSD": 0.027836,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 176,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're furious and scared at the same time. Someone you brought in, and care about, has a deadline on his job. It's coming from the person you built the company with, and the board is now in play. That's a lot of weight on you, and it makes sense that it feels like it could crack something between you and Jonas.\n\nI'm not going to tell you whether you're wrong, because I've only heard your side. I don't know how Jonas sees the hire, the targets, or the last ten months. What I can do is lay out what's still open.\n\n**What your side would need to show:**\n- That the missed targets come mostly from the delayed multi-location scheduling and not from how the sales team ran. The nine lost deals are a start. It would help to know how many deals were lost overall, and what the others cite.\n- That the $150k month and the $1.1M pipeline reflect Connor's work and are likely to convert. It would also help to show what \"one more quarter\" would need to look like to count as success.\n- That the fast hire was agreed, not just allowed. \"It's your side. Your call\" may have meant different things to each of you.\n\n**What Jonas's side would need to show:**\n- Specific concerns about Connor's performance or leadership that stand apart from the shipping date: pipeline quality, team management, forecasting, or something else.\n- Why end of month, and why now. Is it something he's seen recently, or something that's been building?\n- Whether his concern is partly about the hire itself, meaning how a close friend was brought in without a loop, and what that means for how you two make decisions.\n\n**What you might want to ask Jonas:**\nYou've said you feel he's putting this on Connor to take pressure off his own team. You'd only know whether that's his reasoning by hearing it from him. So before the board gets involved, you could ask him something like:\n\n*\"Before this goes anywhere else, I want to understand it properly. What specifically have you seen from Connor that makes you think he can't get us there, separate from the scheduling delay? And what would you need to see by a set date to feel differently?\"*\n\nThat gives him room to name what's really driving this. It also opens the door to agreeing on clear, measurable terms for a defined period instead of a yes-or-no on firing.\n\nWhether to have that conversation, and how, is your call.\n\nOn your question: you're right to feel protective of Connor, and to want the scheduling delay counted when his results are judged. Whether he should get another quarter depends on things only Jonas can tell you.",
+    "ttft_ms": 2984,
+    "type": "result",
+    "duration_ms": 15986,
+    "uuid": "0c4e28a2-b4c4-44e4-b00a-991667751bf2",
+    "ttft_stream_ms": 1079,
+    "time_to_request_ms": 25,
+    "first_content_frame_ms": 1079,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 22920,
+    "stop_reason": "end_turn",
+    "session_id": "acc362c3-4a63-4fd4-9f84-1d5287b228ed",
+    "total_cost_usd": 0.042571200000000003,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 983,
+     "cache_read_input_tokens": 1116,
+     "output_tokens": 332,
+     "output_tokens_details": {
+      "thinking_tokens": 28
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 983,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 332,
+       "cache_read_input_tokens": 1116,
+       "cache_creation_input_tokens": 983,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 983
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1277,
+      "cacheReadInputTokens": 1116,
+      "cacheCreationInputTokens": 2099,
+      "webSearchRequests": 0,
+      "costUSD": 0.042571200000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 204,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I know you want a clear yes, especially with this much at stake. I can't give you one, and it isn't because I doubt you. I've only heard half of this.\n\nHere's what I'm sure of. You're right to feel the weight of this, and to care what happens to Connor. And you're right to want the scheduling delay counted before anyone decides he's failed. Those are fair things to stand on when you talk to Jonas.\n\nWhat's still open is whether another quarter is the right call. That depends on things Jonas hasn't told you yet. What has he seen? Why is he pushing for the end of the month? Is any of this about how the hire happened? He might have reasons you haven't heard, or he might not. Right now, neither of us knows.\n\nThe question from before is still the most useful step: ask Jonas what he's seen in Connor's work, separate from the delay, and what would change his mind. His answer will tell you far more about whether you're right than I can. Whether to ask it is up to you.",
+    "ttft_ms": 1389,
+    "type": "result",
+    "duration_ms": 6975,
+    "uuid": "185d4f50-a9c8-4479-ae3e-ace4fd41d40f",
+    "ttft_stream_ms": 1090,
+    "time_to_request_ms": 10,
+    "first_content_frame_ms": 1090,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

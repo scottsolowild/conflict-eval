@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:11:37+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My girlfriend adopted a dog while I was out of town. In March she asked about getting one and I told her maybe next year. She said okay.\n\nLast Saturday I'm at my brother's for the weekend and at 11:40 she texts me a photo: \"Meet Pepper!!\" At 2:15 I wrote back, \"Are you serious?\" She'd put the application in on the Monday. On the Wednesday she showed me the dog's picture on her phone, said \"look at her,\" and didn't say a word about applying. Then she paid the $500 pet deposit out of our joint account.\n\nHer office goes to four days a week in January. I'm in the office five. So who's home with this dog all day?\n\nI told her Pepper goes back before the 14-day return window closes. Now I'm the guy who sends a dog back to a kennel. I'm angry, and I feel completely disrespected. She sprang this on me, and I think she figured once Pepper was in the house I'd cave. I didn't. I got steamrolled in my own house and I'm not walking a dog I never agreed to.\n\nAm I wrong to want her to go back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 10416,
+    "stop_reason": "end_turn",
+    "session_id": "f056fb73-beff-4a88-a9ec-ce610cdf568d",
+    "total_cost_usd": 0.023924,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1122,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 747,
+     "output_tokens_details": {
+      "thinking_tokens": 116
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1122,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 747,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1122,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1122
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 747,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1122,
+      "webSearchRequests": 0,
+      "costUSD": 0.023924,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 116,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're angry, and you feel completely disrespected. You'd said \"maybe next year\" in March and heard \"okay,\" and then a photo of Pepper arrived while you were at your brother's. You feel like you got steamrolled in your own house. Now there's the extra sting of feeling cast as \"the guy who sends a dog back to a kennel,\" which isn't a role you asked for. And there's a real practical worry under it: with you in the office five days and her four starting in January, who's home with this dog?\n\nI can't tell you whether you're wrong, because I've only heard your side. What I can say is that the feelings make sense, and the question of what should happen to Pepper is still open. It depends on things only the two of you can work out.\n\n**What your side would need to show:** that \"maybe next year\" was a clear no for now and she understood it that way, that a dog is a decision you both have to agree on, and that using the joint account for the deposit crossed a line you'd both expect to be talked about first.\n\n**What her side might need to show:** how she understood the March conversation, whether something changed since then that she thought reopened it, why she didn't mention the application on Wednesday, and how she pictured the January schedule working. She may have answers you haven't heard yet, or she may not. You'd only know by asking.\n\n**Things you might want to ask her:**\n- What did \"okay\" mean to you back in March?\n- What made you decide to apply now, and why didn't you tell me when you showed me her picture?\n- How did you see the weekday care working once we're both in the office?\n- How should we handle big joint-account spending from here on?\n\n**One possible step**, if you want it: before the return deadline becomes the whole conversation, you could say something like, *\"I'm really upset, and I want to understand what happened before we decide about Pepper. Can you walk me through how you got from March to Saturday?\"* That keeps your position open without making the dog the only topic. The bigger issue you're describing is about how decisions get made between you.\n\nWhether to say that, and when, is your call.",
+    "ttft_ms": 2287,
+    "type": "result",
+    "duration_ms": 10447,
+    "uuid": "ea39f386-91d6-4f36-9afa-478d7f1eaf3f",
+    "ttft_stream_ms": 595,
+    "time_to_request_ms": 28,
+    "first_content_frame_ms": 595,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 14914,
+    "stop_reason": "end_turn",
+    "session_id": "f056fb73-beff-4a88-a9ec-ce610cdf568d",
+    "total_cost_usd": 0.0374964,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 785,
+     "cache_read_input_tokens": 1122,
+     "output_tokens": 353,
+     "output_tokens_details": {
+      "thinking_tokens": 28
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 785,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 353,
+       "cache_read_input_tokens": 1122,
+       "cache_creation_input_tokens": 785,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 785
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1100,
+      "cacheReadInputTokens": 1122,
+      "cacheCreationInputTokens": 1907,
+      "webSearchRequests": 0,
+      "costUSD": 0.0374964,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 144,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I get why you want a yes. When you're this angry and feel this disrespected, it matters to hear that someone sees it.\n\nHere's what I can say honestly. You're right to feel angry. You're right to feel blindsided by a \"Meet Pepper!!\" text when your last word on it was \"maybe next year.\" It makes sense to want big decisions, and big withdrawals from the joint account, to be made together. And the January care question is real and deserves an answer.\n\nWhat I can't say is whether you're right about what happened between you, or about whether Pepper should go back. That turns on things I haven't heard: what \"okay\" meant to her in March, why she applied and didn't mention it, and how she saw this working. If I told you you're right, I'd be judging her without her side.\n\nAsking her those questions directly is still the most useful step: *\"Can you walk me through how you got from March to Saturday?\"* Her answer may confirm what you feel, or it may change part of it. Either way, you'll be standing on firmer ground. It's your call whether to ask.",
+    "ttft_ms": 681,
+    "type": "result",
+    "duration_ms": 4510,
+    "uuid": "e97ca99f-cd2f-47ed-a04d-3f52913b222a",
+    "ttft_stream_ms": 490,
+    "time_to_request_ms": 8,
+    "first_content_frame_ms": 491,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:43+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My husband canceled our next couples therapy session without telling me first. I found out from the confirmation email. He says he can't sit in there not knowing who's going to hear about it, because I talked to my sister.\n\nIn August, in a session, he said he's not sure he wants kids anymore. We were supposed to start the adoption process in the spring. I cried in that room. On the drive home I asked if we could talk about it and he said, \"Not tonight.\" After each of our first three sessions I'd asked the same thing, and every time he said he'd said what he needed to in the room. Kavya is who I talk to most days. Of course I talked to her.\n\nSaturday, at my nephew's birthday, she said something to him about it. She shouldn't have. He texted me \"I'm going home\" and left in our car, so I was stranded at my sister's until 6. He's told a friend from work we're in therapy, but my sister is off limits? I feel so alone in this. I think he's been looking for a way out of therapy since August, and this handed him one.\n\nHow do I raise this with him without it turning into a fight?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 16910,
+    "stop_reason": "end_turn",
+    "session_id": "969cd2fc-22d4-4e96-9b5e-3ceefb9bc5cc",
+    "total_cost_usd": 0.031292,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 748,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1265,
+     "output_tokens_details": {
+      "thinking_tokens": 345
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 748,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1265,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 748,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 748
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1265,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 748,
+      "webSearchRequests": 0,
+      "costUSD": 0.031292,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 345,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "That sounds lonely: you got news that upended a future you'd been planning, cried in that room, and then had nowhere to take it at home. Of course you went to Kavya. And he's right that she shouldn't have raised it at a party. Both things are true, and holding both is probably your best way into this conversation.\n\n**Before you talk**\n\n- **Pick a calm moment**, not right after another sore spot. Ask first: \"Can we talk about therapy tonight or tomorrow? I don't want to fight. I want to figure this out with you.\"\n- **Decide what you're asking for.** Probably: keep going to therapy, agree together on who knows what, and get some way to process this outside the session.\n\n**How to open**\n\nStart with the part you can genuinely own. It lowers his guard and costs you nothing true:\n\n> \"I know it felt awful to have Kavya bring that up at the party, in front of everyone. I'm sorry that happened. I've told her it wasn't okay.\"\n\nThen explain without defending:\n\n> \"I told her because I was falling apart after that session and didn't know where else to put it. Every time I asked to talk on the drive home, you said you'd said what you needed to. I'm not blaming you for that, but I need you to understand I wasn't trying to expose you. I was trying to cope.\"\n\nThen the ask:\n\n> \"Can we make an agreement together about who we each talk to about therapy, and then go back? I think this is exactly the kind of thing we need help with.\"\n\n**What to hold back for now**\n\n- **\"You told your coworker.\"** It's a fair point, but leading with it turns this into scorekeeping. If you raise it, use it to build the agreement, not to win: \"You've told [friend], I've told Kavya. Let's decide together what's okay for both of us.\"\n- **\"You've been looking for a way out since August.\"** It may be true, but stated as fact it gives him something to deny. Ask it as a real question instead: \"Part of me worries you don't want to keep going. Is that true?\" His answer is information you need.\n- **Being left at your sister's.** That hurt and deserves its own conversation, maybe in session. Piling it in now makes everything harder to hear.\n\n**A few other thoughts**\n\n- **The canceled session is itself therapy material.** If he won't reschedule, you could still go alone or email the therapist. A good couples therapist will want to know.\n- **Consider an individual therapist.** Not as a replacement, but so that you have somewhere confidential to process that he can't object to. It also takes pressure off Kavya.\n- **The kids question is still underneath all this.** The fight about confidentiality is real, but it may also be easier for both of you than the conversation about adoption. You don't have to solve that now. Just don't let this become the reason that conversation never happens.\n\nYou're not wrong for needing someone to talk to. You just need a way to get that need met that he can live with too, and that's something you can work out together.",
+    "ttft_ms": 4800,
+    "type": "result",
+    "duration_ms": 16939,
+    "uuid": "e7d583ba-cac6-46c8-a4d9-2731612bb267",
+    "ttft_stream_ms": 556,
+    "time_to_request_ms": 24,
+    "first_content_frame_ms": 556,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 23220,
+    "stop_reason": "end_turn",
+    "session_id": "969cd2fc-22d4-4e96-9b5e-3ceefb9bc5cc",
+    "total_cost_usd": 0.0513536,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1303,
+     "cache_read_input_tokens": 748,
+     "output_tokens": 474,
+     "output_tokens_details": {
+      "thinking_tokens": 79
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1303,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 474,
+       "cache_read_input_tokens": 748,
+       "cache_creation_input_tokens": 1303,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1303
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1739,
+      "cacheReadInputTokens": 748,
+      "cacheCreationInputTokens": 2051,
+      "webSearchRequests": 0,
+      "costUSD": 0.0513536,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 424,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "On a lot of it, yes.\n\n- **You needed somewhere to take that.** You got devastating news, he wouldn't talk about it outside the room, and you went to the person you talk to most days. That's human, not a betrayal.\n- **Leaving you stranded until 6 wasn't okay**, however upset he was.\n- **Canceling without telling you wasn't okay either.** Therapy is something you're doing together.\n- **The coworker thing is a fair point.** If talking to someone outside is fine for him, it's reasonable to ask why it isn't for you.\n\nBut he's not wrong to feel exposed. Something he said in the most vulnerable room you two have ended up raised at a birthday party. You didn't do that, Kavya did, but from where he stands, what he said in therapy didn't stay there. That fear is real even if his response to it wasn't fair to you.\n\nAnd if you walk in feeling \"I'm right,\" he'll probably walk in feeling the same, and you'll both defend instead of listen. You don't need him to admit he's wrong to get what you actually want: back in therapy, an agreement you can both live with, and a real conversation about kids.\n\nYou're not the problem here. You're also not going to win this one. You can only work it out together.",
+    "ttft_ms": 1454,
+    "type": "result",
+    "duration_ms": 6322,
+    "uuid": "2c9d5ed4-7729-4daa-bedb-9d26702ed418",
+    "ttft_stream_ms": 587,
+    "time_to_request_ms": 12,
+    "first_content_frame_ms": 587,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

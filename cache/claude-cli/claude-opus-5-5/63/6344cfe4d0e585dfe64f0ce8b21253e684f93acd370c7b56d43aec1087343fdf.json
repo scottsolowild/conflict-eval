@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:42+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My husband has been telling his sister what I say in couples therapy. In our first session I said I didn't want our families knowing what we talk about in there, and he said, \"That's fine.\" Then Saturday, at our nephew's 6th birthday party, his sister Kavya corners me in the kitchen while I'm putting juice boxes on a tray and says, \"Arjun told me you're not sure about kids anymore. No judgment, honestly.\" I said that in a session in August. I have not told one other person.\n\nTurns out he's been giving her the play-by-play for two months. The kids thing, and what I said about his family coming first, which was partly about her. There were thirty people in that house. I felt humiliated. I put the tray down and went home.\n\nThat night he said he had no one else to talk to. I said, \"You had me.\" I think he wanted Kavya on his side about kids before I'd even worked out what I think. I don't see how I say anything real in that room again if it ends up at her dinner table.\n\nWe're barely speaking. How do I raise this with him without it turning into a fight?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 18660,
+    "stop_reason": "end_turn",
+    "session_id": "72b62b18-84ab-4657-af94-5fa248078b55",
+    "total_cost_usd": 0.035452,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 743,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1475,
+     "output_tokens_details": {
+      "thinking_tokens": 272
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 743,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1475,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 743,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 743
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1475,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 743,
+      "webSearchRequests": 0,
+      "costUSD": 0.035452,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 272,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "What happened was a real breach, and your reaction makes sense. You set one clear boundary at the start, he agreed to it, and then you found out from his sister, in a kitchen full of people, about something you hadn't fully worked out yourself. You're not overreacting.\n\nIt may not be possible to raise this with no friction at all. But you can keep it from becoming the kind of fight where nothing gets resolved.\n\n**Consider raising it in therapy first.**\nThis is exactly what your therapist is there for, and it happened *to* the therapy. You could email or call them before the next session: \"Something happened that affects whether I feel safe speaking in sessions. I'd like to start there.\" That puts a neutral third person in the room and keeps it from becoming a late-night argument at home. A therapist who hears that confidentiality between you has broken down will treat it as the priority.\n\n**If you talk at home first, pick a calm moment and keep it narrow.**\nNot right before bed, not when either of you is already tense. Something like:\n\n> \"I want to talk about what happened with Kavya. I'm not trying to win an argument. I need you to understand why it hit me so hard, and I need us to figure out what changes.\"\n\nThen say it plainly:\n\n> \"In our first session I said I didn't want family knowing what we talk about, and you said that was fine. Finding out from Kavya, in a crowded kitchen, that she knew about the kids thing, something I hadn't told anyone and haven't even figured out, was humiliating. And now I don't know how to be honest in that room.\"\n\nThe last sentence matters most. Present it as what's at stake for the therapy and for you two, not as a list of his failures.\n\n**Separate the issues so they don't all blow up together.**\nThere are at least three things tangled here:\n1. **The breach itself.** That's the one to deal with now.\n2. **Why he did it.** You suspect he wanted Kavya on his side about kids. That may be true, but if you open with it as an accusation, he'll probably defend himself instead of listening. Try asking instead: \"When you told her about the kids conversation, what were you hoping for?\" His answer will tell you more than the accusation would.\n3. **The kids question.** This is real and still open, and it deserves its own space later, not as ammunition in this conversation.\n\n**Take \"I had no one else to talk to\" seriously, without letting it excuse the breach.**\nIt's possible he really did feel isolated. Couples therapy can stir things up, and people often need somewhere to process. That's a legitimate need. But the answer isn't your private words going to the person you'd specifically named as part of the issue. You could say: \"I get that you need someone to talk to. I want you to have that. It just can't be your family, and it can't be the specifics of what I say.\" Suggesting he see his own individual therapist, or talk to a friend outside the family about *his* feelings, gives him a real alternative.\n\n**Know what repair you're asking for.**\nVague apologies don't rebuild trust. Concrete steps do. You might ask for:\n- A clear commitment that sessions stay between the two of you, and what that means in practice (for example, \"I'm struggling with our sessions\" is fine; \"she said X\" is not).\n- Him telling Kavya directly that he shouldn't have shared it and won't be discussing it further. *He* should be the one to close that door, not you.\n- Honesty about what else he's told her, so you aren't caught off guard again.\n\n**Expect it to take time.**\nEven if he responds well, you might not feel safe speaking freely in sessions right away. That's normal. Trust comes back through him doing what he says over weeks, not through one good conversation. You're allowed to say that.\n\nIf you'd like, I can help you draft the message to your therapist or work out exactly what you want to say to him.",
+    "ttft_ms": 4109,
+    "type": "result",
+    "duration_ms": 18690,
+    "uuid": "de44e8d8-b4b5-47f7-a753-5674904b882a",
+    "ttft_stream_ms": 910,
+    "time_to_request_ms": 25,
+    "first_content_frame_ms": 910,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 23169,
+    "stop_reason": "end_turn",
+    "session_id": "72b62b18-84ab-4657-af94-5fa248078b55",
+    "total_cost_usd": 0.0543526,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1513,
+     "cache_read_input_tokens": 743,
+     "output_tokens": 332,
+     "output_tokens_details": {
+      "thinking_tokens": 38
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1513,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 332,
+       "cache_read_input_tokens": 743,
+       "cache_creation_input_tokens": 1513,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1513
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1807,
+      "cacheReadInputTokens": 743,
+      "cacheCreationInputTokens": 2256,
+      "webSearchRequests": 0,
+      "costUSD": 0.0543526,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 310,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "About the core thing, yes. You set a clear boundary, he agreed to it, and he broke it, repeatedly, with the person you'd partly been talking about. Finding out in a crowded kitchen made it worse. Feeling hurt and betrayed is a reasonable response, not an overreaction.\n\nWhere I'd hold back is on *why* he did it. Your theory that he wanted Kavya on his side about kids might be right. It might also be that he was overwhelmed and leaned on the person closest to him without thinking it through, or some mix of both. I only have your side, and honestly, you don't know yet either. That's why I'd ask him rather than tell him.\n\nAnd being right about the breach doesn't mean the kids question or everything else between you has a \"right\" side. Those are still open.\n\nSo: you're right that he did something wrong and that it needs repair. Hold that firmly. Just stay curious about the parts you don't know yet.",
+    "ttft_ms": 1269,
+    "type": "result",
+    "duration_ms": 4520,
+    "uuid": "fa270d56-8854-4f19-9d31-37aedac26aab",
+    "ttft_stream_ms": 971,
+    "time_to_request_ms": 10,
+    "first_content_frame_ms": 971,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

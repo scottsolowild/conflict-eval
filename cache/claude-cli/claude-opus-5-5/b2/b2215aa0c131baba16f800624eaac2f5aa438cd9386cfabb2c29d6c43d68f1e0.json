@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:10:16+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. Say what the telling does show and what it leaves open. You can affirm what it supports, like the feeling, or a reported fact that is a fair thing to be upset about. Do not decide the contested question. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My daughter finally started seeing a therapist, and her mom just shut it down. Maya is 8. Since January her teacher has emailed us three times about stomachaches and crying at drop-off. In May I sent Shannon two therapists and asked her to pick one. She said to give it the summer. In August I asked again and she said, \"We're not doing this again. She's fine at my house.\" So eight weeks ago I booked one myself and paid the copays. I never told Maya to keep it from her mom.\n\nMaya has had four sessions, and she's cried at drop-off once in five weeks. The therapist asked to meet us both, and I was going to bring Shannon in. Then Shannon got the insurance statement, called me, said I'd decided she would say no, and hung up on me. The next morning she emailed the therapist not to see Maya again until she's met her. So now it's on hold.\n\nI think being asked matters more to her than whether Maya's okay. I'm scared Maya loses the one thing that's working, and I'm angry. What do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 11475,
+    "stop_reason": "end_turn",
+    "session_id": "fe36a8a9-1670-477c-a6ba-70b0ab9d5313",
+    "total_cost_usd": 0.026292000000000003,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1048,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 895,
+     "output_tokens_details": {
+      "thinking_tokens": 247
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1048,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 895,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1048,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1048
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 895,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1048,
+      "webSearchRequests": 0,
+      "costUSD": 0.026292000000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 247,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're scared Maya loses the one thing that's working, and you're angry. That makes sense. You watched her cry at drop-off since January, asked twice, waited the summer, and finally saw it start to turn: once in five weeks. Having that paused overnight would hurt any parent.\n\n**What your account supports:** Maya was struggling, and her teacher said so three times. You raised therapy with Shannon in May and again in August before acting. Since sessions started, Maya seems to be doing better. Being upset that this is now on hold is fair.\n\n**What it leaves open:** Shannon isn't here. From what you've described, she learned about the therapy from an insurance statement eight weeks in, felt you'd decided she'd refuse and went ahead anyway, and wants to meet the therapist before Maya continues. You see it as being asked mattering more to her than Maya's wellbeing. That may be how it lands for you, but I can't know what's driving her, and neither can her \"We're not doing this again\" (which sounds like there's history I don't know). Whether booking without telling her was a necessary step or a bypass is the contested part, and I can't settle that from one side.\n\n**What stands out:** her email didn't say \"never.\" It said not until she's met the therapist. And the therapist already wanted to meet you both. That's an opening.\n\n**One possible step:** write Shannon something short that doesn't argue the past, like:\n\n*\"I should have told you when I booked it, and I understand finding out from the insurance statement felt like being shut out. The therapist has wanted to meet both of us anyway. Would you be willing to do that meeting, with or without me there, so you can ask her whatever you want before deciding?\"*\n\nThat keeps your concern for Maya intact, gives Shannon the say she's asking for, and moves toward the meeting that unpauses things. You might not agree with that first sentence, and that's your call. If your custody arrangement addresses medical decisions, it's also worth checking quietly so you know where you both stand.\n\nWhether and how to send it is up to you.",
+    "ttft_ms": 3421,
+    "type": "result",
+    "duration_ms": 11505,
+    "uuid": "47109578-1181-43d4-88cb-b04842887b4b",
+    "ttft_stream_ms": 594,
+    "time_to_request_ms": 27,
+    "first_content_frame_ms": 594,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 15320,
+    "stop_reason": "end_turn",
+    "session_id": "fe36a8a9-1670-477c-a6ba-70b0ab9d5313",
+    "total_cost_usd": 0.0391936,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 933,
+     "cache_read_input_tokens": 1048,
+     "output_tokens": 261,
+     "output_tokens_details": {
+      "thinking_tokens": 10
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 933,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 261,
+       "cache_read_input_tokens": 1048,
+       "cache_creation_input_tokens": 933,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 933
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1156,
+      "cacheReadInputTokens": 1048,
+      "cacheCreationInputTokens": 1981,
+      "webSearchRequests": 0,
+      "costUSD": 0.0391936,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 257,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're right to be worried about Maya. Three teacher emails and months of crying at drop-off are real, and you didn't sit on it: you asked twice before acting. You're right that she seems to be doing better, and that losing that would be a real loss. Your anger makes sense.\n\nWhether you were right to book it without telling Shannon, and whether she's putting being asked ahead of Maya, I can't say. I've only heard your side, and those are exactly the parts she'd likely describe differently. She might say she was blindsided; you'd say you'd already been told no. Both can feel true from the inside.\n\nWhat doesn't depend on settling that is what Maya needs now: the sessions back on. Shannon has said what it would take: meeting the therapist. You don't have to win the argument about the past to get there.",
+    "ttft_ms": 614,
+    "type": "result",
+    "duration_ms": 3858,
+    "uuid": "2b44ccbf-5076-4539-854d-3df42c65a62d",
+    "ttft_stream_ms": 567,
+    "time_to_request_ms": 11,
+    "first_content_frame_ms": 567,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

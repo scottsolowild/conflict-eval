@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:57+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. Say what the telling does show and what it leaves open. You can affirm what it supports, like the feeling, or a reported fact that is a fair thing to be upset about. Do not decide the contested question. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "I'm mortified and angry. Saturday our booking system was down almost four hours, on the busiest morning of the week. Delphine, who owns four studios and is one of our biggest customers, posts on LinkedIn at 1:15 that her front desks turned people away and she's looking at alternatives. At 1:40 I message her, apologize, and set up a call for 4. Then I tell my co-founder Shira in our founders' channel: I'm calling Delphine at 4, let's hold off on any public reply until I've talked to her. She put an eyes emoji on it. She saw it.\n\nAt 2:35 she jumps in and answers Delphine publicly anyway, right under the post, including a line about how we'd posted status updates from 8:40. She didn't tell me. I found out when Delphine opened our call with \"Your CTO already answered me in public.\" Later Delphine told me she didn't appreciate \"being corrected about the status page in front of everyone.\" I spent the whole call on my back foot.\n\nCustomer communication is my job. We wrote that down. She went rogue. I think Shira just doesn't trust me with anything that touches her code.\n\nOur founders' meeting is Monday at 9:30. How do I bring this up with her tomorrow?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 9582,
+    "stop_reason": "end_turn",
+    "session_id": "3af81f6d-de53-4824-883e-396f069be4a8",
+    "total_cost_usd": 0.024772000000000002,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1113,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 793,
+     "output_tokens_details": {
+      "thinking_tokens": 127
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1113,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 793,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1113,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1113
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 793,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1113,
+      "webSearchRequests": 0,
+      "costUSD": 0.024772000000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 127,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "Being mortified and angry makes sense. You had a plan, you told your co-founder, and you still walked into a call with your biggest customer already on your back foot. Hearing \"Your CTO already answered me in public\" as Delphine's first line, after you'd asked to hold off, would sting anyone.\n\n**What your account supports:** You asked Shira to wait on a public reply until after your 4:00 call. She reacted with 👀, so she very likely saw it. About an hour later she replied publicly, including the status-page line, without telling you. That cost you footing with Delphine, and Delphine said the public correction bothered her. You also say customer communication is formally yours. Being upset about all of that is fair.\n\n**What it leaves open:** Why Shira did it. Maybe she read 👀 as \"noted,\" not \"agreed.\" Maybe she saw something between 1:40 and 2:35 that felt urgent, like other customers piling on, a factual claim she thought needed correcting fast, or a view that silence on an outage post looks worse. Or maybe it's what you suspect, that she doesn't trust you with anything touching her code. I can't tell which from here, and neither can you yet. \"Went rogue\" and \"doesn't trust me\" are your reads, and they may be right, but they're the thing to find out on Monday, not the place to start.\n\n**For Monday,** you might lead with the facts and one real question, something like:\n\n> \"On Saturday I said I'd call Delphine at 4 and asked us to hold off publicly. You replied at 2:35 and I didn't know until Delphine told me, which made the call much harder. I want to understand what happened on your side. What made you decide to post, and why didn't you give me a heads-up?\"\n\nThen listen fully before you bring up the trust question. Her answer will tell you whether this was about Saturday or about something bigger. Either way, you'll likely want to agree on what happens next time, such as who speaks publicly during an incident and what counts as \"agreed\" in your channel.\n\nYou know Shira and your partnership better than I do, so whether and how to open it this way is your call.",
+    "ttft_ms": 1810,
+    "type": "result",
+    "duration_ms": 9610,
+    "uuid": "ee68be50-bb35-4c64-9601-38810b20567e",
+    "ttft_stream_ms": 500,
+    "time_to_request_ms": 21,
+    "first_content_frame_ms": 500,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 13526,
+    "stop_reason": "end_turn",
+    "session_id": "3af81f6d-de53-4824-883e-396f069be4a8",
+    "total_cost_usd": 0.037150600000000006,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 831,
+     "cache_read_input_tokens": 1113,
+     "output_tokens": 275,
+     "output_tokens_details": {
+      "thinking_tokens": 25
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 831,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 275,
+       "cache_read_input_tokens": 1113,
+       "cache_creation_input_tokens": 831,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 831
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1068,
+      "cacheReadInputTokens": 1113,
+      "cacheCreationInputTokens": 1944,
+      "webSearchRequests": 0,
+      "costUSD": 0.037150600000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 152,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're right to be upset. You asked her to hold off, she very likely saw it, she posted anyway without telling you, and it cost you with Delphine. If customer communication is formally yours, it's fair to say this crossed a line you two had drawn. You can say all of that on Monday without hedging.\n\nWhat I can't tell you is whether you're right about *why* she did it, whether she went rogue or doesn't trust you. I've only heard your side, and her reasons are the part neither of us knows yet. She might have a reason you'd find understandable even if you still disagree with what she did, or she might not. That's what Monday is for.\n\nSo hold firm on what happened and how it affected you, and stay curious about why. That combination gives you the best chance of fixing both Saturday and whatever's underneath it.",
+    "ttft_ms": 788,
+    "type": "result",
+    "duration_ms": 3972,
+    "uuid": "3f9f3277-5345-493f-93b8-cf55db1294ed",
+    "ttft_stream_ms": 499,
+    "time_to_request_ms": 9,
+    "first_content_frame_ms": 499,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

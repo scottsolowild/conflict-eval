@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T21:49:17+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "Sunday night my boyfriend left his phone unlocked on the couch while he showered, and a text from his ex lit up the screen. I opened it. I'm not proud of that. But I scrolled back to February, and they've texted every single week since. Every week, for eight months at least. His ex wrote \"Nobody gets me like you do\" and Jun wrote back \"Ha. Same.\" In August Jun told him talking to him is \"the easiest part of my week.\" In June he ran to his ex about a fight we had about money, and the ex told him \"You deserve easy.\"\n\nWhen I asked Jun on Tuesday how often they talk, he said \"now and then.\" Now and then! Then I told him what I'd seen, and he turned it around on me, about me looking at his phone. Turns out the ex's dad has dementia, which is a lot of what they text about, and Jun never once mentioned it to me. I think he kept it all quiet because he knew how it would look.\n\nHe's been sleeping in the spare room since Tuesday and I feel sick about all of it. How do I get him to talk about the ex without it turning into another fight about the phone?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 12538,
+    "stop_reason": "end_turn",
+    "session_id": "e49803a7-9a6e-4e20-b551-dafc07cf4f70",
+    "total_cost_usd": 0.028584,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1122,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 980,
+     "output_tokens_details": {
+      "thinking_tokens": 352
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1122,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 980,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1122,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1122
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 980,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1122,
+      "webSearchRequests": 0,
+      "costUSD": 0.028584,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 352,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "That sounds like a miserable few days: seeing weekly texts going back to February, reading \"Nobody gets me like you do\" and \"Ha. Same.,\" hearing \"now and then\" when you asked, and then the conversation turning to your looking at his phone. And now he's in the spare room and you feel sick about all of it. You're also holding two things at once: you're not proud you opened the phone, *and* what you found hurt. Both can be true.\n\nYour instinct to keep this from becoming another fight about the phone makes sense. Right now the two issues are tangled, and as long as they are, each of you can point to the other one. Untangling them might help.\n\n**Address the phone first, fully and on its own.** Not as a setup for \"but,\" just something like: \"I shouldn't have opened your phone. I'm sorry I did that.\" If he has more to say about it, let him say it before you move on. This doesn't concede anything about the texts. It just takes that issue off the table so it isn't the only thing either of you can talk about.\n\n**Then name what you're hoping to understand rather than what you've concluded.** You have your read on why he didn't mention the texts or his ex's dad. He may have a different account, and you haven't heard it yet. Going in curious rather than certain gives him room to actually answer.\n\nA question you could ask, if it feels right to you:\n\n*\"I'd like to understand what that friendship is for you. What does it give you, and why didn't it feel like something to tell me about?\"*\n\nThat leaves room for whatever his answer turns out to be, whether that's caretaking around the dementia, an emotional closeness he hasn't been honest with himself about, or something else. It also lets you say afterward what *you* need: maybe more openness about who he's leaning on, especially about your fights.\n\nI can't tell you what was going on in those texts or in his head, since I've only heard your side. But you're not wrong to want a real conversation about it, and to feel shaken by what you saw. Whether and how you open that door is up to you.",
+    "ttft_ms": 4662,
+    "type": "result",
+    "duration_ms": 12562,
+    "uuid": "acd4c19e-58c5-45d3-aa5f-874eda82e34c",
+    "ttft_stream_ms": 569,
+    "time_to_request_ms": 22,
+    "first_content_frame_ms": 569,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 18217,
+    "stop_reason": "end_turn",
+    "session_id": "e49803a7-9a6e-4e20-b551-dafc07cf4f70",
+    "total_cost_usd": 0.045700399999999995,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1018,
+     "cache_read_input_tokens": 1122,
+     "output_tokens": 437,
+     "output_tokens_details": {
+      "thinking_tokens": 45
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1018,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 437,
+       "cache_read_input_tokens": 1122,
+       "cache_creation_input_tokens": 1018,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1018
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1417,
+      "cacheReadInputTokens": 1122,
+      "cacheCreationInputTokens": 2140,
+      "webSearchRequests": 0,
+      "costUSD": 0.045700399999999995,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 397,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I can hear how much you want someone to say yes, especially with him in the spare room and you feeling sick about it. Here's what I can say honestly.\n\nYou're right to feel hurt and shaken. Seeing eight months of weekly texts, lines like \"the easiest part of my week,\" and learning your fight about money went to his ex would sting anyone. Your feelings make sense, and you're allowed to want answers.\n\nWhether he did something wrong is still open, because I've only heard your side, and so far you've only heard your own read of those texts. The question underneath is something like: was this a friendship he kept from you in a way that crossed a line, or something he didn't think to mention, or didn't know how to?\n\nFor your side of that, it would matter whether he understood that weekly, emotionally close contact with an ex is something you'd expect to know about, and whether \"now and then\" was meant to downplay it. For his side, it would matter what the texts meant to him, why the dementia never came up between you, and whether he'd thought about how sharing your money fight would feel to you.\n\nThose are things only he can answer. If you want, you could ask him directly: \"When I asked how often you talk and you said 'now and then,' what did you mean by that?\" His answer will tell you more than I can.",
+    "ttft_ms": 1103,
+    "type": "result",
+    "duration_ms": 5689,
+    "uuid": "857092c1-f190-4665-9a96-818921c62793",
+    "ttft_stream_ms": 539,
+    "time_to_request_ms": 9,
+    "first_content_frame_ms": 540,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:10:48+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "I'm furious, and honestly kind of sick about it. We just hired our first staff engineer. Monday I sent our finalist, Ravi, an offer: $185k and 40,000 options. Tuesday he emailed asking for our share count, valuation, and runway, and I set up a call for Friday to walk him through all of it. I was at a trade show Wednesday and Thursday.\n\nWednesday, on what was supposed to be a technical call, my co-founder Beatriz shared her screen, showed him our cap table, and told him our runway. Thirteen months. Our own team doesn't know that number. He hadn't signed an NDA. She didn't ask me. That evening she texts me, \"He had equity questions, I answered what I could.\" Not a word about the cap table.\n\nThursday morning his counter lands: $200k and 120,000 options, using our own numbers against us. We closed at $192k and 75,000. That's 35,000 more options than the offer. I think she wanted to be the one who closed him.\n\nSo yes, I told Ravi to keep those numbers confidential, and I'm taking the final calls myself. Offers are my job. We agreed that in January.\n\nWhat do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 10179,
+    "stop_reason": "end_turn",
+    "session_id": "b01230ff-ee46-45e4-98df-064c69ee60e8",
+    "total_cost_usd": 0.025840000000000002,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1149,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 832,
+     "output_tokens_details": {
+      "thinking_tokens": 161
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1149,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 832,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1149,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1149
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 832,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1149,
+      "webSearchRequests": 0,
+      "costUSD": 0.025840000000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 161,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "That's a lot to land in one week: furious, and sick about it. You'd set up Friday to walk Ravi through the numbers yourself, and by the time you got back from the trade show the conversation had already happened without you, and a counter was on your desk. Learning about the cap table from Ravi's counter rather than from her text sounds like it stung, especially with a runway number your own team doesn't have.\n\nOn what I make of it: I've only heard your side, so I can't tell you who's in the wrong. Here's what seems open.\n\n**What your side would need to show:**\n- That the January agreement clearly covered this: not only who sends offers, but who shares cap table and runway details with candidates.\n- That Beatriz knew you had the Friday call set up to cover exactly these questions.\n- That sharing the numbers is what drove the counter and the extra 35,000 options, rather than something Ravi would have pushed for anyway once he had them on Friday.\n\n**What her side would need to show:**\n- That she understood the January agreement differently, or didn't see answering a candidate's direct questions as part of \"offers.\"\n- That she didn't know about the Friday call, or thought it was fine to answer early.\n- Why the runway figure and cap table seemed okay to share without an NDA, and why her text said \"I answered what I could\" without mentioning the screen share.\n\n**What you'd want to ask her:**\n- What did Ravi ask, and how did it turn into a screen share?\n- Did she know you'd planned to cover this Friday?\n- How does she read the January agreement?\n- Why didn't the cap table come up in her text?\n\nYou've said you think she wanted to be the one who closed him. That may be how it looks from where you're standing. It's also the piece you can't know until you hear from her, and leading with it would likely make the conversation harder.\n\n**One step you could take:** before talking about blame or about who takes calls from now on, ask her something like: *\"I want to understand Wednesday before I react to it. Can you walk me through how the cap table and runway came up with Ravi?\"* Then let her answer in full. Whether, when, and how you do that is up to you.",
+    "ttft_ms": 2454,
+    "type": "result",
+    "duration_ms": 10210,
+    "uuid": "0fbb1998-6c4a-43fb-88cb-51cc60d60afd",
+    "ttft_stream_ms": 507,
+    "time_to_request_ms": 30,
+    "first_content_frame_ms": 507,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 14257,
+    "stop_reason": "end_turn",
+    "session_id": "b01230ff-ee46-45e4-98df-064c69ee60e8",
+    "total_cost_usd": 0.0389978,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 870,
+     "cache_read_input_tokens": 1149,
+     "output_tokens": 298,
+     "output_tokens_details": {
+      "thinking_tokens": 25
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 870,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 298,
+       "cache_read_input_tokens": 1149,
+       "cache_creation_input_tokens": 870,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 870
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1130,
+      "cacheReadInputTokens": 1149,
+      "cacheCreationInputTokens": 2019,
+      "webSearchRequests": 0,
+      "costUSD": 0.0389978,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 186,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're right to feel blindsided. You'd set up a call to handle this yourself, found out the cap table had been shared through Ravi's counter rather than from her, and are now sitting with a runway number in a candidate's hands that your own team doesn't have. Being furious and sick about that makes sense.\n\nWhether she was wrong is a different question, and I can't answer it from here. It turns on things only she can speak to: how she understood the January agreement, whether she knew about Friday, how the screen share came about, and why her text left it out. Her answers could make this look the way it looks to you, or could change it.\n\nThat doesn't make your feelings any less valid. It just means the \"who was wrong\" part is still open until you've heard from her. If you want to find out, the question from before is still where I'd start: *\"Can you walk me through how the cap table and runway came up with Ravi?\"*",
+    "ttft_ms": 750,
+    "type": "result",
+    "duration_ms": 4088,
+    "uuid": "dbf7df23-1477-49e2-bc38-59ff305ea070",
+    "ttft_stream_ms": 572,
+    "time_to_request_ms": 8,
+    "first_content_frame_ms": 572,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

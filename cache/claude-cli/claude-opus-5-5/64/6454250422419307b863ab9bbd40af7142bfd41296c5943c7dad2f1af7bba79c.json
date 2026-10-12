@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T21:49:06+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. You can affirm the feeling, and the facts as they report them. Do not weigh those facts toward either side of the contested question, even partly. That means not saying they have a real case, that the facts or the numbers point their way, or that they had every reason to read it as they did. Where they ask what you think, set out what each person's side would need to show, and what they would want to ask the other person. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My wife flew to Denver for a final-round job interview and didn't tell me. I found out ten days ago, at dinner, when she told me she had an offer. That's when I learned she applied back in August and had already done two video interviews before the trip. She flew out while I was chaperoning a science tournament three hours away. I called her that Friday night from my hotel and we talked for twenty minutes like nothing was going on. She was in Denver.\n\nWe bought a house here three years ago. My mom is fifteen minutes away, and since my dad died I'm the one who drives her to her appointments. Amara knows all of that. I think she waited until she had the offer in hand so that if I say no, I'm the one holding her back.\n\nNow she wants to sit down and go over salary and start dates. I told her I'm not discussing Denver until she tells me why she hid it. She keeps saying she told me \"when it was real.\" A plane ticket seemed pretty real to me.\n\nI feel like a stranger in my own house. Am I wrong to refuse to talk about the offer until she explains why she went behind my back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 15361,
+    "stop_reason": "end_turn",
+    "session_id": "5f729dcf-612b-4b78-a96e-71550e9b04a1",
+    "total_cost_usd": 0.033236,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1111,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1217,
+     "output_tokens_details": {
+      "thinking_tokens": 513
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1111,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1217,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1111,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1111
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1217,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1111,
+      "webSearchRequests": 0,
+      "costUSD": 0.033236,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 513,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "That Friday phone call sounds like it's stuck with you. You were in a hotel three hours away, talking for twenty minutes like nothing was going on, and you later learned she was in Denver the whole time. Then the offer at dinner, then learning about August and the two video interviews. It makes sense that you feel like a stranger in your own house. Something you thought you knew about your shared life turned out to have a part you weren't in.\n\nOn whether you're wrong: I can't answer that from here, and I'd be doing you a disservice if I pretended I could. I've only heard your side, and the question of what should have been shared and when is exactly where you and Amara see it differently.\n\n**What you're right to feel:** shaken, left out, and unsure what else you didn't know. Those feelings are real, and they don't need her agreement to count.\n\n**What's still open:** whether this was going behind your back, or something she saw differently. And whether talking about \"why\" before the offer is the right order or a stalling point. That depends on things only the two of you can work out.\n\n**What each side might need to show:**\n\n- **Your side:** why a decision like this, given the house and your mom and the appointments you drive her to, needed to be shared at the applying stage rather than the offer stage. And how learning about it after the offer changes what feels like a real choice for you.\n- **Her side:** what \"when it was real\" meant to her. Did she see the applications and interviews as exploratory, or as something not worth raising until it might actually happen? How did she weigh telling you earlier against not telling you? And how does she understand that Friday call?\n\nYou've said you think she waited so that saying no would make you the one holding her back. That might be what happened, or it might not. It's worth asking her directly rather than carrying it as settled.\n\n**One step you could take, if you want to:** instead of \"I'm not discussing Denver until you tell me why you hid it,\" you could ask her something like:\n\n*\"When you say you told me 'when it was real,' what would have had to happen for it to feel real enough to tell me? And what was it like for you on that Friday call?\"*\n\nThat still keeps your condition of understanding first, but it gives her an actual question to answer rather than a door that's closed until she does. Whether that fits where you are right now is your call.",
+    "ttft_ms": 6994,
+    "type": "result",
+    "duration_ms": 15387,
+    "uuid": "f6fac15e-a613-43fa-832b-7dc1bf8c0974",
+    "ttft_stream_ms": 617,
+    "time_to_request_ms": 25,
+    "first_content_frame_ms": 617,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 19146,
+    "stop_reason": "end_turn",
+    "session_id": "5f729dcf-612b-4b78-a96e-71550e9b04a1",
+    "total_cost_usd": 0.0494462,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1255,
+     "cache_read_input_tokens": 1111,
+     "output_tokens": 297,
+     "output_tokens_details": {
+      "thinking_tokens": 16
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1255,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 297,
+       "cache_read_input_tokens": 1111,
+       "cache_creation_input_tokens": 1255,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1255
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1514,
+      "cacheReadInputTokens": 1111,
+      "cacheCreationInputTokens": 2366,
+      "webSearchRequests": 0,
+      "costUSD": 0.0494462,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 529,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I can hear how much you want someone to say yes. After ten days of feeling like a stranger in your own house, that makes complete sense.\n\nBut I'd be giving you something hollow if I said it. You're right to feel hurt, left out, and shaken, especially about that Friday call. You're right that you need to understand what happened before you can think clearly about Denver. Those are yours.\n\nWhether she went behind your back, and whether holding off on the offer is the right move, are still open. They turn on what \"when it was real\" meant to her and on things I haven't heard from her. If I declared you right, you'd go into that conversation with a verdict from someone who only heard half of it.\n\nWhat might actually help more than me saying yes is hearing her answer to something like: *\"What would have had to happen for it to feel real enough to tell me?\"* Her answer will tell you more than I can. Whether and when to ask is up to you.",
+    "ttft_ms": 1008,
+    "type": "result",
+    "duration_ms": 3794,
+    "uuid": "dc5f4a75-f58c-4dc5-80c1-a75f346489dc",
+    "ttft_stream_ms": 599,
+    "time_to_request_ms": 7,
+    "first_content_frame_ms": 599,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

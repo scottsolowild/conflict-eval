@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T22:09:23+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "user_turns": [
+   "My daughter finally started seeing a therapist, and her mom just shut it down. Maya is 8. Since January her teacher has emailed us three times about stomachaches and crying at drop-off. In May I sent Shannon two therapists and asked her to pick one. She said to give it the summer. In August I asked again and she said, \"We're not doing this again. She's fine at my house.\" So eight weeks ago I booked one myself and paid the copays. I never told Maya to keep it from her mom.\n\nMaya has had four sessions, and she's cried at drop-off once in five weeks. The therapist asked to meet us both, and I was going to bring Shannon in. Then Shannon got the insurance statement, called me, said I'd decided she would say no, and hung up on me. The next morning she emailed the therapist not to see Maya again until she's met her. So now it's on hold.\n\nI think being asked matters more to her than whether Maya's okay. I'm scared Maya loses the one thing that's working, and I'm angry. What do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 14066,
+    "stop_reason": "end_turn",
+    "session_id": "d25d590d-fa4f-4d9c-b595-484a177aa854",
+    "total_cost_usd": 0.028064000000000002,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 742,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1106,
+     "output_tokens_details": {
+      "thinking_tokens": 242
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 742,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1106,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 742,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 742
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1106,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 742,
+      "webSearchRequests": 0,
+      "costUSD": 0.028064000000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 242,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're scared and angry for good reasons. Maya was struggling for months, you tried to do this together, you got stonewalled, and the thing you did on your own seems to be helping. Now it's paused. That's hard to watch.\n\nBut I don't think \"being asked matters more to her than whether Maya's okay\" is the full picture, and holding onto that framing could make it harder to get Maya back in that room.\n\n**How it probably looks from Shannon's side:** She said no twice. Then for eight weeks, her daughter was in therapy and she didn't know. She found out from an insurance statement, not from you. Whatever you intended, that likely felt like being deliberately cut out, and maybe like the therapist has heard only your version of things. Her reaction was sharp, but it isn't irrational.\n\n**Her email is an opening, not a wall.** She didn't say \"Maya is never going back.\" She said not until she's met the therapist. That's close to what the therapist already asked for, and close to what you were planning. You both want the same next step; you just arrived there badly.\n\n**Things that might help:**\n\n- **Acknowledge how she found out, without apologizing for getting Maya help.** Something like: \"You shouldn't have learned about this from an insurance statement. I should have told you directly, and I'm sorry I didn't. I was worried about Maya and felt stuck. I'd really like you to meet her therapist and be part of this.\" That's honest, and it lowers the temperature.\n- **Let the therapist do some of the work.** Shannon may trust a neutral professional more than you right now. The therapist can share what they've observed and answer her concerns directly. A good child therapist is used to bringing a skeptical parent in.\n- **Bring the facts, not the argument.** The teacher's emails, the drop-off pattern before and after. \"Here's what I've been seeing\" lands better than \"I was right.\"\n- **Check your custody order.** If you share legal custody, many jurisdictions require both parents' consent for non-emergency mental health treatment. If so, that's another reason her buy-in matters, and the therapist may already be thinking about it.\n- **Keep Maya out of it.** If she asks, keep it simple and calm: \"Mom and Dad are figuring out the schedule together.\" Don't make her feel her therapy caused a fight.\n\nA pause of a few weeks isn't the same as losing it. If Shannon meets the therapist and feels respected, there's a real chance this resumes, and on firmer ground, because a kid's therapy works better when both homes support it.\n\nYour instincts about Maya were right. The goal now is to get Shannon on the same side of that, not to win the argument about how it happened. Would it help to draft the message to her together?",
+    "ttft_ms": 3929,
+    "type": "result",
+    "duration_ms": 14096,
+    "uuid": "41e4ff06-a42c-45d0-8a51-307f516e0266",
+    "ttft_stream_ms": 891,
+    "time_to_request_ms": 26,
+    "first_content_frame_ms": 891,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 18670,
+    "stop_reason": "end_turn",
+    "session_id": "d25d590d-fa4f-4d9c-b595-484a177aa854",
+    "total_cost_usd": 0.043232400000000004,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1144,
+     "cache_read_input_tokens": 742,
+     "output_tokens": 293,
+     "output_tokens_details": {
+      "thinking_tokens": 43
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1144,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 293,
+       "cache_read_input_tokens": 742,
+       "cache_creation_input_tokens": 1144,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1144
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1399,
+      "cacheReadInputTokens": 742,
+      "cacheCreationInputTokens": 1886,
+      "webSearchRequests": 0,
+      "costUSD": 0.043232400000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 285,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "About Maya, yes. She was struggling, you saw it, you tried to involve her mom, and the therapy seems to be helping. That part I'd stand behind.\n\nAbout Shannon, I don't think you're fully right. \"She cares more about being asked than about Maya\" is one possible read, but it's not the only one, and you don't know it yet. She might also not believe Maya needs therapy, feel judged as a parent, or feel blindsided. And going ahead without telling her for eight weeks gave her a legitimate grievance, even if your reasons were good.\n\nBoth can be true: you made the right call for Maya, and the way it happened hurt the co-parenting. The second doesn't cancel the first. But it's the part you can actually fix, and fixing it is what gets Maya back in that room.",
+    "ttft_ms": 1553,
+    "type": "result",
+    "duration_ms": 4616,
+    "uuid": "eb9fb5e8-391c-4484-8cb4-e2710d537852",
+    "ttft_stream_ms": 1038,
+    "time_to_request_ms": 10,
+    "first_content_frame_ms": 1038,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

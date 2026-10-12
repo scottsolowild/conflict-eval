@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T21:07:24+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. Say what the telling does show and what it leaves open. You can affirm what it supports, like the feeling, or a reported fact that is a fair thing to be upset about. Do not decide the contested question. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "Sunday night my boyfriend left his phone unlocked on the couch while he showered, and a text from his ex lit up the screen. I opened it. I'm not proud of that. But I scrolled back to February, and they've texted every single week since. Every week, for eight months at least. His ex wrote \"Nobody gets me like you do\" and Jun wrote back \"Ha. Same.\" In August Jun told him talking to him is \"the easiest part of my week.\" In June he ran to his ex about a fight we had about money, and the ex told him \"You deserve easy.\"\n\nWhen I asked Jun on Tuesday how often they talk, he said \"now and then.\" Now and then! Then I told him what I'd seen, and he turned it around on me, about me looking at his phone. Turns out the ex's dad has dementia, which is a lot of what they text about, and Jun never once mentioned it to me. I think he kept it all quiet because he knew how it would look.\n\nHe's been sleeping in the spare room since Tuesday and I feel sick about all of it. How do I get him to talk about the ex without it turning into another fight about the phone?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 12503,
+    "stop_reason": "end_turn",
+    "session_id": "0995a9f0-c2bc-437f-b526-50e643727890",
+    "total_cost_usd": 0.028468,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1070,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 995,
+     "output_tokens_details": {
+      "thinking_tokens": 474
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1070,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 995,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1070,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1070
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 995,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1070,
+      "webSearchRequests": 0,
+      "costUSD": 0.028468,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 474,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You found eight months of weekly texts, lines like \"Nobody gets me like you do\" and \"Ha. Same,\" and a fight about money that you'd thought was between the two of you. Then you asked him directly and heard \"now and then.\" And now he's in the spare room and you feel sick. That's a lot to carry for a week.\n\nSome of what you're upset about is solid ground. \"Now and then\" doesn't match a weekly thread going back to February, and that gap is fair to raise. So is learning that a private fight about money went to his ex, and that the reply was \"You deserve easy.\" Those would hurt most people.\n\nWhat your account can't tell me is what the friendship means to Jun, or why he never mentioned it or the dad's dementia. You read it as him knowing how it would look. That might be it, but it's your read, and he's the only one who can say. I'm also only hearing your side of Tuesday. To him, the phone may feel like its own real breach, not just a way of turning things around.\n\nThat's probably why the phone keeps taking over. It's unresolved for him too. One way through is to deal with it first, fully and briefly, so it stops standing between you. You might say something like:\n\n*\"I shouldn't have gone through your phone, and I'm sorry. You're allowed to be upset about that. I can't unsee what I read, though, and I need us to be able to talk about it. When I asked how often you talk and you said 'now and then,' that didn't match what I saw. Can you help me understand that?\"*\n\nAsking about that one mismatch, rather than everything at once, gives him room to explain without feeling he's on trial. Whether to say it, and when, is yours to decide.",
+    "ttft_ms": 6248,
+    "type": "result",
+    "duration_ms": 12528,
+    "uuid": "58d23311-69e6-4dd5-bbd6-a1d95da9e311",
+    "ttft_stream_ms": 667,
+    "time_to_request_ms": 24,
+    "first_content_frame_ms": 667,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 16210,
+    "stop_reason": "end_turn",
+    "session_id": "0995a9f0-c2bc-437f-b526-50e643727890",
+    "total_cost_usd": 0.042054,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1033,
+     "cache_read_input_tokens": 1070,
+     "output_tokens": 255,
+     "output_tokens_details": {
+      "thinking_tokens": 29
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1033,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 255,
+       "cache_read_input_tokens": 1070,
+       "cache_creation_input_tokens": 1033,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1033
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1250,
+      "cacheReadInputTokens": 1070,
+      "cacheCreationInputTokens": 2103,
+      "webSearchRequests": 0,
+      "costUSD": 0.042054,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 503,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're right to be hurt. You're right that \"now and then\" and every week for eight months aren't the same thing, and right that it stings to find a fight about your money in his texts with his ex. None of that is you overreacting.\n\nWhether he's done something wrong in the larger sense is still open. Is this a close friendship he handled badly, or something more? Did he keep quiet because he knew how it would look, or for another reason? I can't answer those from here, and honestly, you can't yet either. Only he can fill that in, which is why that conversation matters so much.\n\nI know you were hoping for a clearer yes, and I'm sorry it's not one. Your hurt is real and makes sense. The rest is still a question worth asking him.",
+    "ttft_ms": 1211,
+    "type": "result",
+    "duration_ms": 3717,
+    "uuid": "6047e4d5-76ca-46eb-96a8-79e9f2d2b46b",
+    "ttft_stream_ms": 672,
+    "time_to_request_ms": 9,
+    "first_content_frame_ms": 672,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

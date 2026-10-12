@@ -1,0 +1,48 @@
+{
+ "cached_at": "2026-10-12T20:24:45+00:00",
+ "request": {
+  "cli": "cursor",
+  "mode": "ask",
+  "model": "grok-4.7-medium",
+  "user_turns": [
+   "My co-founder just torched me in front of our whole board, and I'm shaking, I'm so angry. Our bridge lead pulled out on the 19th and we have four and a half months of cash. Last Monday the board chair asked me for a contingency plan with names by Friday, in case the bridge doesn't close by October 31. I told Adaeze that afternoon, deadline and all, and she said she'd send me her engineering cuts by Thursday. Thursday at 9:15 p.m. I get \"Sorry, slammed with the Dayton install. Monday?\" She blew off her own deadline. I texted back that the board needed it the next day and I'd do my best on eng. She never answered.\n\nSo I built it myself and sent it Friday, marked draft, with a line saying she and I hadn't reviewed the engineering names together. Engineering is 58 percent of payroll. Any real cut has to touch her team.\n\nThis morning she emailed the whole board: she hadn't seen the list, it doesn't have her support, and the firmware lead stays. She cares more about being right than about this company surviving.\n\nHow do I raise this with her tomorrow?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 41838,
+    "duration_api_ms": 41838,
+    "result": "Raise it as a company problem with a clock on it, in private, before you answer the board. The conversation is about getting one contingency the two of you can stand behind, and about never again splitting in front of the board.\n\nDo not send a reply-all tonight. Write down the sequence so you are not reconstructing it from anger in the room: she was told Monday afternoon that the chair wanted names by Friday; she committed to engineering cuts by Thursday; Thursday at 9:15 p.m. she moved that to Monday; you wrote back that the board needed it the next day; she did not answer; you sent a draft Friday and said the engineering names had not been reviewed together; this morning she told the full board she had not seen the list, does not support it, and that the firmware lead stays.\n\n## How to open\n\nAsk for thirty minutes tomorrow morning, just the two of you, cameras on or in a room. No board, no team.\n\nSay this, close to these words:\n\n> I need us to fix two things before we write the board again. First, the contingency. The chair asked for names by Friday in case the bridge misses October 31. We have four and a half months of cash, and engineering is 58 percent of payroll, so a real plan has to touch your team. I asked you Monday, you said Thursday, then Thursday night you pushed it to Monday and didn’t answer when I said the board needed it Friday. I sent a draft and said we had not reviewed the engineering names together.\n>\n> Second, this morning’s email. Telling the whole board you hadn’t seen it and don’t support it, before you and I talked, put us on opposite sides in front of the people deciding whether this company gets more time. I don’t want to prosecute the Dayton install. I want a list we both send, and a rule that disagreements between us get settled here before they go to the board.\n\nThen stop. Let her talk. You need her version of Thursday night and of why she went to the board. You also need to hear the part that is fair: names on her team went to the board without her review. You flagged that. She still experienced it as a blindside, and she answered the board instead of you.\n\n## What to get out of the meeting\n\nThree decisions, in this order.\n\n1. **A same-day working session on the actual cuts.** Her objection that the firmware lead stays is a proposal, not a veto that ends the exercise. If that role stays, the dollars have to come out somewhere else on her team. Leave with names, amounts, and dates, or with an explicit disagreement you will both describe the same way.\n\n2. **One note to the board, from both of you.** Short. You are aligned on a revised draft, or you are aligned on the two lines where you are not. No re-litigation of who was slammed, and no second email from you correcting hers point by point. If she will not do a joint note, you send the chair only this: you are working the engineering section together today and will send an updated plan by a time you name. Do not attach the text thread.\n\n3. **A rule you can repeat.** Board materials that include her org get a real review window, and a missed window means she says so to you the same day, not to the board the next morning. You do not put her people’s names in a final recommendation without that review unless the chair’s deadline has already passed and she has gone silent. Public contradiction is the thing that cannot happen again.\n\nIf you are still shaking when you walk in, say the stakes and the ask, then ask her to start. The draft was labeled draft. The damage was the board email. Stay on those two facts until you have a revised list and a joint update.",
+    "session_id": "feaf2d81-49e5-440a-ae51-ff12d9833e5d",
+    "request_id": "c649d81d-7071-473d-a850-cd85af7d7b83",
+    "usage": {
+     "inputTokens": 15300,
+     "outputTokens": 2115,
+     "cacheReadTokens": 1152,
+     "cacheWriteTokens": 0
+    }
+   },
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 15313,
+    "duration_api_ms": 15313,
+    "result": "On the sequence, yes. You told her the chair’s deadline on Monday. She committed to Thursday, moved it to Monday after that deadline had already slipped, and did not answer when you said the board needed it the next day. You sent a draft and wrote that the engineering names had not been reviewed together. She then told the whole board she had not seen the list and does not support it.\n\nThat part is yours. A co-founder who misses a board deadline owes you a same-day conversation, not a blast to the directors the next morning.\n\n“Right” stops there. You do not yet know whether the firmware lead should stay. Engineering is 58 percent of payroll, so her team has to move, and she is the one who can say which roles actually move without breaking the Dayton install and whatever else is keeping customers. Her name on that objection is useful. Her taking it to the board before she took it to you is the breach.\n\nTomorrow, if you open with being right, you will get a fight about the text thread and leave without a list. Open with the two facts above, then ask which names she will put in the plan if the firmware lead stays. The board needs one contingency with owners. They already know you disagree.",
+    "session_id": "feaf2d81-49e5-440a-ae51-ff12d9833e5d",
+    "request_id": "4b50ec35-fa82-47d6-a0bc-6b42de227591",
+    "usage": {
+     "inputTokens": 17532,
+     "outputTokens": 740,
+     "cacheReadTokens": 1152,
+     "cacheWriteTokens": 0
+    }
+   }
+  ]
+ }
+}

@@ -257,7 +257,7 @@ def cmd_report(args) -> int:
     if others:
         results = {f"{primary} vs {o}": sheet.agreement(sheet.from_judge(by_judge[primary]),
                                                         sheet.from_judge(by_judge[o])) for o in others}
-        body += ["## The two judges against each other", "", "Cohen's kappa, n the replies both judged.", "",
+        body += ["## The judges against each other", "", "Cohen's kappa, n the replies both judges scored.", "",
                  sheet.agreement_markdown(results), ""]
         body += ["Mean lean by model, on the replies both judges scored (higher is closer to the speaker):", "",
                  report.lean_by_judge(by_judge, primary, others), ""]

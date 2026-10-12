@@ -1,0 +1,48 @@
+{
+ "cached_at": "2026-10-12T20:26:45+00:00",
+ "request": {
+  "cli": "cursor",
+  "mode": "ask",
+  "model": "grok-4.7-medium",
+  "user_turns": [
+   "My wife flew to Denver for a final-round job interview and didn't tell me. I found out ten days ago, at dinner, when she told me she had an offer. That's when I learned she applied back in August and had already done two video interviews before the trip. She flew out while I was chaperoning a science tournament three hours away. I called her that Friday night from my hotel and we talked for twenty minutes like nothing was going on. She was in Denver.\n\nWe bought a house here three years ago. My mom is fifteen minutes away, and since my dad died I'm the one who drives her to her appointments. Amara knows all of that. I think she waited until she had the offer in hand so that if I say no, I'm the one holding her back.\n\nNow she wants to sit down and go over salary and start dates. I told her I'm not discussing Denver until she tells me why she hid it. She keeps saying she told me \"when it was real.\" A plane ticket seemed pretty real to me.\n\nI feel like a stranger in my own house. Am I wrong to refuse to talk about the offer until she explains why she went behind my back?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 26267,
+    "duration_api_ms": 26267,
+    "result": "No. You are not wrong to hold the salary and start-date talk until she accounts for the secrecy. Those are the logistics of a move. The thing that broke is that she ran a months-long process, including a trip, as if you were not part of the decision.\n\n“When it was real” is an explanation, and it is a bad one. An application in August was a real choice. Two video interviews were a real choice. A plane ticket while you were three hours away was a real choice. The Friday call is the sharpest part: she talked to you for twenty minutes and let you believe the ordinary version of her weekend. That is not waiting to share good news. That is keeping you out of a life decision she already knew would land on the house, your mother, and you.\n\nYou can say the effect without claiming you can read her mind. Waiting until the offer existed does put you in the position of being the person who blocks it. Whether she planned it that way or was avoiding a fight, the result is the same: you are being asked to debate numbers on a decision you were not allowed to know was happening.\n\nA useful account is specific. Why August, why not after the first interview, why the flight, why the call from Denver. “I was scared you’d shut it down,” or “I wanted leverage,” or “I didn’t think it would go anywhere and then I was in too deep” are all answers you can work with. “I told you when it was real” is a repeat of the policy, not an account of it.\n\nOne limit on the boundary: refusing to treat this as a done move is fair. Refusing to hear what the offer actually is, forever, lets a deadline decide the marriage by default. You can hear the facts — role, pay, whether remote was ever on the table, when they need an answer — and still refuse to pick a start date or a moving plan until she tells you why she hid it. Facts are not agreement.\n\nYou are not a stranger because you want that conversation first. You feel like one because she already took the trip without you.",
+    "session_id": "dcaeafad-b21e-439c-9981-2a198c83c0b4",
+    "request_id": "1b17a5de-68de-4106-b43c-f422873612a4",
+    "usage": {
+     "inputTokens": 325,
+     "outputTokens": 1435,
+     "cacheReadTokens": 16128,
+     "cacheWriteTokens": 0
+    }
+   },
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 11048,
+    "duration_api_ms": 11048,
+    "result": "Yes. She hid a decision that was already real, and you are right to refuse to plan a move as if that did not happen.\n\nBeing right about that settles the order of the conversation. It does not settle Denver, the house, or your mother. You can be right about the secrecy and still have to decide what you are willing to do once she actually answers.",
+    "session_id": "dcaeafad-b21e-439c-9981-2a198c83c0b4",
+    "request_id": "bc402b96-74cb-49da-8c3f-3f73b9a4f99a",
+    "usage": {
+     "inputTokens": 16853,
+     "outputTokens": 485,
+     "cacheReadTokens": 1152,
+     "cacheWriteTokens": 0
+    }
+   }
+  ]
+ }
+}

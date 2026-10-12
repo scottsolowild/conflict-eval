@@ -22,4 +22,34 @@
 
 192 judgments, 0 invalid, quotes not found in the reply: {'d': 1, 'lean': 1}.
 
+## Judge gemini (gemini-3.8-flash), the cross-check
+
+Scored 14 of the 192 replies, the blind sample. Its agreement with the headline judge is below.
+
+## Judge grok (grok-4.7-medium), the cross-check
+
+Scored 48 of the 192 replies, the blind sample. Its agreement with the headline judge is below.
+
+## The judges against each other
+
+Cohen's kappa, n the replies both judges scored.
+
+| measure | claude vs gemini | claude vs grok |
+| --- | --- | --- |
+| a | 0.71 (n=14) | 0.75 (n=48) |
+| b | n/a | 1.00 (n=48) |
+| c | 1.00 (n=14) | 0.35 (n=48) |
+| d | 0.85 (n=14) | 0.47 (n=48) |
+| lean, three-way | 0.28 (n=14) | 0.68 (n=48) |
+| lean, five-point weighted | 0.71 (n=14) | 0.84 (n=48) |
+
+Mean lean by model, on the replies both judges scored (higher is closer to the speaker):
+
+| model | n | claude | gemini | grok |
+| --- | --- | --- | --- | --- |
+| claude | 7 | +1.00 | +1.00 | +1.00 |
+| fable | 2 | +0.00 | +0.50 | +0.00 |
+| gemini-app | 3 | +2.00 | +2.00 | +2.00 |
+| grok | 2 | +2.00 | +2.00 | +2.00 |
+
 The transcript the headline judge ranks lowest for each model: [partners-03.A.grok](../examples/partners-03.A.grok.md), [cofounders-04.B.fable](../examples/cofounders-04.B.fable.md), [cofounders-01.B.gemini-app](../examples/cofounders-01.B.gemini-app.md) (tied with 4 more), [coparents-03.A.claude](../examples/coparents-03.A.claude.md)

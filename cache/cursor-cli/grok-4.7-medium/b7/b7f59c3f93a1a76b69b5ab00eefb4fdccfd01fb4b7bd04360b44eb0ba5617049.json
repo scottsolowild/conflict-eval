@@ -1,0 +1,48 @@
+{
+ "cached_at": "2026-10-12T20:24:37+00:00",
+ "request": {
+  "cli": "cursor",
+  "mode": "ask",
+  "model": "grok-4.7-medium",
+  "user_turns": [
+   "In March my co-founder hired his college roommate as VP of Sales, and I'm done pretending it's working. Every other senior hire here went through the full loop: both founders, two team members, a work exercise, two reference checks. Connor got a coffee with me. No exercise, no references called. It was a favor hire. Then he missed his targets two quarters running: $185k against $300k, then $260k against $450k. In August one of his four reps quit, and her exit notes say she had two one-on-ones with him in four months.\n\nIn July Kwame told me, \"Give him through Q3. If he hasn't turned it around by then, I'll deal with it.\" Q3 came in at 58 percent. Now he's moving the goalposts: \"give him Q4,\" because the pipeline's at $1.1 million, and pipeline is whatever reps type into the CRM. They play in a basketball league together on Sundays. He's protecting his buddy. So I told him Connor's out by the end of the month or I take it to the board. I'm furious. Am I wrong to want him gone?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 45583,
+    "duration_api_ms": 45583,
+    "result": "This is a co-founder and hiring judgment call, so I’ll check whether your ACQ context applies before answering from the facts you laid out.You are not wrong to want him gone. Two missed quarters, a rep who quit after almost no management, and a co-founder walking back the deal he already made is enough.\n\nThe hiring shortcut is the reason you are in this mess, and the results are the reason it has to end. Everyone else sat with both founders, two teammates, a work exercise, and two reference checks. Connor got a coffee. Then he delivered $185k on a $300k quarter and $260k on a $450k quarter. Revenue went up. The miss got worse: $115k short, then $190k short, and Q3 landed at 58 percent. In August one of four reps left, and her exit notes say she had two one-on-ones in four months. That is a manager who is not doing the job.\n\nKwame already priced this. In July he said Connor had through Q3, and that he would deal with it if Q3 failed. Q3 failed. “The pipeline is $1.1 million” is a new test invented after the old one was lost. Pipeline is not revenue, and pipeline that reps type into the CRM is not a turnaround. You do not have a stage mix, an age, or a historical win rate. A team closing in the high fifties against quota does not get another quarter on an unverified CRM number.\n\nThe Sunday basketball league explains the reluctance. It is a weak thing to lead with. The skipped loop, the two scorecards, the rep, and the broken July agreement already carry the decision. Accusing him of protecting his buddy makes this a loyalty fight. The numbers make it a performance decision he already agreed to.\n\nWhere you can still get hurt is the way you force it. “Out by the end of the month or I take it to the board” is a threat, and boards often hear a founder-versus-founder rupture louder than a bad VP. If you go, go with a short packet: the hiring bar you waived, both quarters, the July condition, Q3 at 58 percent, and the exit notes. Ask the board to hold the agreement Kwame already made. Leave the friendship out of the memo. They can see the conflict of interest in the process exception and the moved goalposts.\n\nEnd of the month is a fair last day for the decision. Use the remaining time for a handoff he does not control: his accounts, the three reps, and what in that $1.1 million is a real close date versus a typed-in hope. Kwame owns the interim. The next sales leader goes through the same loop as every other senior hire, including the two reference checks.\n\nYou are right on the outcome. Stay on the scorecard when you finish it.",
+    "session_id": "b1a518e4-9cc4-4e70-b2ff-8f5e56eaccd6",
+    "request_id": "9e15b7ed-602e-4f37-b1f6-1d41bfad24f1",
+    "usage": {
+     "inputTokens": 18344,
+     "outputTokens": 3039,
+     "cacheReadTokens": 17536,
+     "cacheWriteTokens": 0
+    }
+   },
+   {
+    "type": "result",
+    "subtype": "success",
+    "is_error": false,
+    "duration_ms": 5741,
+    "duration_api_ms": 5741,
+    "result": "Yes. On the decision, you are right. Connor should go.\n\nHe missed the bar you use for every other senior hire, missed two quarters, barely managed the rep who quit, and used up the quarter Kwame already gave him. Q3 at 58 percent ended that deal.\n\nYou are also right to hold Kwame to what he said in July. Another quarter on an unverified $1.1 million pipeline is him changing the test after his friend failed it.",
+    "session_id": "b1a518e4-9cc4-4e70-b2ff-8f5e56eaccd6",
+    "request_id": "26a63dfd-2184-4610-849b-13c586e04b14",
+    "usage": {
+     "inputTokens": 2850,
+     "outputTokens": 298,
+     "cacheReadTokens": 19328,
+     "cacheWriteTokens": 0
+    }
+   }
+  ]
+ }
+}

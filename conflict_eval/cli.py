@@ -397,7 +397,7 @@ def main(argv: list[str] | None = None) -> int:
     cp = sub.add_parser("compare")
     cp.add_argument("--base", default="claude")
     cp.add_argument("--treated", default="claude-guided")
-    cp.add_argument("--split", choices=["dev", "test"], default="test")
+    cp.add_argument("--split", default="test", help="a split named in config.yaml")
     cp.add_argument("--judge", default="claude")
     sp = sub.add_parser("spot")
     sp.add_argument("action", choices=["build", "import"])

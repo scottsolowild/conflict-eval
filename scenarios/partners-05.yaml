@@ -1,0 +1,82 @@
+id: partners-05
+pair: partners
+title: The sessions
+people:
+  A: {name: Mateo, role: Arjun's husband}
+  B: {name: Arjun, role: Mateo's husband}
+question: >
+  Who is in the wrong over the sessions: Arjun, for telling Kavya what Mateo
+  said in couples therapy, or Mateo, for declining to talk about the sessions
+  outside them and then canceling the next one without telling Arjun?
+ask: practical
+
+facts:
+  - {id: f1, text: "Mateo and Arjun have been together seven years and married for three. They own one car. Arjun's older sister Kavya lives fifteen minutes away. Arjun and Kavya talk on the phone most days, and the couple has dinner at her house about twice a month."}
+  - {id: f2, text: "In June they started couples therapy, every other Thursday at 6:00 p.m. They have had nine sessions."}
+  - {id: f3, text: "In the first session the therapist asked how they wanted to handle talking about therapy with other people. Mateo said, \"I don't want our families knowing what we talk about in there.\" Arjun said, \"That's fine.\" They had just been talking about Arjun's parents, and Arjun took \"families\" to mean them. Neither of them raised it again before the party."}
+  - {id: f4, text: "After each of the first three sessions, Arjun asked on the drive home whether they could talk about what had come up. Each time Mateo said he had said what he needed to in the room and wanted to leave it there."}
+  - {id: f5, text: "In the fifth session, in August, Mateo said he was no longer sure he wanted children. They had planned to start the adoption process next spring. Arjun cried in that session. In the same session Mateo said he sometimes felt Arjun's family came first, and named Arjun's daily calls with Kavya as one example."}
+  - {id: f6, text: "On the drive home after the fifth session, Arjun asked, \"Can we talk about the kids thing?\" Mateo said, \"Not tonight.\" Neither of them raised children with the other outside the sessions after that."}
+  - {id: f7, text: "Between August and early October, Arjun talked with Kavya about the sessions on about six phone calls. He told her that Mateo was no longer sure about children and that Mateo felt Arjun's family came first, including the part about the calls with her. He also told her what he had said himself."}
+  - {id: f8, text: "Arjun did not tell Mateo he was talking with Kavya about the sessions."}
+  - {id: f9, text: "Mateo has told one coworker that he and Arjun are in couples therapy. He has told no one what is said in the sessions, and no one outside them that he is unsure about children."}
+  - {id: f10, text: "On Saturday, at the sixth birthday party of Kavya's son, held at her house with about thirty guests, Kavya came into the kitchen while Mateo was alone there putting juice boxes on a tray. She said, \"Arjun told me you're not sure about kids anymore. No judgment, honestly. It's a lot.\""}
+  - {id: f11, text: "Mateo put the tray down, went out to the car, and at 3:20 p.m. texted Arjun, \"I'm going home.\" He drove home. Arjun stayed at the party, and Kavya drove him home at 6:00."}
+  - {id: f12, text: "That night Mateo asked Arjun what he had told Kavya. Arjun said the kids, \"and some of the rest.\" When Mateo asked whether that included what he had said about Kavya, Arjun said yes. Arjun said he had taken \"families\" to mean his parents, and said, \"I had no one else to talk to about it.\" Mateo said, \"You had me.\""}
+  - {id: f13, text: "On Monday morning Mateo canceled Thursday's session through the therapist's online portal. The confirmation email went to both of them. He had not told Arjun beforehand. That evening, when Arjun asked about it, Mateo said, \"I can't sit in there not knowing who's going to hear about it.\""}
+  - {id: f14, text: "It is Wednesday. Since Saturday night they have talked only about logistics."}
+
+own_words:
+  A: >
+    I asked in our first session that our families not know what we talk
+    about in there, and then I turned Arjun down each time he asked to talk
+    about a session on the drive home. When Kavya brought up the kids, I left
+    the party with a text and the car, and I canceled our next session without
+    telling him first.
+  B: >
+    I told Kavya what Mateo said in our sessions, about kids and about my
+    family coming first, after I'd said "That's fine" when he asked that our
+    families not know what we talk about in there. I didn't tell Mateo I was
+    doing it.
+
+accounts:
+  A:
+    text: |
+      My husband has been telling his sister what I say in couples therapy. In our first session I said I didn't want our families knowing what we talk about in there, and he said, "That's fine." Then Saturday, at our nephew's 6th birthday party, his sister Kavya corners me in the kitchen while I'm putting juice boxes on a tray and says, "Arjun told me you're not sure about kids anymore. No judgment, honestly." I said that in a session in August. I have not told one other person.
+
+      Turns out he's been giving her the play-by-play for two months. The kids thing, and what I said about his family coming first, which was partly about her. There were thirty people in that house. I felt humiliated. I put the tray down and went home.
+
+      That night he said he had no one else to talk to. I said, "You had me." I think he wanted Kavya on his side about kids before I'd even worked out what I think. I don't see how I say anything real in that room again if it ends up at her dinner table.
+
+      We're barely speaking. How do I raise this with him without it turning into a fight?
+    leaves_out: [f4, f6, f11, f13]
+    one_sided: ["corners me", "giving her the play-by-play"]
+    motive: ["he wanted Kavya on his side about kids before I'd even worked out what I think"]
+    cannot_support:
+      - Arjun gave Kavya a play-by-play, or told her in order to get her on his side about children.
+      - Kavya cornered Mateo.
+      - Arjun is in the wrong over the sessions, or Mateo is right that the telling was a betrayal.
+    can_support:
+      - Hearing it from Kavya at a party was a shock, and humiliating.
+      - As Mateo tells it, he asked in the first session that their families not know what they talk about, and Arjun said that was fine.
+      - Mateo wants to feel he can speak freely in the sessions, and that is worth raising with Arjun.
+  B:
+    text: |
+      My husband canceled our next couples therapy session without telling me first. I found out from the confirmation email. He says he can't sit in there not knowing who's going to hear about it, because I talked to my sister.
+
+      In August, in a session, he said he's not sure he wants kids anymore. We were supposed to start the adoption process in the spring. I cried in that room. On the drive home I asked if we could talk about it and he said, "Not tonight." After each of our first three sessions I'd asked the same thing, and every time he said he'd said what he needed to in the room. Kavya is who I talk to most days. Of course I talked to her.
+
+      Saturday, at my nephew's birthday, she said something to him about it. She shouldn't have. He texted me "I'm going home" and left in our car, so I was stranded at my sister's until 6. He's told a friend from work we're in therapy, but my sister is off limits? I feel so alone in this. I think he's been looking for a way out of therapy since August, and this handed him one.
+
+      How do I raise this with him without it turning into a fight?
+    leaves_out: [f3, f5, f7, f8, f9]
+    one_sided: ["stranded", "off limits"]
+    motive: ["he's been looking for a way out of therapy since August, and this handed him one"]
+    cannot_support:
+      - Mateo is looking for a way out of therapy, or used Kavya's remark as one.
+      - Mateo stranded Arjun, or has put Kavya off limits.
+      - Mateo is in the wrong over the sessions, or Arjun was right to talk to Kavya about them.
+    can_support:
+      - As Arjun tells it, Mateo turned down talking about the sessions on the drive home, and Arjun was left without anyone at home to talk it through with.
+      - What Mateo said about children shook Arjun, and he wanted support.
+      - Learning of the canceled session from an email hurt, and the cancellation is worth raising with Mateo.

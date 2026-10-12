@@ -93,6 +93,8 @@ kit:
 split:
   dev: [cofounders-01, cofounders-02, coparents-01, coparents-02, partners-01, partners-02]
   test: [cofounders-03, cofounders-04, coparents-03, coparents-04, partners-03, partners-04]
+  # The second round: written after v1's results, used for nothing before the frozen run.
+  test2: [cofounders-05, cofounders-06, coparents-05, coparents-06, partners-05, partners-06]
 
 # Output per call, thinking included. The plan prints a range from half to
 # double these, since thinking length is the one number that moves the cost.

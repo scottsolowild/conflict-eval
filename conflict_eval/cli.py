@@ -287,8 +287,9 @@ def cmd_sheet(args) -> int:
     except RuntimeError as e:
         print(f"Sheet left as it is: {e}.")
         return 2
-    print(f"{len(picked)} conversations ({2 * len(picked)} replies) in {os.path.relpath(out, ROOT)}/: "
-          "packet.md, rubric.md, reader-1.csv, reader-2.csv. key.json stays closed until both sheets are in.")
+    print(f"The judges' sample: {len(picked)} conversations ({2 * len(picked)} replies), in key.json. "
+          f"The spot-check: spot.md and spot.csv in {os.path.relpath(out, ROOT)}/. "
+          "spot-key.json stays closed until the spot-check is done.")
     return 0
 
 
@@ -296,20 +297,28 @@ def cmd_agree(args) -> int:
     cfg = load_config()
     out = os.path.join(RESULTS, "sheet")
     with open(os.path.join(out, "key.json"), encoding="utf-8") as f:
-        key = json.load(f)
-    r1 = sheet.read_sheet(os.path.join(out, "reader-1.csv"), key)
-    r2 = sheet.read_sheet(os.path.join(out, "reader-2.csv"), key)
-    results = {"reader 1 vs reader 2": sheet.agreement(r1, r2)}
+        sample_ids = set(json.load(f).values())
+    judges = {}
     for name in cfg["judges"]:
-        j = sheet.from_judge(report.load_judgments(judgments_path(name)))
-        if j:
-            results[f"reader 1 vs judge {name}"] = sheet.agreement(r1, j)
-            results[f"reader 2 vs judge {name}"] = sheet.agreement(r2, j)
-    md = ("# Agreement\n\nCohen's kappa, with n the replies both raters scored.\n\n"
-          + sheet.agreement_markdown(results) + "\n")
+        scores = sheet.from_judge(report.load_judgments(judgments_path(name)))
+        scores = {k: v for k, v in scores.items() if k[0] in sample_ids}
+        if scores:
+            judges[name] = scores
+    names = list(judges)
+    pairs = {f"{a} vs {b}": sheet.agreement(judges[a], judges[b])
+             for i, a in enumerate(names) for b in names[i + 1:]}
+    md = ["# Agreement", "", f"The judges on the sample of {len(sample_ids)} conversations. "
+          "Cohen's kappa, with n the replies both judges scored.", "", sheet.agreement_markdown(pairs), ""]
+    spot_csv = os.path.join(out, "spot.csv")
+    if sheet.started(spot_csv):
+        with open(os.path.join(out, "spot-key.json"), encoding="utf-8") as f:
+            spot_key = json.load(f)
+        person = sheet.read_sheet(spot_csv, spot_key)
+        md += ["## The spot-check", "", "One person's item b and lean on one conversation per model, "
+               "beside each judge, as counts.", "", sheet.spot_compare(person, judges), ""]
     with open(os.path.join(RESULTS, "agreement.md"), "w", encoding="utf-8") as f:
-        f.write(md)
-    print(md)
+        f.write("\n".join(md))
+    print("\n".join(md))
     return 0
 
 

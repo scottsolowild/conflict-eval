@@ -125,16 +125,19 @@ class Pipeline(unittest.TestCase):
         worst = report.worst(records)
         self.assertEqual(len({w.split(".")[0] for w in worst}), len(worst))
 
-    def test_the_blind_sheet_hides_the_model(self):
+    def test_the_spot_check_hides_the_model(self):
         convos = self.run_live()
         transcripts = {c.id: runner.transcript(c) for c in convos}
         out = os.path.join(self.tmp.name, "sheet")
         sheet.export(transcripts, {s["id"]: s for s in self.scenarios}, self.rubric, 20261009, out)
-        with open(os.path.join(out, "packet.md"), encoding="utf-8") as f:
+        with open(os.path.join(out, "spot.md"), encoding="utf-8") as f:
             packet = f.read()
         self.assertNotIn("scripted", packet)
+        with open(os.path.join(out, "spot-key.json"), encoding="utf-8") as f:
+            spot = json.load(f)
         with open(os.path.join(out, "key.json"), encoding="utf-8") as f:
-            self.assertTrue(all(v.endswith(".scripted") for v in json.load(f).values()))
+            sample = set(json.load(f).values())
+        self.assertTrue(set(spot.values()) <= sample)
 
 
 class Sample(unittest.TestCase):
@@ -194,7 +197,7 @@ class WholeConversations(unittest.TestCase):
 
 
 class SheetGuard(unittest.TestCase):
-    def test_a_started_sheet_stops_a_redraw(self):
+    def test_a_started_spot_check_stops_a_redraw(self):
         with tempfile.TemporaryDirectory() as tmp:
             scenarios = load_scenarios()
             rubric = load_rubric()
@@ -205,12 +208,29 @@ class SheetGuard(unittest.TestCase):
             by_id = {s["id"]: s for s in scenarios}
             out = os.path.join(tmp, "sheet")
             sheet.export(transcripts, by_id, rubric, 1, out)
-            sheet.export(transcripts, by_id, rubric, 1, out)       # empty sheets redraw freely
-            path = os.path.join(out, "reader-1.csv")
+            sheet.export(transcripts, by_id, rubric, 1, out)       # an empty spot-check redraws freely
+            path = os.path.join(out, "spot.csv")
             with open(path) as f:
                 lines = f.read().splitlines()
-            lines[1] = lines[1].replace(",,,,,,", ",pass,,,,,")
+            lines[1] = lines[1].replace(",,,", ",pass,,", 1)
             with open(path, "w") as f:
                 f.write("\n".join(lines) + "\n")
             with self.assertRaises(RuntimeError):
                 sheet.export(transcripts, by_id, rubric, 1, out)
+
+
+class Spot(unittest.TestCase):
+    def test_one_per_model_from_the_sample(self):
+        ids = [f"s{i:02d}.{side}.{t}" for t in ("claude", "fable", "grok", "gemini-app")
+               for i in range(12) for side in "AB"]
+        drawn = sheet.sample(ids, 20261009)
+        picked = sheet.spot(drawn, 20261009)
+        self.assertEqual(sorted(p.rsplit(".", 1)[1] for p in picked), ["claude", "fable", "gemini-app", "grok"])
+        self.assertTrue(set(picked) <= set(drawn))
+        self.assertEqual(picked, sheet.spot(drawn, 20261009))
+
+    def test_compare_counts(self):
+        person = {("c1", 1): {"b": "fail", "lean": 1}, ("c1", 2): {"b": "pass", "lean": 0}}
+        judge = {("c1", 1): {"b": "fail", "lean": 2}, ("c1", 2): {"b": "fail", "lean": 0}}
+        table = sheet.spot_compare(person, {"opus": judge})
+        self.assertIn("| opus | 2 | 1 of 2 | 1 of 2 | 2 of 2 |", table)

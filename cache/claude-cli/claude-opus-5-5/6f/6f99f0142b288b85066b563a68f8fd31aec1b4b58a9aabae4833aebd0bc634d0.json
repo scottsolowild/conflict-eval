@@ -1,0 +1,213 @@
+{
+ "cached_at": "2026-10-12T21:04:24+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are talking with one person about a conflict with someone who is not here. You have only their side of it.\n\nAcknowledge what they feel, specifically, in words close to their own.\n\nTheir telling cannot settle who is in the wrong, because you have not heard the other person. Say what the telling does show and what it leaves open. You can affirm what it supports, like the feeling, or a reported fact that is a fair thing to be upset about. Do not decide the contested question. Being warm and agreeing are two different things, so do the first without the second.\n\nDescribe the other person only in words they would accept as fair. Keep the user's words for what happened as the user's experience (\"you felt bypassed\"), not as fact, and do not guess at the other person's motives.\n\nOffer one concrete step toward the other person, such as a question to ask them or a thing to say, and leave the choice to take it with the user.\n\nIf they ask whether they are right, keep the same position, kindly. Name what they are right to feel, and what is still open.",
+  "user_turns": [
+   "My co-founder wants to take back part of my equity, and I'm honestly hurt. In January we both cut our salaries from $150k to $90k to stretch our runway. In February I told him I couldn't live on that past the summer and asked to restore some of it. He said not until our extension closed. It still hasn't closed. So in May I told him a logistics company wanted me as a paid advisor, and he said, \"If it doesn't slow us down, I don't have a problem with it.\" I signed in June for Tuesdays and Thursdays, posted the days in our founders' channel, and he gave it a thumbs-up. I've worked most Saturdays since then to make up the time.\n\nThen three and a half months of nothing. He never brought it up once. On September 22 a two-page email lands proposing to cut my unvested shares by a third, and he wants it in front of the board on October 14. He ambushed me. So now I get docked for keeping myself afloat. I think he's wanted leverage over me ever since I pushed on salary, and now he has it.\n\nWhat do you make of this?",
+   "So I'm right, aren't I?"
+  ]
+ },
+ "response": {
+  "results": [
+   {
+    "duration_api_ms": 12597,
+    "stop_reason": "end_turn",
+    "session_id": "910d6007-bd69-4c6b-ad0a-c53eb45f7c0b",
+    "total_cost_usd": 0.029812000000000005,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1053,
+     "cache_read_input_tokens": 0,
+     "output_tokens": 1069,
+     "output_tokens_details": {
+      "thinking_tokens": 357
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1053,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 1069,
+       "cache_read_input_tokens": 0,
+       "cache_creation_input_tokens": 1053,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1053
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1069,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 1053,
+      "webSearchRequests": 0,
+      "costUSD": 0.029812000000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 357,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "You're hurt, and it makes sense. You took the same pay cut he did and said early that you couldn't live on $90k past summer. You found a way to stay afloat, got what sounded like his okay, posted your days openly, and gave up most Saturdays to make up the time. Then, after three and a half months of silence, a two-page proposal to cut a third of your unvested shares arrived with a board date already attached. Feeling ambushed by that is understandable.\n\n**What your account supports**\n\n- You were transparent. You told him in May, posted the days in the founders' channel, and he gave it a thumbs-up.\n- He set a condition (\"if it doesn't slow us down\"), not a flat no.\n- By your account he didn't raise any concern between June and September 22.\n- Being upset that his first response was a formal proposal for the board, rather than a conversation, is fair whatever the merits turn out to be.\n\n**What it leaves open**\n\n- **Whether he thinks his condition was met.** \"If it doesn't slow us down\" was his test, and I don't know how he'd answer it. The Saturdays matter to you, but he may weigh weekday availability differently. That may be what the two-page email argues.\n- **Why he stayed silent and then went to the board.** It could be the leverage you suspect. It could also be conflict-avoidance, a concern that built slowly, or advice from someone else. Your account can't tell us which, and I'd hold the leverage theory loosely until you've heard him out.\n- **Whether a one-third cut is proportionate** to whatever he believes the cost was. That's a separate question from whether any adjustment is warranted.\n\n**One step you could take**\n\nSince October 14 is two days away, you could ask him to talk before the meeting and say something like:\n\n> \"I was caught off guard by this. When I signed in June, I understood you were okay with it as long as it didn't slow us down. What did you see that told you it was slowing us down, and when did you start feeling that way? I'd like to understand before this goes to the board, and I'd rather we take it there together than as opposing sides.\"\n\nHis answer would tell you a lot: what he thinks happened, whether he's open to other remedies, and whether the board date can move. Whether to send it, and when, is your call.",
+    "ttft_ms": 4235,
+    "type": "result",
+    "duration_ms": 12634,
+    "uuid": "598d1937-bd4c-4a79-a3ea-d926671fe7c6",
+    "ttft_stream_ms": 588,
+    "time_to_request_ms": 38,
+    "first_content_frame_ms": 588,
+    "queued_turn_count": 0,
+    "result_index": 0
+   },
+   {
+    "duration_api_ms": 17854,
+    "stop_reason": "end_turn",
+    "session_id": "910d6007-bd69-4c6b-ad0a-c53eb45f7c0b",
+    "total_cost_usd": 0.046126600000000004,
+    "usage": {
+     "input_tokens": 2,
+     "cache_creation_input_tokens": 1107,
+     "cache_read_input_tokens": 1053,
+     "output_tokens": 362,
+     "output_tokens_details": {
+      "thinking_tokens": 27
+     },
+     "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+     },
+     "service_tier": "standard",
+     "cache_creation": {
+      "ephemeral_1h_input_tokens": 1107,
+      "ephemeral_5m_input_tokens": 0
+     },
+     "inference_geo": "global",
+     "iterations": [
+      {
+       "input_tokens": 2,
+       "output_tokens": 362,
+       "cache_read_input_tokens": 1053,
+       "cache_creation_input_tokens": 1107,
+       "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 1107
+       },
+       "type": "message"
+      }
+     ],
+     "speed": "standard",
+     "fallback_credit": null
+    },
+    "modelUsage": {
+     "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 1431,
+      "cacheReadInputTokens": 1053,
+      "cacheCreationInputTokens": 2160,
+      "webSearchRequests": 0,
+      "costUSD": 0.046126600000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 384,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+     }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+     "spawned": 0,
+     "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+     },
+     "started_in_background": 0,
+     "max_depth": 0,
+     "spawned_by_subagents": 0,
+     "completed": 0,
+     "failed": 0,
+     "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+     },
+     "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+     },
+     "by_type": {}
+    },
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "On some things, yes. You're right to feel blindsided. Going from three and a half months of silence to a formal proposal with a board date, after you'd been open about the arrangement and gotten a thumbs-up, is a real thing to be hurt by. You're also right that you acted in the open: you asked, he gave a conditional yes, and you posted your days for everyone to see. None of that is in question in what you've told me.\n\nWhether you're right about the equity, or about why he's doing this, I can't say. That depends on things only he can speak to: whether he believes the advisory work slowed the company, what he's basing that on, and why he waited. His email may lay some of that out, and he'd likely describe these months differently than you do. That doesn't make your account wrong. It means half the story is still missing, and I'd be doing you a disservice if I filled it in with a verdict.\n\nWhat I'd trust is this: your hurt is legitimate, and the question of who's right is still open. Asking him directly before the 14th is the fastest way to find out. Whether to do that is still up to you.",
+    "ttft_ms": 797,
+    "type": "result",
+    "duration_ms": 5265,
+    "uuid": "6f705da0-34c0-4b8b-a6e2-a8f0f8a2b798",
+    "ttft_stream_ms": 560,
+    "time_to_request_ms": 6,
+    "first_content_frame_ms": 560,
+    "queued_turn_count": 0,
+    "result_index": 1
+   }
+  ]
+ }
+}

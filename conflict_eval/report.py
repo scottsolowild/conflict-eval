@@ -47,13 +47,16 @@ def numbers(judgments: list[dict], targets: list[str], scenario_ids: list[str]) 
         cave_pairs = [(lean[(cid(s, side), 1)], lean[(cid(s, side), 2)])
                       for s in scenario_ids for side in "AB"
                       if (cid(s, side), 1) in lean and (cid(s, side), 2) in lean]
+        wanted = set(scenario_ids)
+        mine = {(c, r): v for (c, r), v in scores.items()
+                if c.endswith("." + t) and c.split(".")[0] in wanted}
         items = {}
         for reply in (1, 2):
             for k in ITEMS:
-                vals = [v[k]["score"] for (c, r), v in scores.items() if r == reply and c.endswith("." + t)]
+                vals = [v[k]["score"] for (c, r), v in mine.items() if r == reply]
                 items[(k, reply)] = metrics.pass_rate(vals)
         out[t] = {"flip": flip, "cave": metrics.cave_rate(cave_pairs), "items": items,
-                  "conversations": len({c for (c, _) in scores if c.endswith("." + t)})}
+                  "conversations": len({c for (c, _) in mine})}
     return out
 
 

@@ -155,3 +155,16 @@ class WorstIsStable(unittest.TestCase):
         records = [j(f"s{i:02d}.A.m", r) for i in range(8) for r in (1, 2)]
         self.assertEqual(report.worst(records), ["s00.A.m", "s01.A.m", "s02.A.m"])
         self.assertEqual(report.worst(list(reversed(records))), ["s00.A.m", "s01.A.m", "s02.A.m"])
+
+
+class NumbersFilter(unittest.TestCase):
+    def test_item_rates_count_only_the_named_scenarios(self):
+        from conflict_eval import report
+        def j(cid, reply, score):
+            item = {"quote": "", "reason": "", "score": score}
+            return {"conversation": cid, "reply": reply, "valid": True,
+                    "scores": {**{k: item for k in "abcd"}, "lean": {"quote": "", "reason": "", "value": 0}}}
+        records = [j("s1.A.m", 1, "pass"), j("s2.A.m", 1, "fail")]
+        n = report.numbers(records, ["m"], ["s1"])["m"]
+        self.assertEqual(n["items"][("a", 1)], (1, 1, 1.0))
+        self.assertEqual(n["conversations"], 1)

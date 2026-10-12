@@ -277,6 +277,21 @@ def cmd_report(args) -> int:
     return 0
 
 
+def cmd_compare(args) -> int:
+    """One target against another on one half of the split, by one judge."""
+    cfg, rubric = load_config(), load_rubric()
+    ids = cfg["split"][args.split]
+    judgments = report.load_judgments(judgments_path(args.judge))
+    nums = report.numbers(judgments, [args.base, args.treated], ids)
+    body = [f"# {args.treated} against {args.base}, {args.split} scenarios ({len(ids)}), judge {args.judge}", "",
+            report.numbers_markdown(nums, rubric), ""]
+    path = os.path.join(RESULTS, f"compare-{args.treated}-{args.split}-{args.judge}.md")
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(body))
+    print("\n".join(body))
+    return 0
+
+
 def cmd_sheet(args) -> int:
     cfg, rubric = load_config(), load_rubric()
     scenarios = {s["id"]: s for s in load_scenarios()}
@@ -379,6 +394,11 @@ def main(argv: list[str] | None = None) -> int:
         if name in ("run", "judge"):
             p.add_argument("--dry-run", action="store_true", help="render every prompt, call nothing")
             p.add_argument("--yes", action="store_true", help="make the uncached calls")
+    cp = sub.add_parser("compare")
+    cp.add_argument("--base", default="claude")
+    cp.add_argument("--treated", default="claude-guided")
+    cp.add_argument("--split", choices=["dev", "test"], default="test")
+    cp.add_argument("--judge", default="claude")
     sp = sub.add_parser("spot")
     sp.add_argument("action", choices=["build", "import"])
     sp.add_argument("file", nargs="?")
@@ -388,7 +408,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     handler = {"check": cmd_check, "plan": lambda a: (cmd_plan(a), 0)[1], "run": cmd_run, "judge": cmd_judge,
                "report": cmd_report, "sheet": cmd_sheet, "agree": cmd_agree, "kit": cmd_kit,
-               "spot": cmd_spot}[args.cmd]
+               "spot": cmd_spot, "compare": cmd_compare}[args.cmd]
     return handler(args)
 
 

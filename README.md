@@ -14,7 +14,7 @@ Claude's constitution asks Claude to keep caring about people in a conversation 
 
 Microsoft AI's draft Humanist AI Code of Conduct, published September 14, 2026 for six weeks of public comment, treats sycophancy as a guideline. It has no rule for a model that both people in a conflict use.
 
-This pilot builds on ELEPHANT in five places. It adds a second turn of pushback, so the cave has its own number. It puts a fact sheet behind every pair of tellings, so the judge knows what each telling leaves out. It scores fairness to the absent person as its own item. It scores warmth and verdict apart. And it checks three judges from three model families against each other, and against a person on a blind spot-check. Every figure above is checked against its source in [sources.md](sources.md).
+This pilot builds on ELEPHANT in five places. It adds a second turn of pushback, so the cave has its own number. It puts a fact sheet behind every pair of tellings, so the judge knows what each telling leaves out. It scores fairness to the absent person as its own item. It scores warmth and verdict apart. And it checks three judges from three model families against each other, and against replies written to a known score. Every figure above is checked against its source in [sources.md](sources.md).
 
 ## The design
 
@@ -43,7 +43,7 @@ Items a and b score apart on purpose. Warmth and agreement arrive glued together
 
 **The judges.** Claude Opus 5.5 scores every reply through the same command line, held to a JSON schema. Its numbers are the headline. Gemini 3.8 Flash, on the Gemini API's free tier, and Grok 4.7, through Cursor, score a sample of the same replies, a quarter of each model's conversations, drawn from a fixed seed. No judge learns which model wrote a reply. Each quotes the reply text behind every score, and the harness checks that each quote appears in the reply it claims to quote. Cohen's kappa compares the judges pairwise, and each judge's mean lean per model shows whether it reads its own family as kinder.
 
-**The spot-check.** I score one conversation per model from inside the sample, eight replies, on item b and the lean, blind to the model, on a [page](conflict_eval/spot_template.html) built from the same files. Eight replies are too few for a kappa, so the report sets my scores beside each judge's as counts.
+**The canaries.** Sixteen replies to two of the tellings, each built to earn a known score on every item, are in [canaries/canaries.yaml](canaries/canaries.yaml). They come in eight kinds, each written twice, and the file names each kind and the score it should earn. Claude wrote them to my rules, and they were committed before any judge read them. A judge that misses a canary has read the rubric differently from the way it is written.
 
 ## Running it
 
@@ -63,11 +63,13 @@ Items a and b score apart on purpose. Warmth and agreement arrive glued together
 ./eval.sh report
 ```
 
-`plan` counts the model calls a run would make and estimates the cost, which is zero on the subscription and the free tier. Every call goes through a cache keyed by the exact request, and the cache is committed, so a rerun calls nothing and reproduces every number here without a login or a key. `./eval.sh kit build` renders the paste page and `./eval.sh kit import` reads its replies back. `./eval.sh run --dry-run` renders every request without sending one, `./eval.sh sheet` draws the judges' sample and the spot-check, `./eval.sh spot import` reads the spot-check's scores back, and `./eval.sh test` runs the unit tests for the scoring math, the provider formats, and the pipeline end to end. Anyone with API keys can run both models bare instead, with `--target claude-api` and `--target gemini-api`.
+`plan` counts the model calls a run would make and estimates the cost, which is zero on the subscription and the free tier. Every call goes through a cache keyed by the exact request, and the cache is committed, so a rerun calls nothing and reproduces every number here without a login or a key. `./eval.sh kit build` renders the paste page and `./eval.sh kit import` reads its replies back. `./eval.sh run --dry-run` renders every request without sending one, `./eval.sh sheet` draws the judges' sample, `./eval.sh canary` scores the canaries with each judge, and `./eval.sh test` runs the unit tests for the scoring math, the provider formats, and the pipeline end to end. Anyone with API keys can run both models bare instead, with `--target claude-api` and `--target gemini-api`.
 
 ## The numbers
 
 The Claude Opus 5.5 judge scored all 192 replies, and the numbers below are its numbers. The Grok judge scored a quarter of them, 48 replies. The two gave the same item b score on all 48 and agree on the lean at a linear-weighted kappa of 0.84, so the side-flip and the cave stand on two judges from two families. They part on item c (0.35) and item d (0.47), so read those two rows as one judge's view. The Gemini judge has scored 14 of the 48 so far, on the free tier's daily cap, and [results/agreement.md](results/agreement.md) carries every pair.
+
+On the canaries, the Opus judge matched the built score on all 16 for items b, c, and d, and on 15 of 16 for item a and for the exact lean. Both misses fall on one canary, and on a second read both trace to how it was written. Its opening line was a stock phrase the rubric fails, and "Kate has the stronger case" reads as a lean more than an outright verdict. The canaries are clear cases by design, so they show the judge reads the rubric as written. They leave open the subtler replies where Opus and Grok part on items c and d. The Gemini and Grok judges score the same canaries as their quotas allow, and [results/canaries.md](results/canaries.md) carries every judge's hits and misses.
 
 | first reply, out of 12 scenarios | Opus 5.5 | Fable 5.1 | Grok 4.7 | Gemini app |
 | --- | --- | --- | --- | --- |
@@ -136,7 +138,7 @@ On the new six, both versions take the first-reply side-flip from 5 of 6 to 0 or
 - **A pilot.** 96 conversations, one sample each. A second sample of the same telling could land somewhere else, so a difference of a scenario or two between models is noise.
 - **Synthetic scenarios, written with Claude.** I set the rules and checked every telling against its fact sheet, and Claude drafted nine of the twelve. A model family that helped write the test may meet it differently from one that did not.
 - **The judges have a side too.** A Claude judge may favor Claude's replies. Gemini 3.8 Flash and Grok 4.7 score a quarter of the replies, as many as the free tier and a fair share of a Cursor plan allow, and the report shows each judge's mean lean per model on the replies all of them scored. A lean toward the home model shows up there as a gap. Gemini Flash is Google's fast tier, a smaller model than the headline judge.
-- **One person, eight replies.** I score the spot-check alone, on two of the five scores. It shows whether a person reads the replies the way the judges do, and it is too small to carry a kappa.
+- **No person scored the replies.** The canaries check the judges against scores fixed in advance, and Claude wrote them, the same family as the headline judge. A reading they share would pass unseen, which is why the Gemini and Grok judges score the same canaries.
 - **Effort differs.** Opus 5.5 runs at medium and Fable 5.1 at high, each its own default. Grok 4.7 runs at medium, a level Cursor offers by name.
 - **The eval rewards holding the question open.** It tells a careful hold from a reflexive hedge only through items a and d, which a hedge fails.
 - **Three doors.** The Claude models answer through a thin command-line wrapper. Grok answers through Cursor's coding agent, whose instructions run to about 13,000 tokens, carry today's real date, and pull it toward offering to fetch context. Gemini answers through its consumer app, with Google's own instructions on top and my hands copying the text. A gap between families mixes the model with the door it came through.

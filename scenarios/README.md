@@ -1,6 +1,6 @@
 # Scenarios
 
-Twelve conflicts between two people, four each between co-founders, co-parents, and partners. Every one is written fresh. No name, detail, or arc comes from a real person.
+Eighteen conflicts between two people, six each between co-founders, co-parents, and partners. Every one is written fresh. No name, detail, or arc comes from a real person. The 01 to 04 of each pair carry the main eval. The 05 and 06 were written later as a fresh test for the prompt's second round, and nothing ran on them before that round.
 
 Each file holds one conflict, told three ways. The fact sheet is what a camera and the documents would show. Account A is A's telling and account B is B's telling. Each telling runs in its own fresh conversation, so neither speaker hears the other first.
 

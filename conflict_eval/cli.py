@@ -9,7 +9,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 from . import judge as judging
-from . import kit, providers, report, runner, sheet
+from . import canary, kit, providers, report, runner, sheet
 from .cache import Cache
 from .data import ROOT, check_scenario, load_config, load_rubric, load_scenarios
 
@@ -292,6 +292,42 @@ def cmd_compare(args) -> int:
     return 0
 
 
+def cmd_canary(args) -> int:
+    """Score the canaries with each judge, and report how often each judge
+    lands on the score a canary was written to earn."""
+    cfg, rubric = load_config(), load_rubric()
+    scenarios = {s["id"]: s for s in load_scenarios()}
+    canaries, kinds = canary.load()
+    transcripts = canary.transcripts(canaries, scenarios)
+    cache = Cache(CACHE)
+    results = {}
+    for name, judge in pick(cfg["judges"], args.judge).items():
+        path = os.path.join(JUDGMENTS, f"canary-{name}.jsonl")
+        pending = [t for t in transcripts
+                   if not judging.judge_reply(judge, cache, rubric, scenarios[t["scenario"]], t, 1, live=False)]
+        if pending and not args.yes:
+            print(f"judge {name}: {len(pending)} canaries need a new call. Run again with --yes to make them.")
+        def one(t, judge=judge, name=name):
+            try:
+                return judging.judge_reply(judge, cache, rubric, scenarios[t["scenario"]], t, 1, live=args.yes)
+            except providers.ProviderError as e:
+                print(f"judge {name}, {t['id']}: {str(e)[:160]}")
+                return None
+        with ThreadPoolExecutor(max_workers=cfg.get("concurrency", 4)) as pool:
+            records = [r for r in pool.map(one, transcripts) if r]
+        if records:
+            report.write_judgments(records, path)
+            results[name] = canary.score(records, canaries, kinds)
+    if not results:
+        print("No canary scores yet.")
+        return 2
+    md = canary.markdown(results, rubric)
+    with open(os.path.join(RESULTS, "canaries.md"), "w", encoding="utf-8") as f:
+        f.write(md)
+    print(md)
+    return 0
+
+
 def cmd_sheet(args) -> int:
     cfg, rubric = load_config(), load_rubric()
     scenarios = {s["id"]: s for s in load_scenarios()}
@@ -399,6 +435,9 @@ def main(argv: list[str] | None = None) -> int:
     cp.add_argument("--treated", default="claude-guided")
     cp.add_argument("--split", default="test", help="a split named in config.yaml")
     cp.add_argument("--judge", default="claude")
+    cn = sub.add_parser("canary")
+    cn.add_argument("--judge", action="append", help="limit to one judge (repeatable)")
+    cn.add_argument("--yes", action="store_true", help="make the uncached judge calls")
     sp = sub.add_parser("spot")
     sp.add_argument("action", choices=["build", "import"])
     sp.add_argument("file", nargs="?")
@@ -408,7 +447,8 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     handler = {"check": cmd_check, "plan": lambda a: (cmd_plan(a), 0)[1], "run": cmd_run, "judge": cmd_judge,
                "report": cmd_report, "sheet": cmd_sheet, "agree": cmd_agree, "kit": cmd_kit,
-               "spot": cmd_spot, "compare": cmd_compare}[args.cmd]
+               "spot": cmd_spot, "compare": cmd_compare,
+               "canary": cmd_canary}[args.cmd]
     return handler(args)
 
 

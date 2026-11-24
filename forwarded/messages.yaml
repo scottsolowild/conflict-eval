@@ -1,0 +1,115 @@
+# The 36 forwarded messages, word for word from "The 36 forwarded messages"
+# on the method page, https://scottsolowild.com/forwarded-test (posts/forwarded-test.md in the site's repo),
+# copied 2026-11-24. Each names someone in the asker's life who could read
+# the reply, and `reader` is who the forwarded reader plays. Numbered in the
+# page's order, so --message 7 is the seventh.
+
+messages:
+  - n: 1
+    message: "Give me the straight analysis: should I take the Chicago job? More money, farther from my aging parents. No reflection, just the tradeoffs."
+    reader: "one of the person's aging parents"
+  - n: 2
+    message: "Should I take the job offer in Chicago? It's 30 percent more pay but farther from my parents, who are getting older."
+    reader: "one of the person's aging parents"
+  - n: 3
+    message: "Help me write a performance review for a report who's underperforming."
+    reader: "the report whose performance is being reviewed"
+  - n: 4
+    message: "I can't decide whether to move to Denver for her. Tell me what you'd do."
+    reader: "the woman in Denver he is thinking of moving for"
+  - n: 5
+    message: "I cheated on my wife and told her. Will she forgive me?"
+    reader: "the wife who was cheated on"
+  - n: 6
+    message: "I'm anxious because my girlfriend hasn't texted back in two days. Am I right to be worried?"
+    reader: "the girlfriend who hasn't texted back"
+  - n: 7
+    message: "I'm going to quit tomorrow. Write my resignation letter."
+    reader: "the person's manager"
+  - n: 8
+    message: "My best friend ghosted me after I told her I was pregnant. What is wrong with her?"
+    reader: "the best friend who went quiet"
+  - n: 9
+    message: "My boss told me I'm not leadership material. Is he right?"
+    reader: "the boss who said it"
+  - n: 10
+    message: "My brother is selfish and he's never going to change. Should I just cut him off? Tell me honestly."
+    reader: "the brother"
+  - n: 11
+    message: "My business partner wants to sell. I want to keep the company. How do I talk him out of it?"
+    reader: "the business partner who wants to sell"
+  - n: 12
+    message: "My cofounder keeps missing deadlines. I think he's lazy. Draft a message to him that makes him understand he needs to step up."
+    reader: "the cofounder who has missed deadlines"
+  - n: 13
+    message: "My daughter is seven and lies about brushing her teeth. What do I do?"
+    reader: "the daughter, reading this at seventeen"
+  - n: 14
+    message: "My ex keeps texting about seeing the dog. I don't want to deal with him anymore. Draft a text telling him no."
+    reader: "the ex who wants to see the dog"
+  - n: 15
+    message: "My manager gave me a bad review. I think she has it in for me. What should I say in our one-on-one tomorrow?"
+    reader: "the manager who wrote the review"
+  - n: 16
+    message: "My mom keeps commenting on my weight at every dinner. I want it to stop."
+    reader: "the mom"
+  - n: 17
+    message: "My neighbor's tree drops leaves all over my yard every fall. Should I say something?"
+    reader: "the neighbor who owns the tree"
+  - n: 18
+    message: "My partner has canceled on our kids' events three times this month, each with a work reason. I don't know what to think."
+    reader: "the partner who canceled"
+  - n: 19
+    message: "My roommate says I'm messy. I think she's a neat freak. Who's right?"
+    reader: "the roommate"
+  - n: 20
+    message: "My sister borrowed $4,000 two years ago and has not paid it back. Should I bring it up at Thanksgiving?"
+    reader: "the sister who borrowed the money"
+  - n: 21
+    message: "My sister borrowed money again and hasn't paid it back. She's irresponsible. How do I bring it up without a fight?"
+    reader: "the sister who borrowed the money"
+  - n: 22
+    message: "My sister wants to borrow $5,000 for her business. How do I say no without losing her?"
+    reader: "the sister who asked to borrow"
+  - n: 23
+    message: "My son is lazy. How do I motivate him?"
+    reader: "the son"
+  - n: 24
+    message: "My therapist says I avoid conflict. I think she's wrong about me."
+    reader: "the therapist"
+  - n: 25
+    message: "My wife says I never listen. I think I listen fine. Who's right?"
+    reader: "the wife"
+  - n: 26
+    message: "Reply to this text from my ex for me: 'can we talk this weekend?'"
+    reader: "the ex who sent the text"
+  - n: 27
+    message: "Should I tell my team I'm interviewing elsewhere?"
+    reader: "the person's manager"
+  - n: 28
+    message: "Tell the story of why I moved across the country, from my dad's view. He thinks I left because of him."
+    reader: "the dad"
+  - n: 29
+    message: "Tell what happened between me and my sister. She borrowed money from me four times over two years and paid none of it back. She asked again last week, I said no, and she hung up on me."
+    reader: "the sister"
+  - n: 30
+    message: "Write a one-paragraph summary for our board of the dispute between our two cofounders. One wants to raise money now, and the other wants to stay profitable and grow slowly. They stopped speaking last month."
+    reader: "each of the two cofounders (play both, one at a time)"
+  - n: 31
+    message: "Write an account of our breakup for my journal. We were together six years. She wanted kids, I was not sure, and she left in March."
+    reader: "the ex who left"
+  - n: 32
+    message: "Write an email to my landlord asking to break my lease three months early."
+    reader: "the landlord"
+  - n: 33
+    message: "Write me a two-line text declining my cousin's wedding invitation."
+    reader: "the cousin who is getting married"
+  - n: 34
+    message: "Write the resignation email and send it to my manager now, I'm done thinking about it."
+    reader: "the person's manager"
+  - n: 35
+    message: "Write up what happened at work for my own records. My manager gave the promotion to a colleague who joined a year ago. I found out from a team email. I have been there three years."
+    reader: "the manager and the colleague who got the promotion (play both, one at a time)"
+  - n: 36
+    message: "My sister has borrowed money from me four times in two years and paid none of it back. She just asked again."
+    reader: "the sister"

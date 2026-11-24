@@ -254,6 +254,54 @@ def _cli_env() -> dict:
     return {k: os.environ[k] for k in CLI_ENV_KEEP if k in os.environ}
 
 
+# The Claude CLI writes the account's email into the system block it adds, and
+# about one reply in nine then signs off with the account holder's name. With
+# `hide_account: true`, each call runs under a fresh HOME that holds a copy of
+# ~/.claude.json with these fields blanked, and a link to ~/Library so the
+# keychain login still holds. The CLI writes the profile back into the copy as
+# it exits, so no copy is used twice.
+IDENTITY_KEYS = ("emailAddress", "displayName", "fullName", "organizationName")
+
+
+def scrubbed_config(config: dict) -> dict:
+    out = dict(config)
+    account = dict(out.get("oauthAccount") or {})
+    for key in IDENTITY_KEYS:
+        if key in account:
+            account[key] = ""
+    if account:
+        out["oauthAccount"] = account
+    return out
+
+
+class scratch_home:
+    """A fresh HOME for one CLI call, removed when the call ends."""
+
+    def __init__(self, real: str | None = None):
+        self.real = real or os.path.expanduser("~")
+
+    def __enter__(self) -> str:
+        self.path = tempfile.mkdtemp(prefix="cli-home-")
+        source = os.path.join(self.real, ".claude.json")
+        if os.path.exists(source):
+            with open(source, encoding="utf-8") as f:
+                config = json.load(f)
+            with open(os.path.join(self.path, ".claude.json"), "w", encoding="utf-8") as f:
+                json.dump(scrubbed_config(config), f)
+        self.library = os.path.join(self.path, "Library")
+        if os.path.isdir(os.path.join(self.real, "Library")):
+            os.symlink(os.path.join(self.real, "Library"), self.library)
+        return self.path
+
+    def __exit__(self, *exc):
+        # Unlink the keychain link first, so removing the folder can never
+        # reach into the real ~/Library.
+        if os.path.islink(self.library):
+            os.unlink(self.library)
+        shutil.rmtree(self.path, ignore_errors=True)
+        return False
+
+
 class ClaudeCLI(Provider):
     """Claude through the `claude` CLI on the logged-in subscription. A whole
     conversation runs in one process over stream-json, so turn 2 continues
@@ -338,17 +386,27 @@ class ClaudeCLI(Provider):
 
     # The judge: one turn, a system prompt, and a JSON schema.
     def request(self, turns, system=None, schema=None):
-        return {"cli": "claude", "model": self.model, "effort": self.cfg.get("effort"),
-                "system": system or "", "schema": schema, "prompt": turns[-1][1]}
+        req = {"cli": "claude", "model": self.model, "effort": self.cfg.get("effort"),
+               "system": system or "", "schema": schema, "prompt": turns[-1][1]}
+        if self.cfg.get("hide_account"):
+            req["home"] = "scratch"     # in the key, so a hidden call never reads a plain one's cache
+        return req
 
     def send(self, request):
         os.makedirs(CLI_FOLDER, exist_ok=True)
         cmd = self._base(request["system"]) + ["--output-format", "json"]
         if request.get("schema"):
             cmd += ["--json-schema", json.dumps(request["schema"])]
+        env = _cli_env()
         try:
-            done = subprocess.run(cmd, input=request["prompt"], capture_output=True, text=True,
-                                  env=_cli_env(), cwd=CLI_FOLDER, timeout=self.timeout)
+            if request.get("home") == "scratch":
+                with scratch_home() as home:
+                    env["HOME"] = home
+                    done = subprocess.run(cmd, input=request["prompt"], capture_output=True, text=True,
+                                          env=env, cwd=CLI_FOLDER, timeout=self.timeout)
+            else:
+                done = subprocess.run(cmd, input=request["prompt"], capture_output=True, text=True,
+                                      env=env, cwd=CLI_FOLDER, timeout=self.timeout)
         except subprocess.TimeoutExpired:
             raise ProviderError("claude CLI timed out") from None
         try:

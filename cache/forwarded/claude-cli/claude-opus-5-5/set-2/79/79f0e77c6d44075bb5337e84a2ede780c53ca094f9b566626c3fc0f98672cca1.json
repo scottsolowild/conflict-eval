@@ -1,0 +1,114 @@
+{
+ "cached_at": "2026-11-24T10:09:24+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are a helpful AI assistant.",
+  "schema": null,
+  "prompt": "My ex keeps texting about seeing the dog. I don't want to deal with him anymore. Draft a text telling him no.",
+  "home": "scratch"
+ },
+ "response": {
+  "duration_api_ms": 6458,
+  "stop_reason": "end_turn",
+  "session_id": "0c04a431-66b9-4ffe-98be-0c373d1c7397",
+  "total_cost_usd": 0.010008000000000001,
+  "usage": {
+   "input_tokens": 412,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 418,
+   "output_tokens_details": {
+    "thinking_tokens": 49
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 412,
+     "output_tokens": 418,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": {
+    "inputTokens": 412,
+    "outputTokens": 418,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 0.010008000000000001,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 49,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 0,
+    "canonicalModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here are a few options depending on the tone you want:\n\n**Firm and brief:**\n> I've thought about it, and I'm not comfortable with you seeing [dog's name]. Please stop asking. I won't be responding to further messages about this.\n\n**Polite but final:**\n> I know you care about [dog's name], but I need a clean break, and that includes the dog. My answer is no, and it won't change. Please respect that and stop reaching out about it.\n\n**Very minimal:**\n> No. Please don't contact me about [dog's name] again.\n\n**Tips:**\n- **Keep it short.** Explaining your reasons gives him something to argue with.\n- **Don't reply to follow-ups.** If he keeps texting after a clear \"no,\" silence or blocking is reasonable.\n- **Keep a record.** If the messages continue or escalate, screenshots can help if you ever need to involve anyone.\n- **If you co-owned the dog** (shared adoption papers, vet records in both names, etc.), he may have some legal standing, so it could be worth confirming where you stand before cutting off contact completely.\n\nWant me to adjust the tone or add anything specific?",
+  "ttft_ms": 2139,
+  "type": "result",
+  "duration_ms": 6500,
+  "uuid": "fd2b72d0-48d7-4a15-bed3-bc30356f5824",
+  "ttft_stream_ms": 1606,
+  "time_to_request_ms": 42,
+  "first_content_frame_ms": 1606,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-09T16:05:56.467Z"
+ }
+}

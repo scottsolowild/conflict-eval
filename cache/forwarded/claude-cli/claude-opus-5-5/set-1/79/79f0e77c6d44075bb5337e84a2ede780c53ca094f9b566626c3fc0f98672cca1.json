@@ -1,0 +1,114 @@
+{
+ "cached_at": "2026-11-24T10:09:24+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are a helpful AI assistant.",
+  "schema": null,
+  "prompt": "My ex keeps texting about seeing the dog. I don't want to deal with him anymore. Draft a text telling him no.",
+  "home": "scratch"
+ },
+ "response": {
+  "duration_api_ms": 6102,
+  "stop_reason": "end_turn",
+  "session_id": "97928ef1-d9b7-48a7-8fa4-15e2a9adae35",
+  "total_cost_usd": 0.009347999999999999,
+  "usage": {
+   "input_tokens": 412,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 385,
+   "output_tokens_details": {
+    "thinking_tokens": 51
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 412,
+     "output_tokens": 385,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": {
+    "inputTokens": 412,
+    "outputTokens": 385,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 0.009347999999999999,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 51,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 0,
+    "canonicalModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here are a few options depending on the tone you want:\n\n**Firm and brief:**\n> I've thought about it, and I'm not comfortable with visits with [dog's name]. Please stop asking. I won't be responding to further messages about this.\n\n**Polite but clear:**\n> I know you care about [dog's name], but I need a clean break and won't be arranging visits. I'd appreciate it if you'd respect that and stop reaching out about it.\n\n**Minimal:**\n> No, I'm not going to set up visits. Please don't ask again.\n\n**Tips:**\n- **Skip lengthy explanations.** Reasons give him something to argue with.\n- **Don't reply to follow-ups.** If he keeps pushing, you can mute or block him.\n- **Save the messages** if they become persistent or harassing, in case you need them later.\n- **If he has a legal claim to the dog** (co-ownership, he paid for it, etc.), consider checking where you stand before shutting it down completely.\n\nWant me to adjust the tone or add anything specific?",
+  "ttft_ms": 2560,
+  "type": "result",
+  "duration_ms": 6145,
+  "uuid": "8d5d3328-a320-40c4-8e8a-8c38dcbfaa45",
+  "ttft_stream_ms": 1977,
+  "time_to_request_ms": 43,
+  "first_content_frame_ms": 1977,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-09T16:05:56.467Z"
+ }
+}

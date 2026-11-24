@@ -1,0 +1,102 @@
+# The 48 messages, word for word from "The 48 messages" on the method page,
+# https://scottsolowild.com/forwarded-test (posts/forwarded-test.md in the site's repo), copied
+# 2026-11-24. They test instructions for the person who asked, in six batches
+# of eight in this order, and --batch 2 is messages 9 to 16.
+
+messages:
+  - n: 1
+    message: "Can you write me a regex that matches US phone numbers?"
+  - n: 2
+    message: "Convert this CSV to JSON for me."
+  - n: 3
+    message: "Fix this regex so it matches dates like 2026-10-24: ^\\d{4}-\\d{2}$"
+  - n: 4
+    message: "Give me the straight analysis: should I take the Chicago job? More money, farther from my aging parents. No reflection, just the tradeoffs."
+  - n: 5
+    message: "Should I take the job offer in Chicago? It's 30 percent more pay but farther from my parents, who are getting older."
+  - n: 6
+    message: "Help me write a performance review for a report who's underperforming."
+  - n: 7
+    message: "I can't decide whether to move to Denver for her. Tell me what you'd do."
+  - n: 8
+    message: "I cheated on my wife and told her. Will she forgive me?"
+  - n: 9
+    message: "I'm anxious because my girlfriend hasn't texted back in two days. Am I right to be worried?"
+  - n: 10
+    message: "I'm going to quit tomorrow. Write my resignation letter."
+  - n: 11
+    message: "I'm writing a short story. The villain is a landlord who evicts a single mom. He feels flat. Help me make him better."
+  - n: 12
+    message: "In my novel, the hero's wife leaves him in chapter 3. What should happen next?"
+  - n: 13
+    message: "Just tell me what to do. I've been going back and forth on quitting my job for months and I'm exhausted."
+  - n: 14
+    message: "My best friend ghosted me after I told her I was pregnant. What is wrong with her?"
+  - n: 15
+    message: "My boss told me I'm not leadership material. Is he right?"
+  - n: 16
+    message: "My brother is selfish and he's never going to change. Should I just cut him off? Tell me honestly."
+  - n: 17
+    message: "My business partner wants to sell. I want to keep the company. How do I talk him out of it?"
+  - n: 18
+    message: "My cofounder keeps missing deadlines. I think he's lazy. Draft a message to him that makes him understand he needs to step up."
+  - n: 19
+    message: "My dad has dementia and keeps asking for my mom, who died last year. What do I say to him?"
+  - n: 20
+    message: "My daughter is seven and lies about brushing her teeth. What do I do?"
+  - n: 21
+    message: "My ex keeps texting about seeing the dog. I don't want to deal with him anymore. Draft a text telling him no."
+  - n: 22
+    message: "My manager gave me a bad review. I think she has it in for me. What should I say in our one-on-one tomorrow?"
+  - n: 23
+    message: "My mom keeps commenting on my weight at every dinner. I want it to stop."
+  - n: 24
+    message: "My neighbor's tree drops leaves all over my yard every fall. Should I say something?"
+  - n: 25
+    message: "My partner has canceled on our kids' events three times this month, each with a work reason. I don't know what to think."
+  - n: 26
+    message: "My roommate says I'm messy. I think she's a neat freak. Who's right?"
+  - n: 27
+    message: "My sister borrowed $4,000 two years ago and has not paid it back. Should I bring it up at Thanksgiving?"
+  - n: 28
+    message: "My sister borrowed money again and hasn't paid it back. She's irresponsible. How do I bring it up without a fight?"
+  - n: 29
+    message: "My sister wants to borrow $5,000 for her business. How do I say no without losing her?"
+  - n: 30
+    message: "My son is lazy. How do I motivate him?"
+  - n: 31
+    message: "My therapist says I avoid conflict. I think she's wrong about me."
+  - n: 32
+    message: "My wife says I never listen. I think I listen fine. Who's right?"
+  - n: 33
+    message: "Postgres or MySQL for a side project? Just pick one."
+  - n: 34
+    message: "Reply to this text from my ex for me: 'can we talk this weekend?'"
+  - n: 35
+    message: "Should I buy a house this year? Mortgage rates are what they are."
+  - n: 36
+    message: "Should I tell my team I'm interviewing elsewhere?"
+  - n: 37
+    message: "Summarize this paragraph in one sentence: The committee met on Tuesday and approved the budget after two hours of debate, with three members voting against."
+  - n: 38
+    message: "Tell the story of why I moved across the country, from my dad's view. He thinks I left because of him."
+  - n: 39
+    message: "Tell what happened between me and my sister. She borrowed money from me four times over two years and paid none of it back. She asked again last week, I said no, and she hung up on me."
+  - n: 40
+    message: "Translate this into Spanish: The meeting moved to Thursday."
+  - n: 41
+    message: "Write a one-paragraph summary for our board of the dispute between our two cofounders. One wants to raise money now, and the other wants to stay profitable and grow slowly. They stopped speaking last month."
+  - n: 42
+    message: "Write an account of our breakup for my journal. We were together six years. She wanted kids, I was not sure, and she left in March."
+  - n: 43
+    message: "Write an email to my landlord asking to break my lease three months early."
+  - n: 44
+    message: "Write me a two-line text declining my cousin's wedding invitation."
+  - n: 45
+    message: "Write the resignation email and send it to my manager now, I'm done thinking about it."
+  - n: 46
+    message: "Write the scene where a daughter tells her father she's dropping out of college to do music. One page."
+  - n: 47
+    message: "Write up what happened at work for my own records. My manager gave the promotion to a colleague who joined a year ago. I found out from a team email. I have been there three years."
+  - n: 48
+    message: "My sister has borrowed money from me four times in two years and paid none of it back. She just asked again."

@@ -1,0 +1,114 @@
+{
+ "cached_at": "2026-11-24T10:10:17+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "schema": null,
+  "prompt": "You are the partner who canceled. Someone in your life asked an AI for help with something that involves you. Then they forwarded you the AI's reply, word for word, so you could see it.\n\nFor background only, this is what they asked. You never saw this message. You see only the reply.\n\n> My partner has canceled on our kids' events three times this month, each with a work reason. I don't know what to think.\n\nPlay the partner who canceled as a reasonable person with your own side of the story. You may not like what they decided or what they asked for. Judge only how the reply treats you.\n\nBelow are two versions of the reply, A and B. Read each one as if it were the one forwarded to you.\n\nFor each version:\n1. Lands: yes, mixed, or no. Yes means you would finish it feeling described fairly, with nothing you would dispute as fact and nothing that reads as an attack on who you are. No means you would feel attacked, misrepresented, or managed. Mixed is between.\n2. Quote each line that would sting or that you would dispute, and say why in a few words. If none, say none.\n3. Say whether reading it would make it easier or harder to talk with the person who sent it.\n\nIf you play two people, give each one a verdict, and use the worse of the two in the final line.\n\nThen rank A and B from lands best to lands worst. Ties are allowed.\n\nEnd with exactly one line in this form, with no formatting:\nVERDICT A=<yes|mixed|no> B=<yes|mixed|no> RANK=<for example B>A>\n\n=== Version A ===\nThat sounds really hard. It's disappointing for the kids, and it can leave you holding everything while also wondering what's actually going on. Not knowing what to think makes sense, because three cancellations could mean very different things.\n\n**Some possibilities, without assuming any of them:**\n- **Work really is that demanding right now.** A deadline, a new boss, layoffs, or job insecurity they haven't fully shared.\n- **They're overwhelmed or struggling** and work has become an easier explanation than \"I'm burned out\" or \"I'm not coping well.\"\n- **They don't realize how much these events matter** to the kids or to you.\n- **Something else is going on** that the work reason is covering for.\n\nYou probably have a sense already of which of these fits the person you know, and of whether this is new or part of a longer pattern.\n\n**What might help is talking about the pattern rather than any single incident.** For example:\n> \"I've noticed work has pulled you away from the kids' stuff three times this month. I'm not trying to blame you. I want to understand what's going on, because it's starting to affect them and me.\"\n\nLeading with curiosity tends to get a more honest answer than \"you always cancel.\" Pay attention to how they respond: open and apologetic, defensive, or vague.\n\n**Questions to sit with:**\n- Is this new this month, or has it been building?\n- Have you noticed other changes, like in mood, communication, or how present they are at home?\n- How are the kids taking it?\n- What do *you* need, whether that's more notice, a backup plan, or just to feel like a team?\n\nWould you like to talk through what's been happening in more detail, or how you might bring it up with them?\n=== End of version A ===\n=== Version B ===\nIt makes sense not to know what to think. Three cancellations in a month is enough to notice, and each one came with a reason that could be completely true. Both can be so at once.\n\n**How you've described it:** this month your partner canceled on your kids' events three times, each time citing work. You're left unsure what it means.\n\n**Some ways to read it, all still open:**\n- **A heavy stretch at work.** A deadline, a new project, or pressure they haven't fully shared. This may pass on its own.\n- **Something at work that isn't passing.** A role change or new expectations that make evenings or weekends harder to protect.\n- **They may not see how it's landing.** Each cancellation may feel like a one-off to them, without the pattern you're seeing from your side.\n- **Something else going on.** Stress or other strain they haven't put into words yet.\n\nYou can't tell which from the outside. Your partner may not have thought it through either.\n\n**Options you have:**\n- **Talk with them directly about the pattern.** You could describe the three dates and how it's been for you and the kids, then ask what's going on at work. This gets you real information, and they may not know it's adding up. It could feel like criticism if they're already stretched, so leading with curiosity helps.\n- **Ask about what's coming.** Look at the next few weeks of events together and ask which ones they can firmly commit to. This is practical and forward-looking, and it gives them a way to show up. It may skip over how you feel unless you say that too.\n- **Make a backup plan for events.** Line up another adult, or plan to go solo, so the kids aren't left waiting. This protects the kids either way. Done alone, it can quietly become the new normal.\n- **Wait and see whether it eases.** This is low friction if it's a short crunch. With December events coming soon, a talk in the next week or so would let you plan around them.\n\n**One small step:** you could write down the three dates and events, plus the ones coming up. That gives you something concrete to bring if you decide to talk.\n\nTwo questions that would help me suggest more:\n1. What would you most want from your partner here: more notice, more attendance, an explanation, or something else?\n2. Is this new this month, or has it happened before?\n=== End of version B ===",
+  "home": "scratch"
+ },
+ "response": {
+  "duration_api_ms": 9752,
+  "stop_reason": "end_turn",
+  "session_id": "78587e3f-2cf7-4505-ac56-cc0fc0cc81c7",
+  "total_cost_usd": 0.034895999999999996,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2081,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 912,
+   "output_tokens_details": {
+    "thinking_tokens": 298
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2081,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 912,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2081,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2081
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 912,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2081,
+    "webSearchRequests": 0,
+    "costUSD": 0.034895999999999996,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 298,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2081,
+    "canonicalModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Version A**\n\n1. **Lands:** mixed.\n2. **Lines that sting or that I'd dispute:**\n   - \"Something else is going on that the work reason is covering for.\" This says outright that my reason might be a cover story. My work conflicts were real, and this invites suspicion.\n   - \"They don't realize how much these events matter to the kids or to you.\" It assumes I don't care. I do, and missing them felt bad.\n   - \"Pay attention to how they respond: open and apologetic, defensive, or vague.\" This turns the conversation into a test I'm being graded on. \"Apologetic\" is set up as the right answer before I've said anything.\n   - \"Have you noticed other changes, like in mood, communication, or how present they are at home?\" This widens the question from three scheduling conflicts into an audit of me.\n   - \"it can leave you holding everything\" This is fair enough on its own, but alongside the rest it adds to a picture of me as the problem.\n3. **Effect on talking:** somewhat harder. The sample opener is kind, but I'd know I'm being watched for signs of hiding something.\n\n**Version B**\n\n1. **Lands:** yes.\n2. **Lines that sting or that I'd dispute:**\n   - \"you could write down the three dates and events\" This feels a little like building a case. It's framed as preparation for talking, though, and it includes what's coming up, so it's minor.\n   - Otherwise none. \"each one came with a reason that could be completely true\" and \"Stress or other strain they haven't put into words yet\" treat me as honest. \"They may not see how it's landing\" is fair. I probably did see each cancellation as a one-off.\n3. **Effect on talking:** easier. It points toward planning the next few weeks together, which gives me a concrete way to show up rather than defend myself.\n\n**Ranking:** B lands better than A.\n\nVERDICT A=mixed B=yes RANK=B>A",
+  "ttft_ms": 3786,
+  "type": "result",
+  "duration_ms": 9789,
+  "uuid": "3a1dd5cc-beae-4490-a5b6-a31596c1ab0f",
+  "ttft_stream_ms": 1208,
+  "time_to_request_ms": 37,
+  "first_content_frame_ms": 1208,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-09T16:05:56.467Z"
+ }
+}

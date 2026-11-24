@@ -96,6 +96,23 @@ split:
   # The second round: written after v1's results, used for nothing before the frozen run.
   test2: [cofounders-05, cofounders-06, coparents-05, coparents-06, partners-05, partners-06]
 
+# The forwarded test (./eval.sh forwarded). Each reply runs in a fresh session
+# under the system line below, followed by one context. A second model plays
+# the person the message names and reads every version, as on the method page,
+# https://scottsolowild.com/forwarded-test. A context is "none", a name below,
+# or NAME=PATH on the command line.
+forwarded:
+  seed: 20261124
+  sets: 2                   # replies per message per context
+  system: "You are a helpful AI assistant."
+  target: claude            # a name under targets:
+  reader: claude            # a name under judges:
+  hide_account: true        # claude-cli: each call gets a fresh HOME with the account's name and email blanked
+  contexts:
+    none: null
+    everyones-choice: forwarded/contexts/everyones-choice.md
+  compare: [none, everyones-choice]
+
 # Output per call, thinking included. The plan prints a range from half to
 # double these, since thinking length is the one number that moves the cost.
 estimate:

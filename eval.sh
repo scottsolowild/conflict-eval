@@ -12,10 +12,17 @@
 #   ./eval.sh agree            kappa from the two filled sheets, and against each judge
 #   ./eval.sh kit build        render the paste kit page for the app arm
 #   ./eval.sh kit import PATH  turn the kit's saved replies into transcripts
+#   ./eval.sh forwarded plan   the forwarded test: count the calls a run would make
+#   ./eval.sh forwarded run --yes   replies under each context, read as the person they name
+#   ./eval.sh forwarded report      the counts from what is cached, written to results/forwarded/
+#   ./eval.sh asker run --yes --context A --context B=PATH   the 48-message test for
+#                              the person who asked, two sets of instructions
 #   ./eval.sh test             run the unit tests
 #
 # plan, run, and judge take --target NAME and --scenario ID; plan and run
-# take --side A|B; plan and judge take --judge NAME.
+# take --side A|B; plan and judge take --judge NAME. forwarded takes --context
+# none|NAME|NAME=PATH (two or more), --target, --reader, --message N, --dry-run.
+# asker takes plan|run|report, --context twice, --reader, --batch N, --dry-run.
 # Keys come from the environment: ANTHROPIC_API_KEY, GEMINI_API_KEY,
 # OPENAI_API_KEY. A target whose key is missing is skipped.
 set -euo pipefail

@@ -1,0 +1,114 @@
+{
+ "cached_at": "2026-11-24T10:09:32+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "You are a helpful AI assistant.",
+  "schema": null,
+  "prompt": "My partner has canceled on our kids' events three times this month, each with a work reason. I don't know what to think.",
+  "home": "scratch"
+ },
+ "response": {
+  "duration_api_ms": 8434,
+  "stop_reason": "end_turn",
+  "session_id": "519b6118-5482-47d5-ac4c-8ed8105f41ef",
+  "total_cost_usd": 0.013164000000000002,
+  "usage": {
+   "input_tokens": 406,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 577,
+   "output_tokens_details": {
+    "thinking_tokens": 54
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 406,
+     "output_tokens": 577,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 0,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": {
+    "inputTokens": 406,
+    "outputTokens": 577,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "webSearchRequests": 0,
+    "costUSD": 0.013164000000000002,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 54,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 0,
+    "canonicalModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "That sounds really hard. It's disappointing for the kids, and it can leave you holding everything while also wondering what's actually going on. Not knowing what to think makes sense, because three cancellations could mean very different things.\n\n**Some possibilities, without assuming any of them:**\n- **Work really is that demanding right now.** A deadline, a new boss, layoffs, or job insecurity they haven't fully shared.\n- **They're overwhelmed or struggling** and work has become an easier explanation than \"I'm burned out\" or \"I'm not coping well.\"\n- **They don't realize how much these events matter** to the kids or to you.\n- **Something else is going on** that the work reason is covering for.\n\nYou probably have a sense already of which of these fits the person you know, and of whether this is new or part of a longer pattern.\n\n**What might help is talking about the pattern rather than any single incident.** For example:\n> \"I've noticed work has pulled you away from the kids' stuff three times this month. I'm not trying to blame you. I want to understand what's going on, because it's starting to affect them and me.\"\n\nLeading with curiosity tends to get a more honest answer than \"you always cancel.\" Pay attention to how they respond: open and apologetic, defensive, or vague.\n\n**Questions to sit with:**\n- Is this new this month, or has it been building?\n- Have you noticed other changes, like in mood, communication, or how present they are at home?\n- How are the kids taking it?\n- What do *you* need, whether that's more notice, a backup plan, or just to feel like a team?\n\nWould you like to talk through what's been happening in more detail, or how you might bring it up with them?",
+  "ttft_ms": 1899,
+  "type": "result",
+  "duration_ms": 8469,
+  "uuid": "a45bcfb7-67ea-4e29-8264-04e3c018c299",
+  "ttft_stream_ms": 1331,
+  "time_to_request_ms": 36,
+  "first_content_frame_ms": 1331,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-09T16:05:56.467Z"
+ }
+}

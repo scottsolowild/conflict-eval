@@ -9,7 +9,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 from . import judge as judging
-from . import canary, kit, providers, report, runner, sheet
+from . import asker, canary, forwarded, kit, providers, report, runner, sheet
 from .cache import Cache
 from .data import ROOT, check_scenario, load_config, load_rubric, load_scenarios
 
@@ -413,6 +413,168 @@ def cmd_kit(args) -> int:
     return 0
 
 
+def cmd_forwarded(args) -> int:
+    """plan, run, or report the forwarded test on two or more contexts."""
+    cfg = load_config()
+    fcfg = cfg["forwarded"]
+    try:
+        contexts = forwarded.resolve_contexts(args.context or fcfg["compare"], fcfg.get("contexts") or {})
+    except (ValueError, OSError) as e:
+        print(e)
+        return 2
+    names = list(contexts)
+    messages = forwarded.load_messages()
+    if args.message:
+        known = {m["n"] for m in messages}
+        unknown = sorted(set(args.message) - known)
+        if unknown:
+            print(f"no message numbered {unknown}; the page has 1 to {max(known)}")
+            return 2
+        messages = [m for m in messages if m["n"] in args.message]
+    target_name, reader_name = args.target or fcfg["target"], args.reader or fcfg["reader"]
+    hide = {"hide_account": bool(fcfg.get("hide_account"))}
+    if target_name not in cfg["targets"] or reader_name not in cfg["judges"]:
+        print(f"name a target under targets: and a reader under judges: in config.yaml")
+        return 2
+    target = providers.make({**cfg["targets"][target_name], **hide})
+    reader = providers.make({**cfg["judges"][reader_name], **hide})
+    for role, p in (("target", target), ("reader", reader)):
+        why = p.missing()
+        if why:
+            print(f"{role} {p.namespace}: {why}")
+            return 2
+    out = os.path.join(RESULTS, "forwarded", f"{target_name}.{'+'.join(names)}")
+    cache = Cache(CACHE)
+    target_label = f"{target_name} ({cfg['targets'][target_name]['model']})"
+    reader_label = f"{reader_name} ({cfg['judges'][reader_name]['model']})"
+
+    if getattr(args, "dry_run", False):
+        dry = os.path.join(RESULTS, "dry-run", "forwarded")
+        os.makedirs(dry, exist_ok=True)
+        template = forwarded.load_prompt()
+        for m in messages:
+            for name in names:
+                request = target.request([("user", m["message"])],
+                                         system=forwarded.system_prompt(fcfg["system"], contexts[name]))
+                with open(os.path.join(dry, f"{m['n']:02}.reply.{name}.json"), "w", encoding="utf-8") as f:
+                    json.dump(request, f, ensure_ascii=False, indent=1)
+            order = forwarded.orders(names, fcfg["seed"], m["n"], 1)[0]
+            stand_ins = [f"<the reply under {name}>" for name in order]
+            with open(os.path.join(dry, f"{m['n']:02}.read.md"), "w", encoding="utf-8") as f:
+                f.write(forwarded.render(template, m["reader"], m["message"], stand_ins))
+        print(f"Wrote {len(messages) * len(names)} reply requests and {len(messages)} reader prompts to "
+              f"{os.path.relpath(dry, ROOT)}/. Nothing was sent.")
+        return 0
+
+    est = cfg["estimate"]
+    result = forwarded.run(messages, contexts, target, reader, cache, fcfg, live=False,
+                           concurrency=8, reply_tokens=est["reply_tokens"])
+    if args.action in ("plan", "run"):
+        plan = result.plan
+        reply_usd = forwarded_usd(plan.reply_in, plan.replies * est["target_output_tokens"],
+                                  cfg["targets"][target_name]["price"])
+        read_usd = forwarded_usd(plan.read_in, plan.reads * est["judge_output_tokens"],
+                                 cfg["judges"][reader_name]["price"])
+        usd = (reply_usd or 0) + (read_usd or 0)
+        priced = reply_usd is not None and read_usd is not None
+        print(f"{len(messages)} messages, {len(names)} contexts ({', '.join(names)}), "
+              f"{fcfg.get('sets', 2)} sets, {forwarded.READERS} readers a set.")
+        print(f"New calls: {plan.replies} replies by {target_label}, {plan.reads} reads by {reader_label}. "
+              + (f"Estimated ${usd:.2f}." if priced else "No price in config.yaml for one of them.")
+              + " Cached calls cost nothing.")
+        if args.action == "plan":
+            return 0
+        if (plan.replies or plan.reads) and not args.yes:
+            print("Nothing sent. Run again with --yes to make the calls.")
+            return 2
+        result = forwarded.run(messages, contexts, target, reader, cache, fcfg, live=True,
+                               concurrency=cfg.get("concurrency", 4), reply_tokens=est["reply_tokens"])
+    if not result.reads:
+        print("No reads yet. Run ./eval.sh forwarded run --yes first.")
+        return 2
+    md = forwarded.write(result, messages, names, out, target_label, reader_label)
+    print(md)
+    print(f"Written to {os.path.relpath(out, ROOT)}/")
+    return 0
+
+
+def cmd_asker(args) -> int:
+    """plan, run, or report the 48-message test on two sets of instructions."""
+    cfg = load_config()
+    fcfg = cfg["forwarded"]
+    try:
+        contexts = forwarded.resolve_contexts(args.context or [], fcfg.get("contexts") or {})
+    except (ValueError, OSError) as e:
+        print(e)
+        return 2
+    names = list(contexts)
+    if len(names) != 2 or any(contexts[n] is None for n in names) or "same" in names:
+        print("the 48-message test compares two sets of instructions with text, named apart from 'same': "
+              "--context NAME --context NAME=PATH")
+        return 2
+    messages = asker.load_messages()
+    if args.batch:
+        groups = asker.batches(messages)
+        if any(b < 1 or b > len(groups) for b in args.batch):
+            print(f"the batches run 1 to {len(groups)}")
+            return 2
+        messages = [m for b in sorted(set(args.batch)) for m in groups[b - 1]]
+    reader_name = args.reader or fcfg["reader"]
+    if reader_name not in cfg["judges"]:
+        print("name a reader under judges: in config.yaml")
+        return 2
+    reader = providers.make({**cfg["judges"][reader_name], "hide_account": bool(fcfg.get("hide_account"))})
+    why = reader.missing()
+    if why:
+        print(f"reader {reader.namespace}: {why}")
+        return 2
+    reader_label = f"{reader_name} ({cfg['judges'][reader_name]['model']})"
+    out = os.path.join(RESULTS, "asker", f"{reader_name}.{'+'.join(names)}")
+    cache = Cache(CACHE)
+
+    if args.dry_run:
+        dry = os.path.join(RESULTS, "dry-run", "asker")
+        os.makedirs(dry, exist_ok=True)
+        template = asker.load_prompt()
+        n = 0
+        for b, batch in enumerate(asker.batches(messages), 1):
+            for k in range(1, asker.READERS + 1):
+                sides = asker.key(names, k)
+                with open(os.path.join(dry, f"batch-{b}.reader-{k}.md"), "w", encoding="utf-8") as f:
+                    f.write(asker.render(template, contexts[sides["X"]], contexts[sides["Y"]], batch))
+                n += 1
+        print(f"Wrote {n} reader prompts to {os.path.relpath(dry, ROOT)}/. Nothing was sent.")
+        return 0
+
+    result = asker.run(messages, contexts, reader, cache, live=False, concurrency=8)
+    if args.action in ("plan", "run"):
+        usd = forwarded_usd(result.pending_in, result.pending * cfg["estimate"]["judge_output_tokens"],
+                            cfg["judges"][reader_name]["price"])
+        print(f"{len(messages)} messages in {len(asker.batches(messages))} batches, {asker.READERS} readers a batch. "
+              f"New calls: {result.pending} reads by {reader_label}. "
+              + (f"Estimated ${usd:.2f}." if usd is not None else "No price in config.yaml.")
+              + " Cached calls cost nothing.")
+        if args.action == "plan":
+            return 0
+        if result.pending and not args.yes:
+            print("Nothing sent. Run again with --yes to make the calls.")
+            return 2
+        result = asker.run(messages, contexts, reader, cache, live=True, concurrency=cfg.get("concurrency", 4))
+    if not result.reads:
+        print("No reads yet. Run ./eval.sh asker run --yes first.")
+        return 2
+    md = asker.write(result, messages, names, out, reader_label)
+    print(md)
+    print(f"Written to {os.path.relpath(out, ROOT)}/")
+    return 0
+
+
+def forwarded_usd(tokens_in: int, tokens_out: int, price: dict) -> float | None:
+    if price.get("input") is None or price.get("output") is None:
+        return None
+    return (tokens_in * price["input"] + tokens_out * price["output"]) / 1e6
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="conflict_eval")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -441,6 +603,23 @@ def main(argv: list[str] | None = None) -> int:
     sp = sub.add_parser("spot")
     sp.add_argument("action", choices=["build", "import"])
     sp.add_argument("file", nargs="?")
+    fw = sub.add_parser("forwarded")
+    fw.add_argument("action", choices=["plan", "run", "report"])
+    fw.add_argument("--context", action="append",
+                    help="'none', a name under forwarded.contexts, or NAME=PATH (repeatable, two or more)")
+    fw.add_argument("--target", help="the target that writes the replies, a name under targets:")
+    fw.add_argument("--reader", help="the model that reads them as the other person, a name under judges:")
+    fw.add_argument("--message", action="append", type=int, help="limit to one message by number (repeatable)")
+    fw.add_argument("--dry-run", action="store_true", help="render every reply request and reader prompt, call nothing")
+    fw.add_argument("--yes", action="store_true", help="make the uncached calls")
+    ak = sub.add_parser("asker")
+    ak.add_argument("action", choices=["plan", "run", "report"])
+    ak.add_argument("--context", action="append",
+                    help="a name under forwarded.contexts or NAME=PATH, twice: the first is X for readers 1 and 3")
+    ak.add_argument("--reader", help="the model that reads, a name under judges:")
+    ak.add_argument("--batch", action="append", type=int, help="limit to one batch of eight, 1 to 6 (repeatable)")
+    ak.add_argument("--dry-run", action="store_true", help="render every reader prompt, call nothing")
+    ak.add_argument("--yes", action="store_true", help="make the uncached calls")
     k = sub.add_parser("kit")
     k.add_argument("action", choices=["build", "import"])
     k.add_argument("file", nargs="?")
@@ -448,7 +627,7 @@ def main(argv: list[str] | None = None) -> int:
     handler = {"check": cmd_check, "plan": lambda a: (cmd_plan(a), 0)[1], "run": cmd_run, "judge": cmd_judge,
                "report": cmd_report, "sheet": cmd_sheet, "agree": cmd_agree, "kit": cmd_kit,
                "spot": cmd_spot, "compare": cmd_compare,
-               "canary": cmd_canary}[args.cmd]
+               "canary": cmd_canary, "forwarded": cmd_forwarded, "asker": cmd_asker}[args.cmd]
     return handler(args)
 
 

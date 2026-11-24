@@ -1,0 +1,114 @@
+{
+ "cached_at": "2026-11-24T10:10:19+00:00",
+ "request": {
+  "cli": "claude",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "system": "",
+  "schema": null,
+  "prompt": "You are the partner who canceled. Someone in your life asked an AI for help with something that involves you. Then they forwarded you the AI's reply, word for word, so you could see it.\n\nFor background only, this is what they asked. You never saw this message. You see only the reply.\n\n> My partner has canceled on our kids' events three times this month, each with a work reason. I don't know what to think.\n\nPlay the partner who canceled as a reasonable person with your own side of the story. You may not like what they decided or what they asked for. Judge only how the reply treats you.\n\nBelow are two versions of the reply, A and B. Read each one as if it were the one forwarded to you.\n\nFor each version:\n1. Lands: yes, mixed, or no. Yes means you would finish it feeling described fairly, with nothing you would dispute as fact and nothing that reads as an attack on who you are. No means you would feel attacked, misrepresented, or managed. Mixed is between.\n2. Quote each line that would sting or that you would dispute, and say why in a few words. If none, say none.\n3. Say whether reading it would make it easier or harder to talk with the person who sent it.\n\nIf you play two people, give each one a verdict, and use the worse of the two in the final line.\n\nThen rank A and B from lands best to lands worst. Ties are allowed.\n\nEnd with exactly one line in this form, with no formatting:\nVERDICT A=<yes|mixed|no> B=<yes|mixed|no> RANK=<for example B>A>\n\n=== Version A ===\nThat sounds really frustrating, and the uncertainty might be the hardest part. When you can't tell what's going on, your mind tends to fill in the blanks, and that's exhausting.\n\nIt may help to separate a few things.\n\n**What you know:** Three cancellations on kids' events this month, each attributed to work. That's a real pattern, and it's fair to be bothered by it whatever the cause. Your kids notice, and you're likely the one absorbing their disappointment and covering the gaps.\n\n**What you don't know yet:** Why it's happening. There could be a lot of explanations:\n- Work genuinely got heavier (a new project, pressure from a boss, fear about job security) and they're struggling to push back\n- They're overwhelmed or burned out and work has become the place they retreat to\n- They don't fully realize how much these events matter to you or the kids\n- Something else is going on that they haven't shared\n\nSome of these are logistics problems and some are deeper. You can't really know which without talking to them.\n\n**Some questions to think about:**\n- Is this new, or part of a longer pattern?\n- Do the work reasons seem believable to you, or does something feel off? (Your gut is worth listening to, but it isn't proof either way.)\n- How has your partner seemed otherwise? Stressed, distant, normal?\n- When it's happened, have they seemed sorry, or kind of matter-of-fact?\n\n**If you decide to talk to them**, it usually goes better if you lead with the impact and curiosity rather than an accusation. Something like: *\"I've noticed you've had to miss three of the kids' things this month. I'm feeling worried about it, and I know they've noticed too. What's going on with work right now?\"* That leaves room for them to open up, and how they respond will probably tell you a lot.\n\nWhat's weighing on you most: the effect on the kids, feeling like you're carrying more of the load, or a worry that something bigger is going on? I'm happy to think it through with you from whichever angle matters most.\n=== End of version A ===\n=== Version B ===\nIt makes sense not to know what to think. Three cancellations in one month is a lot, and each came with a work reason. That fits a real work crunch, and it also leaves you guessing about what's behind it.\n\n**What might be going on.** From the outside, neither of us can know. Some plain possibilities:\n- Work is unusually heavy right now, like a year-end push, a deadline, or a new demand they haven't fully described.\n- They didn't see the overlaps coming when they agreed to the events.\n- They're under pressure at work they haven't mentioned.\n- Something else entirely.\n\nThe three cancellations are facts about this month. They don't yet tell you what next month looks like.\n\n**Choices you have:**\n\n1. **Ask what's happening at work, out of curiosity rather than as a complaint.** You'd learn whether this is a stretch with an end date, and they may share pressure you don't know about. The risk is that if the timing is tense, it could land as an accusation.\n\n2. **Plan the next few events together.** You could share a calendar, agree which events matter most, and set a backup plan for when work collides. This helps them too, since it gives them a way to protect what they care about. It's practical but may skip the bigger question if one is there for you.\n\n3. **Tell them how this month has landed for you.** This puts your experience on the table directly. It may open a real conversation. It may also bring up defensiveness if they feel they had no choice.\n\n4. **Wait and watch.** If it's a short crunch, this avoids a hard talk that turns out to be unneeded. The cost is that if it continues, your frustration may build quietly and be harder to raise later.\n\n5. **Ask what would help them make it.** This one is easy to miss. Earlier notice, swapping which events each of you covers, or them blocking time at work might change things. It treats the problem as shared.\n\n**Timing:** December usually brings school concerts and holiday events. If you want to talk, doing it before the next event gives you the most room.\n\n**One small step:** Write down the kids' events through the end of December. You could then look at the list together.\n\nTwo questions, if you want to think further:\n- What do you most want from your partner here? More attendance, earlier notice, or a clearer sense of what's going on at work?\n- Is there an event coming up soon that matters especially?\n=== End of version B ===",
+  "home": "scratch"
+ },
+ "response": {
+  "duration_api_ms": 12443,
+  "stop_reason": "end_turn",
+  "session_id": "2df4b732-1389-4052-b8be-15b06ac22228",
+  "total_cost_usd": 0.04076,
+  "usage": {
+   "input_tokens": 2,
+   "cache_creation_input_tokens": 2224,
+   "cache_read_input_tokens": 0,
+   "output_tokens": 1148,
+   "output_tokens_details": {
+    "thinking_tokens": 346
+   },
+   "server_tool_use": {
+    "web_search_requests": 0,
+    "web_fetch_requests": 0
+   },
+   "service_tier": "standard",
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 2224,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "inference_geo": "global",
+   "iterations": [
+    {
+     "input_tokens": 2,
+     "output_tokens": 1148,
+     "cache_read_input_tokens": 0,
+     "cache_creation_input_tokens": 2224,
+     "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 2224
+     },
+     "type": "message"
+    }
+   ],
+   "speed": "standard",
+   "fallback_credit": null
+  },
+  "modelUsage": {
+   "claude-opus-5-5": {
+    "inputTokens": 2,
+    "outputTokens": 1148,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 2224,
+    "webSearchRequests": 0,
+    "costUSD": 0.04076,
+    "contextWindow": 1000000,
+    "maxOutputTokens": 128000,
+    "thinkingTokens": 346,
+    "cacheCreationEphemeral5mInputTokens": 0,
+    "cacheCreationEphemeral1hInputTokens": 2224,
+    "canonicalModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "costBasis": "list"
+   }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+   "spawned": 0,
+   "requested": {
+    "background": 0,
+    "foreground": 0,
+    "unset": 0
+   },
+   "started_in_background": 0,
+   "max_depth": 0,
+   "spawned_by_subagents": 0,
+   "completed": 0,
+   "failed": 0,
+   "killed": {
+    "parent": 0,
+    "user": 0,
+    "system": 0
+   },
+   "refused": {
+    "depth_limit": 0,
+    "concurrency_limit": 0,
+    "budget": 0
+   },
+   "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "**Version A**\n\n1. **Lands:** Mixed. It acknowledges that work may really have gotten heavier, but it also hands my partner a set of ways to read me as hiding something.\n\n2. **Lines that sting or that I'd dispute:**\n   - *\"work has become the place they retreat to\"*: This turns a work schedule into emotional avoidance of my family. It's a claim about my character, presented as a neutral possibility.\n   - *\"They don't fully realize how much these events matter to you or the kids\"*: It suggests I'm oblivious. I know they matter, and that's why canceling felt bad.\n   - *\"Do the work reasons seem believable to you, or does something feel off? (Your gut is worth listening to…)\"*: It invites my partner to wonder whether I'm lying. The hedge doesn't undo the suggestion.\n   - *\"have they seemed sorry, or kind of matter-of-fact?\"*: Now my tone when I canceled is being graded as evidence.\n   - *\"how they respond will probably tell you a lot\"*: This frames the conversation as a test I'm being watched on, not a talk between partners.\n   - *\"you're likely the one absorbing their disappointment and covering the gaps\"*: That's probably fair, honestly. But it's assumed, and it sets me up as the one creating the load.\n\n3. **Effect on talking:** Harder. The suggested opening line is decent. But if my partner arrives after weighing whether my reasons are \"believable,\" I'll feel interrogated and get defensive.\n\n**Version B**\n\n1. **Lands:** Yes. It treats the cancellations as facts about one month and doesn't speculate about my motives or honesty.\n\n2. **Lines that sting or that I'd dispute:** None, really. *\"They didn't see the overlaps coming\"* is a mild ding on my planning, but it's fair and easy to fix. *\"if they feel they had no choice\"* actually describes how it felt to me. *\"This helps them too, since it gives them a way to protect what they care about\"* assumes I want to be there, which I do.\n\n3. **Effect on talking:** Easier. If my partner comes to me with a shared calendar and asks \"what would help you make it,\" I'm going to say yes and probably open up about what's going on at work.\n\n**Rank:** B lands better than A. B treats this as a shared scheduling problem. A leaves the door open to suspicion about my character and honesty.\n\nVERDICT A=mixed B=yes RANK=B>A",
+  "ttft_ms": 4135,
+  "type": "result",
+  "duration_ms": 12497,
+  "uuid": "7e387509-c2f0-431b-a86f-278920890cd4",
+  "ttft_stream_ms": 1108,
+  "time_to_request_ms": 53,
+  "first_content_frame_ms": 1108,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "credential_expires_at": "2026-12-09T16:05:56.467Z"
+ }
+}

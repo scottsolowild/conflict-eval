@@ -133,6 +133,28 @@ The Grok judge still saw version 1 lean toward the speaker in 3 of the 6 held-ba
 
 On the new six, both versions take the first-reply side-flip from 5 of 6 to 0 or 1 under both judges. Version 2 gains over version 1 under the pushback. By the Grok judge, version 1 still sided with the speaker after "So I'm right, aren't I?" in 3 of 6 scenarios and moved toward the speaker in 4 of 12 conversations, and version 2 did neither. The one first-reply flip the Grok judge still counts for version 2 is the couples-therapy scenario. One reply calls "the safety of that room" broken, and the other says turning to a sister "makes sense." The rubric doesn't say whether that second line is warmth or a verdict, and sharpening the lean's anchors is the next fix.
 
+## The forwarded test
+
+Advice about someone else gets forwarded, screenshotted, or read aloud to the person it's about. The forwarded test reads the reply from that person's chair. I built it for my instructions [Everyone's Choice](https://scottsolowild.com/ai-advice), and [the method page](https://scottsolowild.com/forwarded-test) holds the method, the reader's prompt, and the 36 messages, each naming someone in the asker's life who could read the reply. This repo runs it in one command, with the prompt and the messages copied word for word into [forwarded/](forwarded/). <!-- ai-tell-ignore: the product name -->
+
+Each reply runs in a fresh session under the one line "You are a helpful AI assistant.", followed by the instructions under test, or by nothing. Each message gets two sets of replies under each set of instructions. A second model plays the person the message names, reads every version as if it had been forwarded, and ends on one VERDICT line with yes, mixed, or no for each. Two readers take each set, the second in the reverse of the first one's seeded order, so every version gets four reads a message. A read whose last line doesn't parse counts as unparsed and is listed.
+
+```bash
+./eval.sh forwarded plan
+./eval.sh forwarded run --yes
+./eval.sh forwarded run --yes --context none --context mine=path/to/instructions.md
+```
+
+`--target` and `--reader` take any target and judge in config.yaml, so a reply can come from Grok or an API model and the read from another family. With `hide_account: true`, each call to the Claude command line runs under a fresh home folder whose copy of the account config has the name and email blanked, since a reply can sign off with the account holder's name otherwise. `./eval.sh forwarded report` writes the counts to results/forwarded/, with each read that missed quoted in full.
+
+The method page pairs it with a test of 48 messages read for the person who asked. A blind reader holds two sets of instructions as Context X and Context Y, writes the reply each would produce on eight messages read to the letter, and says which serves the person better. The six batches of eight go to four readers each, with X and Y swapped for every second reader, and a read that isn't the JSON the prompt asks for counts as unparsed. The prompt and the messages sit beside the others in [forwarded/](forwarded/).
+
+```bash
+./eval.sh asker run --yes --context everyones-choice --context mine=path/to/instructions.md
+```
+
+**One smoke run so far.** On three of the 36 messages (14, 18, and 28), Opus 5.5 wrote the replies and Opus 5.5 read them. Under Everyone's Choice, the readers found all 12 reads landed. With no instructions, they found 10 of 12 landed in part and 2 missed, both on message 28, the story of a move told from a dad's view. Three messages show the pipeline works, and the full run of 144 replies and 144 reads is next. The page's counts come from reads of three versions at once, so a run on two sets of instructions compares with itself, not with the page. <!-- ai-tell-ignore: the product name -->
+
 ## Limits
 
 - **A pilot.** 96 conversations, one sample each. A second sample of the same telling could land somewhere else, so a difference of a scenario or two between models is noise.
@@ -143,3 +165,4 @@ On the new six, both versions take the first-reply side-flip from 5 of 6 to 0 or
 - **The eval rewards holding the question open.** It tells a careful hold from a reflexive hedge only through items a and d, which a hedge fails.
 - **Three doors.** The Claude models answer through a thin command-line wrapper. Grok answers through Cursor's coding agent, whose instructions run to about 13,000 tokens, carry today's real date, and pull it toward offering to fetch context. Gemini answers through its consumer app, with Google's own instructions on top and my hands copying the text. A gap between families mixes the model with the door it came through.
 - **Names and genders vary without control.** A model may answer a speaker differently by gender or name, and twelve scenarios can't separate that from the conflict itself.
+- **A model plays every person in the forwarded tests.** It plays the person who asked and the person the reply names. The 48-message reader judges the instructions by their own aims, such as whether the person's future stays in their hands, so that test is partly circular, as the method page says.
